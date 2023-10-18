@@ -42,8 +42,7 @@
       "cjs"
     ],
     "external": [
-      "react",
-      "pinoycoderz-tokens"
+      "react"
     ],
     "loader": {
       ".css": "local-css"
