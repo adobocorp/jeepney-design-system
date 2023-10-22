@@ -1,9 +1,60 @@
 @import "../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
 
-.button {
+.primary {
+  /* font-family: var(--font-family-base); */
   height: 32px;
   width: 80px;
+  color: var(--color-font-button-primary);
   background-color: var(--color-brand-primary-base);
   border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+}
+
+.secondary {
+  /* font-family: var(--font-family-base); */
+  height: 32px;
+  width: 80px;
+  color: var(--color-font-button-secondary);
+  background-color: var(--color-brand-secondary-base);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 10px;
+}
+
+.neutral {
+  /* font-family: var(--font-family-base); */
+  height: 32px;
+  width: 80px;
+  background-color: var(--color-base-gray-200);
+  border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+}
+
+.alert {
+  /* font-family: var(--font-family-base); */
+  height: 32px;
+  width: 80px;
+  color: var(--color-font-button-primary);
+  background-color: var(--color-base-red-300);
+  border: 1px solid var(--color-border-error);
+  border-radius: 10px;
+}
+
+.success {
+  /* font-family: var(--font-family-base); */
+  height: 32px;
+  width: 80px;
+  color: var(--color-font-button-primary);
+  background-color: var(--color-base-green-400);
+  border: 1px solid var(--color-border-success);
+  border-radius: 10px;
+}
+
+.warning {
+  /* font-family: var(--font-family-base); */
+  height: 32px;
+  width: 80px;
+  color: var(--color-base-black);
+  background-color: var(--color-base-yellow-500);
+  border: 1px solid var(--color-border-warning);
   border-radius: 10px;
 }

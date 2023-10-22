@@ -5,9 +5,16 @@ import "ui/dist/index.css";
 const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
-    type: {
+    color: {
       control: { type: "radio" },
-      options: ["button", "submit", "reset"],
+      options: [
+        "primary",
+        "secondary",
+        "neutral",
+        "alert",
+        "success",
+        "warning",
+      ],
     },
   },
 };
@@ -27,15 +34,116 @@ export const Primary: Story = {
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
-        alert("Hello from Turborepo!");
+        alert("Salamat!");
       }}
     >
-      Hello
+      Para po
     </Button>
   ),
-  name: "Button",
+  name: "Primary",
   args: {
-    children: "Hello",
-    type: "button",
+    children: "Para po",
+    color: "primary",
+  },
+};
+
+export const Secondary: Story = {
+  render: (props) => (
+    <Button
+      {...props}
+      onClick={(): void => {
+        // eslint-disable-next-line no-alert -- alert for demo
+        alert("Salamat!");
+      }}
+    >
+      Para po
+    </Button>
+  ),
+  name: "Secondary",
+  args: {
+    children: "Para po",
+    color: "secondary",
+  },
+};
+
+export const Neutral: Story = {
+  render: (props) => (
+    <Button
+      {...props}
+      onClick={(): void => {
+        // eslint-disable-next-line no-alert -- alert for demo
+        alert("Salamat!");
+      }}
+    >
+      Para po
+    </Button>
+  ),
+  name: "Neutral",
+  args: {
+    children: "Para po",
+    color: "neutral",
+  },
+};
+
+export const Alert: Story = {
+  render: (props) => (
+    <Button
+      {...props}
+      onClick={(): void => {
+        // eslint-disable-next-line no-alert -- alert for demo
+        alert("Salamat!");
+      }}
+    >
+      Kuya! Please stop the bus!
+    </Button>
+  ),
+  name: "Alert",
+  args: {
+    children: "Kuya! Please stop the bus!",
+    color: "alert",
+    style: {
+      width: "200px",
+    },
+  },
+};
+
+export const Success: Story = {
+  render: (props) => (
+    <Button
+      {...props}
+      onClick={(): void => {
+        // eslint-disable-next-line no-alert -- alert for demo
+        alert("Salamat!");
+      }}
+    >
+      Para po
+    </Button>
+  ),
+  name: "Success",
+  args: {
+    children: "Para po",
+    color: "success",
+  },
+};
+
+export const Warning: Story = {
+  render: (props) => (
+    <Button
+      {...props}
+      onClick={(): void => {
+        // eslint-disable-next-line no-alert -- alert for demo
+        alert("Salamat!");
+      }}
+    >
+      Paki preno po ng jeep.
+    </Button>
+  ),
+  name: "Warning",
+  args: {
+    children: "Paki preno po ng jeep.",
+    color: "warning",
+    style: {
+      width: "200px",
+    },
   },
 };

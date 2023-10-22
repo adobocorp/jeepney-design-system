@@ -121,6 +121,18 @@
         "800": { "value": "#737476", "attributes": { "font": "inverse" } },
         "900": { "value": "#5C5C5E", "attributes": { "font": "inverse" } }
       },
+      "green": {
+        "50": { "value": "#B7BFB3", "attributes": { "font": "base" } },
+        "100": { "value": "#9FAA99", "attributes": { "font": "base" } },
+        "200": { "value": "#6E7F66", "attributes": { "font": "base" } },
+        "300": { "value": "#566A4D", "attributes": { "font": "base" } },
+        "400": { "value": "#3E5533", "attributes": { "font": "base" } },
+        "500": { "value": "#263F1A", "attributes": { "font": "base" } },
+        "600": { "value": "#0E2A00", "attributes": { "font": "inverse" } },
+        "700": { "value": "#0D2600", "attributes": { "font": "inverse" } },
+        "800": { "value": "#0B2200", "attributes": { "font": "inverse" } },
+        "900": { "value": "#0A1D00", "attributes": { "font": "inverse" } }
+      },
       "white": { "value": "#ffffff" },
       "black": { "value": "#000000" }
     }
