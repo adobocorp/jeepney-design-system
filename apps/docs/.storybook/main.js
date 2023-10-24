@@ -5,6 +5,7 @@ function getAbsolutePath(value) {
 }
 
 const config = {
+  staticDirs: ["../public"],
   stories: ["../stories/*.stories.tsx", "../stories/**/*.stories.tsx"],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
