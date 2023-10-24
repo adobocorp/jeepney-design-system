@@ -2,7 +2,7 @@
   "font": {
     "family": {
       "base": {
-        "value": "{asset.font.bantayog-regular.name.value}"
+        "value": "{asset.font.quezon.name.value}"
       },
       "icons": {
         "value": "{asset.font.icon.name.value}"

@@ -11,6 +11,10 @@
       "bantayog-regular": {
         "name": { "value": "Bantayog Regular" },
         "otf": { "value": "assets/fonts/Bantayog-Regular.otf" }
+      },
+      "quezon": {
+        "name": { "value": "Quezon" },
+        "ttf": { "value": "assets/fonts/Quezon.ttf" }
       }
     }
   }

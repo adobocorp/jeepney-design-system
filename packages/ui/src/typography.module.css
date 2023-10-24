@@ -2,25 +2,25 @@
 
 .h1 {
   font-family: var(--font-family-base);
-  font-size: var(--font-size-xl);
+  font-size: var(--size-font-xl);
 }
 
 .h2 {
-  /* font-family: var(--font-family-base); */
-  font-size: var(--font-size-large);
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-large);
 }
 
 .h3 {
-  /* font-family: var(--font-family-base); */
-  font-size: var(--font-size-medium);
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-medium);
 }
 
 .h4 {
-  /* font-family: var(--font-family-base); */
-  font-size: var(--font-size-small);
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-small);
 }
 
 .h5 {
-  /* font-family: var(--font-family-base); */
-  font-size: var(--font-size-tiny);
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-tiny);
 }

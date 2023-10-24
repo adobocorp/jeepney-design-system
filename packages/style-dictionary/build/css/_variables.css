@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 22 Oct 2023 08:52:26 GMT
+ * Generated on Tue, 24 Oct 2023 06:37:20 GMT
  */
 
 :root {
@@ -11,6 +11,8 @@
   --asset-font-icon-woff2: "assets/fonts/MaterialIcons-Regular.woff2";
   --asset-font-bantayog-regular-name: "Bantayog Regular";
   --asset-font-bantayog-regular-otf: "assets/fonts/Bantayog-Regular.otf";
+  --asset-font-quezon-name: "Quezon";
+  --asset-font-quezon-ttf: "assets/fonts/Quezon.ttf";
   --color-background-base: #ffffff;
   --color-background-alt: #eaecef;
   --color-background-disabled: #eaecef;
@@ -1143,7 +1145,7 @@
   --content-icon-zoom-out-map: zoom_out_map;
   --content-icon-zoom-out: zoom_out;
   --content-icon-zoom-in: zoom_in;
-  --font-family-base: Bantayog Regular;
+  --font-family-base: Quezon;
   --font-family-icons: MaterialIcons;
   --size-font-tiny: 0.75rem;
   --size-font-small: 0.875rem;
