@@ -1,0 +1,41 @@
+@import "../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
+
+.carousel {
+  width: 800px;
+  height: 400px;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+
+.backgroundWithImage {
+  background: url("https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg");
+  background-repeat: no-repeat;
+}
+
+.backgroundWithPrimary {
+  background-color: var(--color-brand-primary-base);
+}
+
+.backgroundWithSecondary {
+  background-color: var(--color-brand-secondary-base);
+}
+
+.backgroundWithNeutral {
+  background-color: var(--color-base-grey-200);
+}
+
+.backgroundWithSuccess {
+  background-color: var(--color-base-green-400);
+}
+
+.backgroundWithAlert {
+  background-color: var(--color-base-red-300);
+}
+
+.backgroundWithWarning {
+  background-color: var(--color-base-yellow-500);
+}
