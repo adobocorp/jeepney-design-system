@@ -1,14 +1,15 @@
 export { Button, COLOR, type ButtonProps } from "./button";
 export { Typography, HEADING, type TypographyProps } from "./typography";
 export { Carousel } from "./carousel";
+export { type CarouselProps } from "./carousel/types";
+
 export {
   BackgroundColor,
-  type CarouselProps,
+  type BackgroundFilled,
+  type BackgroundImage,
   type CardContent,
   type VideoContent,
   type CallToAction,
-  type BackgroundFilled,
-  type BackgroundImage,
   ContentType,
   BackgroundType,
-} from "./carousel/types";
+} from "./shared/types";

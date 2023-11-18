@@ -19,6 +19,10 @@ export const Carousel = ({
               background={background}
             ></CarouselContent>
           )}
+          <div>
+            <button>Previous</button>
+            <button>Next</button>
+          </div>
         </CarouselBackground>
       )}
     </div>

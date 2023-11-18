@@ -2,14 +2,11 @@ import { BackgroundType, WithBackground } from "../../shared/types";
 import { BackgroundImage } from "../../shared/background/background-image";
 import { BackgroundFilled } from "../../shared/background/background-filled";
 
-type CarouselBackgroundProps = WithBackground & {
+type StepBackgroundProps = WithBackground & {
   children: any;
 };
 
-export function CarouselBackground({
-  background,
-  children,
-}: CarouselBackgroundProps) {
+export function StepBackground({ background, children }: StepBackgroundProps) {
   switch (background.backgroundType) {
     case BackgroundType.Image:
       return (

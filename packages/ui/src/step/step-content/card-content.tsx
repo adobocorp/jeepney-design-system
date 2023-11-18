@@ -1,6 +1,6 @@
 import styles from "./content.module.css";
 import cn from "classnames";
-import { CardContent as CardContentProps } from "../types";
+// import { CardContent as CardContentProps } from "../../shared/types";
 import { CardCallToAction } from "./card-call-to-action";
 
 export const CardContent = ({

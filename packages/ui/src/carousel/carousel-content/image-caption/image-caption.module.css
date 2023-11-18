@@ -1,0 +1,49 @@
+@import "../../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
+
+.imageCaptionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.upperImageContainer {
+  height: 240px;
+  width: 100%;
+  background: url("https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg");
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.lowerCaptionContainer {
+  height: 48px;
+  padding: 32px;
+  background: var(--color-base-white);
+  border-radius: 2px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.lowerCaptionContent {
+  color: var(--color-base-black);
+}
+
+.lowerCaptionContentPrimary {
+  font-size: var(--size-font-large);
+  margin-bottom: 12px;
+}
+
+.lowerCaptionContentSecondary {
+  height: 30px;
+  overflow-y: hidden;
+  font-size: var(--size-font-small);
+}

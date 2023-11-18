@@ -1,6 +1,6 @@
 @import "../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
 
-.carousel {
-  width: 100%;
+.step {
+  width: 800px;
   height: 400px;
 }

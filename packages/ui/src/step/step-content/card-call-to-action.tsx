@@ -1,5 +1,5 @@
 import styles from "./content.module.css";
-import { BackgroundColor } from "../types";
+import { BackgroundColor } from "../../shared/types";
 import cn from "classnames";
 
 export function CardCallToAction({ callToAction, backgroundColor }) {

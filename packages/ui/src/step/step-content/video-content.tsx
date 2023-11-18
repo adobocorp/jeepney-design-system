@@ -1,6 +1,6 @@
 import styles from "./content.module.css";
 import cn from "classnames";
-import { VideoContent as VideoContentProps } from "../types";
+import { VideoContent as VideoContentProps } from "../../shared/types";
 
 type VideoPlayerProps = {
   height: number;
