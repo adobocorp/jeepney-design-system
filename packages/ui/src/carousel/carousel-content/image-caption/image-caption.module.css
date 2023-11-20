@@ -6,7 +6,8 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
-  margin: 18px 0px;
+  width: 800px;
+  margin: 18px auto;
 }
 
 .contentContainer {
@@ -27,6 +28,7 @@
 
 .lowerCaptionContainer {
   height: 48px;
+  width: calc(100% - 64px);
   padding: 32px;
   background: var(--color-base-white);
   border-radius: 2px;

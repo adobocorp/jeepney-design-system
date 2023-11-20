@@ -1,8 +1,8 @@
 import { NavigationProgress } from "./navigation-progress";
-export function CarouselNavigation() {
+export function CarouselNavigation({ progressBars = 1 }) {
   return (
     <div>
-      <NavigationProgress></NavigationProgress>
+      <NavigationProgress progressBars={progressBars}></NavigationProgress>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import styles from "./carousel.module.css";
 import { CarouselBackground } from "./carousel-background";
 import { CarouselProps } from "./types";
 import { CarouselContent } from "./carousel-content";
-import { CarouselNavigation } from "./carousel-navigation";
+import { CarouselSwiper } from "./carousel-swiper";
 
 export const Carousel = ({
   width,
@@ -15,12 +15,25 @@ export const Carousel = ({
       {background?.backgroundType && (
         <CarouselBackground background={background}>
           {content?.contentType && (
-            <CarouselContent
-              content={content}
-              background={background}
-            ></CarouselContent>
+            <CarouselSwiper>
+              <CarouselContent
+                content={content}
+                background={background}
+              ></CarouselContent>
+              <CarouselContent
+                content={content}
+                background={background}
+              ></CarouselContent>
+              <CarouselContent
+                content={content}
+                background={background}
+              ></CarouselContent>
+              <CarouselContent
+                content={content}
+                background={background}
+              ></CarouselContent>
+            </CarouselSwiper>
           )}
-          <CarouselNavigation></CarouselNavigation>
         </CarouselBackground>
       )}
     </div>

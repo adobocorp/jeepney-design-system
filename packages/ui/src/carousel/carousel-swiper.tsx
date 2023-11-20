@@ -1,22 +1,25 @@
 // Import Swiper React components
+import { Children } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { CarouselNavigation } from "./carousel-navigation";
 
 // Import Swiper styles
-import "../../node_modules/swiper/swiper.scss";
+import "swiper/css";
 
-export const CarouseSwiper = () => {
+export function CarouselSwiper({ children }) {
+  const childrenCount = Children.count(children);
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
+      style={{ width: "100%" }}
+      spaceBetween={25}
+      slidesPerView={1}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      {children.map((child) => (
+        <SwiperSlide>{child}</SwiperSlide>
+      ))}
+      <CarouselNavigation progressBars={childrenCount}></CarouselNavigation>
     </Swiper>
   );
-};
-
+}
