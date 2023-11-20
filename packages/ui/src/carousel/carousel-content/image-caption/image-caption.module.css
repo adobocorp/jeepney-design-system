@@ -6,6 +6,7 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
+  margin: 18px 0px;
 }
 
 .contentContainer {
@@ -43,7 +44,5 @@
 }
 
 .lowerCaptionContentSecondary {
-  height: 30px;
-  overflow-y: hidden;
   font-size: var(--size-font-small);
 }

@@ -2,6 +2,7 @@ import styles from "./carousel.module.css";
 import { CarouselBackground } from "./carousel-background";
 import { CarouselProps } from "./types";
 import { CarouselContent } from "./carousel-content";
+import { CarouselNavigation } from "./carousel-navigation";
 
 export const Carousel = ({
   width,
@@ -19,10 +20,7 @@ export const Carousel = ({
               background={background}
             ></CarouselContent>
           )}
-          <div>
-            <button>Previous</button>
-            <button>Next</button>
-          </div>
+          <CarouselNavigation></CarouselNavigation>
         </CarouselBackground>
       )}
     </div>
