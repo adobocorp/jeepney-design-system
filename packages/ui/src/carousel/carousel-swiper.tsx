@@ -11,9 +11,10 @@ export function CarouselSwiper({ children }) {
   return (
     <Swiper
       style={{ width: "100%" }}
+      navigation={true}
       spaceBetween={25}
       slidesPerView={1}
-      onSlideChange={() => console.log("slide change")}
+      onSlideChange={({ activeIndex }) => console.log({ activeIndex })}
       onSwiper={(swiper) => console.log(swiper)}
     >
       {children.map((child) => (

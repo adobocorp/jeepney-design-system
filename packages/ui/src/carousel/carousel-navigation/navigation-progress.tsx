@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import style from "./carousel-navigation.module.css";
 import cn from "classnames";
-import { ProgressMeter } from "./progress-meter";
 import { useSwiper } from "swiper/react";
+import style from "./carousel-navigation.module.css";
+import { ProgressMeter } from "./progress-meter";
+
 export function NavigationProgress({ progressBars = 1 }: any) {
   const swiper = useSwiper();
-  const seconds = 5;
+  const seconds = 10;
   const widthMs = seconds * 10;
   const [currentProgressMeterWidth, setCurrentProgressMeterWidth] = useState(0);
   const [currentProgressMeterIndex, setCurrentProgressMeterIndex] = useState(0);
@@ -17,20 +18,25 @@ export function NavigationProgress({ progressBars = 1 }: any) {
       } else {
         setCurrentProgressMeterWidth(0);
         if (currentProgressMeterIndex < progressBars - 1) {
+          swiper.slideNext();
           setCurrentProgressMeterIndex(currentProgressMeterIndex + 1);
         } else {
           setCurrentProgressMeterIndex(0);
+          swiper.slideTo(0);
         }
-        swiper.slideNext();
       }
     }, widthMs);
+
+    if (swiper.activeIndex !== currentProgressMeterIndex) {
+      setCurrentProgressMeterIndex(swiper.activeIndex);
+      setCurrentProgressMeterWidth(0);
+      clearInterval(widthInterval);
+    }
 
     return () => {
       clearInterval(widthInterval);
     };
   });
-
-  console.log(currentProgressMeterWidth);
 
   return (
     <div className={cn(style.navigationProgressContainer)}>
@@ -43,7 +49,7 @@ export function NavigationProgress({ progressBars = 1 }: any) {
                 ? currentProgressMeterWidth
                 : 0
             }
-          ></ProgressMeter>
+          />
         ))}
     </div>
   );

@@ -56,6 +56,11 @@ export type CardContent = {
   contentType: ContentType.Card;
 };
 
+export enum CardHeight {
+  SHORT = "short",
+  TALL = "tall",
+}
+
 export type VideoContent = WithCallAction & {
   caption?: string;
   width: number;

@@ -1,0 +1,26 @@
+@import "../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
+
+.h1 {
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-xl);
+}
+
+.h2 {
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-large);
+}
+
+.h3 {
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-medium);
+}
+
+.h4 {
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-small);
+}
+
+.h5 {
+  font-family: var(--font-family-base);
+  font-size: var(--size-font-tiny);
+}
