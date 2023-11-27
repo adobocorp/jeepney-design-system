@@ -9,8 +9,16 @@
         "woff2": { "value": "assets/fonts/MaterialIcons-Regular.woff2" }
       },
       "bantayog-regular": {
-        "name": { "value": "Bantayog Regular" },
+        "name": { "value": "Bantayog-Regular" },
         "otf": { "value": "assets/fonts/Bantayog-Regular.otf" }
+      },
+      "bantayog-semilight": {
+        "name": { "value": "Bantayog-Semilight" },
+        "otf": { "value": "assets/fonts/Bantayog-Semilight.otf" }
+      },
+      "bantayog-light": {
+        "name": { "value": "Bantayog-Light" },
+        "otf": { "value": "assets/fonts/Bantayog-Light.otf" }
       },
       "quezon": {
         "name": { "value": "Quezon" },

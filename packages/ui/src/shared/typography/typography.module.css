@@ -1,12 +1,12 @@
 @import "../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
 
 .h1 {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-primary);
   font-size: var(--size-font-xl);
 }
 
 .h2 {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-secondary);
   font-size: var(--size-font-large);
 }
 

@@ -41,10 +41,12 @@
 }
 
 .lowerCaptionContentPrimary {
+  font-family: var(--font-family-primary);
   font-size: var(--size-font-large);
   margin-bottom: 12px;
 }
 
 .lowerCaptionContentSecondary {
+  font-family: var(--font-family-secondary);
   font-size: var(--size-font-small);
 }

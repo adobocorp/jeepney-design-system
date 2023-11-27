@@ -1,14 +1,18 @@
 
 // Do not edit directly
-// Generated on Mon, 27 Nov 2023 05:41:27 GMT
+// Generated on Mon, 27 Nov 2023 06:27:04 GMT
 
 $asset-font-icon-name: "MaterialIcons";
 $asset-font-icon-ttf: "assets/fonts/MaterialIcons-Regular.ttf";
 $asset-font-icon-eot: "assets/fonts/MaterialIcons-Regular.eot";
 $asset-font-icon-woff: "assets/fonts/MaterialIcons-Regular.woff";
 $asset-font-icon-woff2: "assets/fonts/MaterialIcons-Regular.woff2";
-$asset-font-bantayog-regular-name: "Bantayog Regular";
+$asset-font-bantayog-regular-name: "Bantayog-Regular";
 $asset-font-bantayog-regular-otf: "assets/fonts/Bantayog-Regular.otf";
+$asset-font-bantayog-semilight-name: "Bantayog-Semilight";
+$asset-font-bantayog-semilight-otf: "assets/fonts/Bantayog-Semilight.otf";
+$asset-font-bantayog-light-name: "Bantayog-Light";
+$asset-font-bantayog-light-otf: "assets/fonts/Bantayog-Light.otf";
 $asset-font-quezon-name: "Quezon";
 $asset-font-quezon-ttf: "assets/fonts/Quezon.ttf";
 $color-background-base: #ffffff;
@@ -1144,6 +1148,8 @@ $content-icon-zoom-out-map: zoom_out_map;
 $content-icon-zoom-out: zoom_out;
 $content-icon-zoom-in: zoom_in;
 $font-family-base: Quezon;
+$font-family-primary: Bantayog-Semilight;
+$font-family-secondary: Bantayog-Light;
 $font-family-icons: MaterialIcons;
 $size-font-tiny: 0.75rem;
 $size-font-small: 0.875rem;

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from "./image-caption.module.css";
 import cn from "classnames";
-// import { CardContent as CardContentProps } from "../../../shared/types";
 
 export const LowerCaption = ({ primaryText, secondaryText }: any) => {
   let longCaption = secondaryText;
