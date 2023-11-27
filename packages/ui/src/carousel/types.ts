@@ -3,14 +3,16 @@ import { CardContent, VideoContent } from "../shared/types";
 
 export type CarouselContent = CardContent | VideoContent;
 
-export type WithContent = {
-  content?: CarouselContent;
+export type WithContentList = {
+  contentList: CarouselContent[];
 };
 
-export type CarouselContentProps = WithContent;
+export type CarouselContentProps = {
+  content: CarouselContent;
+};
 
 export type CarouselProps = BackgroundProps &
-  CarouselContentProps & {
+  WithContentList & {
     width: string;
     height: string;
   };

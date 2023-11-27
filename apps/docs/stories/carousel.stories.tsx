@@ -49,7 +49,7 @@ export const Primary: Story = {
       ...filled,
       backgroundColor: BackgroundColor.Primary,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
 
@@ -61,7 +61,7 @@ export const Secondary: Story = {
       ...filled,
       backgroundColor: BackgroundColor.Secondary,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
 
@@ -73,7 +73,7 @@ export const Neutral: Story = {
       ...filled,
       backgroundColor: BackgroundColor.Neutral,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
 
@@ -85,7 +85,7 @@ export const Alert: Story = {
       ...filled,
       backgroundColor: BackgroundColor.Alert,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
 
@@ -97,7 +97,7 @@ export const Success: Story = {
       ...filled,
       backgroundColor: BackgroundColor.Success,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
 
@@ -109,7 +109,7 @@ export const Warning: Story = {
       ...filled,
       backgroundColor: BackgroundColor.Warning,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
 
@@ -121,6 +121,6 @@ export const Image: Story = {
       backgroundPosition: "center",
       backgroundType: BackgroundType.Image,
     },
-    content: card,
+    contentList: [card, card, card],
   },
 };
