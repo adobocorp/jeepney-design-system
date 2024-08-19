@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
-  FlexContentList,
+  FlexContentListV1,
   FlexContentListProps,
   CardContent,
   ContentType,
@@ -8,10 +8,10 @@ import {
   BackgroundType,
   BackgroundColor,
 } from "ui";
-type Story = StoryObj<typeof FlexContentList>;
+type Story = StoryObj<typeof FlexContentListV1>;
 
-const meta: Meta<typeof FlexContentList> = {
-  component: FlexContentList,
+const meta: Meta<typeof FlexContentListV1> = {
+  component: FlexContentListV1,
   argTypes: {
     flexGridType: {
       control: { type: "radio" },
@@ -34,7 +34,7 @@ const content: CardContent = {
 };
 export const ShortCardGrid: Story = {
   render: (props: FlexContentListProps) => (
-    <FlexContentList {...props}></FlexContentList>
+    <FlexContentListV1 {...props}></FlexContentListV1>
   ),
   name: "Short Card Grid",
   args: {

@@ -3,7 +3,7 @@ import { ContentListBackground } from "./content-list-background";
 import { FlexGrid } from "./flex-grid";
 import { FlexContentListProps } from "./types";
 
-export function FlexContentList({
+export function FlexContentListV1({
   primaryText,
   secondaryText,
   contentList,

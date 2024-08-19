@@ -4,7 +4,7 @@ import type { CarouselProps } from "./types";
 import { CarouselContent } from "./carousel-content";
 import { CarouselSwiper } from "./carousel-swiper";
 
-export function Carousel({
+export function CarouselV1({
   width,
   height,
   contentList,

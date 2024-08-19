@@ -1,8 +1,6 @@
-export { Button, COLOR, type ButtonProps } from "./button";
-export { Typography, HEADING, type TypographyProps } from "./typography";
-export { Carousel } from "./carousel";
-export { type CarouselProps } from "./carousel/types";
-export { FlexContentList } from "./flex-content-list";
+export { ButtonV1, COLOR, type ButtonProps } from "./button";
+export { TypographyV1, HEADING, type TypographyProps } from "./typography";
+export { FlexContentListV1 } from "./flex-content-list";
 export {
   type FlexContentListProps,
   FlexGridType,
@@ -18,3 +16,5 @@ export {
   ContentType,
   BackgroundType,
 } from "./shared/types";
+export { CarouselV1 } from "./carousel";
+export { InputV1 } from "./input";

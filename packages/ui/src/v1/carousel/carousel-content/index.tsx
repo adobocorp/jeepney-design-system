@@ -1,6 +1,6 @@
 import type { CarouselContentProps } from "../types";
 import { ContentType } from "../../shared/types";
-import { ImageCaption } from "./image-caption/";
+import { ImageCaption } from "./image-caption";
 
 export function CarouselContent({ content }: CarouselContentProps) {
   switch (content.contentType) {

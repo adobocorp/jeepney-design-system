@@ -1,4 +1,4 @@
-@import "../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
+@import "../../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
 
 .contentContainer {
   height: 300px;

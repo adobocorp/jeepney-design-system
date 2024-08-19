@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Typography } from "ui";
+import { TypographyV1 } from "ui";
 import "ui/dist/index.css";
 
-const meta: Meta<typeof Typography> = {
-  component: Typography,
+const meta: Meta<typeof TypographyV1> = {
+  component: TypographyV1,
   argTypes: {
     heading: {
       control: { type: "radio" },
@@ -14,7 +14,7 @@ const meta: Meta<typeof Typography> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Typography>;
+type Story = StoryObj<typeof TypographyV1>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Typography>;
  * to learn how to use render functions.
  */
 export const H1: Story = {
-  render: (props) => <Typography {...props}>Bayad po.</Typography>,
+  render: (props) => <TypographyV1 {...props}>Bayad po.</TypographyV1>,
   name: "H1",
   args: {
     children: "Bayad po.",
@@ -31,7 +31,7 @@ export const H1: Story = {
 };
 
 export const H2: Story = {
-  render: (props) => <Typography {...props}>Bayad po.</Typography>,
+  render: (props) => <TypographyV1 {...props}>Bayad po.</TypographyV1>,
   name: "H2",
   args: {
     children: "Bayad po.",
@@ -40,7 +40,7 @@ export const H2: Story = {
 };
 
 export const H3: Story = {
-  render: (props) => <Typography {...props}>Bayad po.</Typography>,
+  render: (props) => <TypographyV1 {...props}>Bayad po.</TypographyV1>,
   name: "H3",
   args: {
     children: "Bayad po.",
@@ -49,7 +49,7 @@ export const H3: Story = {
 };
 
 export const H4: Story = {
-  render: (props) => <Typography {...props}>Bayad po.</Typography>,
+  render: (props) => <TypographyV1 {...props}>Bayad po.</TypographyV1>,
   name: "H4",
   args: {
     children: "Bayad po.",
@@ -58,7 +58,7 @@ export const H4: Story = {
 };
 
 export const H5: Story = {
-  render: (props) => <Typography {...props}>Bayad po.</Typography>,
+  render: (props) => <TypographyV1 {...props}>Bayad po.</TypographyV1>,
   name: "H5",
   args: {
     children: "Bayad po.",

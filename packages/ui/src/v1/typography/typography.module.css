@@ -1,4 +1,4 @@
-@import "../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
+@import "../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
 
 .h1 {
   font-family: var(--font-family-base);

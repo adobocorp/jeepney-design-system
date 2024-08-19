@@ -10,7 +10,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx",
+    "build": "tsup src/v1/index.tsx",
     "dev": "tsup src/index.tsx --watch",
     "lint": "eslint src/",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
@@ -32,7 +32,7 @@
   },
   "tsup": {
     "entry": [
-      "src/index.tsx"
+      "src/v1/index.tsx"
     ],
     "splitting": false,
     "sourcemap": true,
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@adobocorp/design-tokens": "workspace:^",
+    "@mui/base": "5.0.0-beta.40",
     "classnames": "^2.3.2",
     "swiper": "^11.0.4"
   }

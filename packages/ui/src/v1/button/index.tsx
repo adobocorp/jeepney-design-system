@@ -1,5 +1,6 @@
-import * as React from "react";
+import { Button } from "@mui/base/Button";
 import styles from "./button.module.css";
+import classNames from "classnames";
 
 export enum COLOR {
   primary = "primary",
@@ -16,7 +17,7 @@ export interface ButtonProps
   color: COLOR;
 }
 
-export function Button({
+export function ButtonV1({
   children,
   color,
   ...other
@@ -24,41 +25,45 @@ export function Button({
   switch (color) {
     case COLOR.primary:
       return (
-        <button type="button" className={styles.primary} {...other}>
+        <Button type="button" className={classNames(styles.primary)} {...other}>
           {children}
-        </button>
+        </Button>
       );
     case COLOR.secondary:
       return (
-        <button type="button" className={styles.secondary} {...other}>
+        <Button
+          type="button"
+          className={classNames(styles.secondary)}
+          {...other}
+        >
           {children}
-        </button>
+        </Button>
       );
     case COLOR.neutral:
       return (
-        <button type="button" className={styles.neutral} {...other}>
+        <Button type="button" className={classNames(styles.neutral)} {...other}>
           {children}
-        </button>
+        </Button>
       );
     case COLOR.alert:
       return (
-        <button type="button" className={styles.alert} {...other}>
+        <Button type="button" className={classNames(styles.alert)} {...other}>
           {children}
-        </button>
+        </Button>
       );
     case COLOR.success:
       return (
-        <button type="button" className={styles.success} {...other}>
+        <Button type="button" className={classNames(styles.success)} {...other}>
           {children}
-        </button>
+        </Button>
       );
     case COLOR.warning:
       return (
-        <button type="button" className={styles.warning} {...other}>
+        <Button type="button" className={classNames(styles.warning)} {...other}>
           {children}
-        </button>
+        </Button>
       );
   }
 }
 
-Button.displayName = "Button";
+ButtonV1.displayName = "ButtonV1";

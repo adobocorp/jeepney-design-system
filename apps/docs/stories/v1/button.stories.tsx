@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "ui";
+
+import { ButtonV1 } from "ui";
 import "ui/dist/index.css";
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof ButtonV1> = {
+  component: ButtonV1,
   argTypes: {
     color: {
       control: { type: "radio" },
@@ -21,7 +22,7 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof ButtonV1>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -30,7 +31,7 @@ type Story = StoryObj<typeof Button>;
  */
 export const Primary: Story = {
   render: (props) => (
-    <Button
+    <ButtonV1
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
@@ -38,7 +39,7 @@ export const Primary: Story = {
       }}
     >
       Para po
-    </Button>
+    </ButtonV1>
   ),
   name: "Primary",
   args: {
@@ -49,7 +50,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   render: (props) => (
-    <Button
+    <ButtonV1
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
@@ -57,7 +58,7 @@ export const Secondary: Story = {
       }}
     >
       Para po
-    </Button>
+    </ButtonV1>
   ),
   name: "Secondary",
   args: {
@@ -68,7 +69,7 @@ export const Secondary: Story = {
 
 export const Neutral: Story = {
   render: (props) => (
-    <Button
+    <ButtonV1
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
@@ -76,7 +77,7 @@ export const Neutral: Story = {
       }}
     >
       Para po
-    </Button>
+    </ButtonV1>
   ),
   name: "Neutral",
   args: {
@@ -87,7 +88,7 @@ export const Neutral: Story = {
 
 export const Alert: Story = {
   render: (props) => (
-    <Button
+    <ButtonV1
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
@@ -95,7 +96,7 @@ export const Alert: Story = {
       }}
     >
       Kuya! Please stop the bus!
-    </Button>
+    </ButtonV1>
   ),
   name: "Alert",
   args: {
@@ -109,7 +110,7 @@ export const Alert: Story = {
 
 export const Success: Story = {
   render: (props) => (
-    <Button
+    <ButtonV1
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
@@ -117,7 +118,7 @@ export const Success: Story = {
       }}
     >
       Para po
-    </Button>
+    </ButtonV1>
   ),
   name: "Success",
   args: {
@@ -128,7 +129,7 @@ export const Success: Story = {
 
 export const Warning: Story = {
   render: (props) => (
-    <Button
+    <ButtonV1
       {...props}
       onClick={(): void => {
         // eslint-disable-next-line no-alert -- alert for demo
@@ -136,7 +137,7 @@ export const Warning: Story = {
       }}
     >
       Paki preno po ng jeep.
-    </Button>
+    </ButtonV1>
   ),
   name: "Warning",
   args: {

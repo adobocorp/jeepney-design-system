@@ -14,7 +14,7 @@ export interface TypographyProps
   heading: HEADING;
 }
 
-export function Typography({ children, heading, ...props }: TypographyProps) {
+export function TypographyV1({ children, heading, ...props }: TypographyProps) {
   switch (heading) {
     case HEADING.H1:
       return (

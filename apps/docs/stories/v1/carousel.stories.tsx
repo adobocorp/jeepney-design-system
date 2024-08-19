@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
-  Carousel,
+  CarouselV1,
   CarouselProps,
   CardContent,
   BackgroundFilled,
@@ -9,10 +9,10 @@ import {
   ContentType,
   BackgroundColor,
 } from "ui";
-type Story = StoryObj<typeof Carousel>;
+type Story = StoryObj<typeof CarouselV1>;
 
-const meta: Meta<typeof Carousel> = {
-  component: Carousel,
+const meta: Meta<typeof CarouselV1> = {
+  component: CarouselV1,
   argTypes: {},
 };
 
@@ -42,7 +42,7 @@ export default meta;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Primary Background",
   args: {
     background: {
@@ -54,7 +54,7 @@ export const Primary: Story = {
 };
 
 export const Secondary: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Secondary Background",
   args: {
     background: {
@@ -66,7 +66,7 @@ export const Secondary: Story = {
 };
 
 export const Neutral: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Neutral Background",
   args: {
     background: {
@@ -78,7 +78,7 @@ export const Neutral: Story = {
 };
 
 export const Alert: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Alert Background",
   args: {
     background: {
@@ -90,7 +90,7 @@ export const Alert: Story = {
 };
 
 export const Success: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Success Background",
   args: {
     background: {
@@ -102,7 +102,7 @@ export const Success: Story = {
 };
 
 export const Warning: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Warning Background",
   args: {
     background: {
@@ -114,7 +114,7 @@ export const Warning: Story = {
 };
 
 export const Image: Story = {
-  render: (props: CarouselProps) => <Carousel {...props}></Carousel>,
+  render: (props: CarouselProps) => <CarouselV1 {...props}></CarouselV1>,
   name: "With Background Image",
   args: {
     background: {
