@@ -1,0 +1,41 @@
+{
+  "name": "@adobo-network/tokens",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Design tokens for Adobo Network",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run style-dictionary:build && rollup -c",
+    "build:tokens": "tsx build.ts",
+    "build:rollup": "rollup -c",
+    "dev": "rollup -c --watch",
+    "clean": "rm -rf dist",
+    "style-dictionary:build": "tsx build.ts",
+    "style-dictionary:clean": "style-dictionary clean",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "design-tokens",
+    "adobo-network",
+    "tokens"
+  ],
+  "author": "Adobo Network",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "catalog:",
+    "rollup": "catalog:",
+    "style-dictionary": "catalog:",
+    "style-dictionary-utils": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
