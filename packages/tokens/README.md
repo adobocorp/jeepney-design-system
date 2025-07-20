@@ -1,11 +1,11 @@
-# @adobo-network/tokens
+# @jeepney-design-system/tokens
 
-Design tokens for Adobo Network applications.
+Design tokens for Jeepey Design System.
 
 ## Installation
 
 ```bash
-npm install @adobo-network/tokens
+npm install @jeepney-design-system/tokens
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ import {
   spacing,
   typography,
   breakpoints,
-} from "@adobo-network/tokens";
+} from "@jeepney-design-system/tokens";
 
 // Use your design tokens
 console.log(colors);

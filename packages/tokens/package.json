@@ -1,8 +1,14 @@
 {
-  "name": "@adobo-network/tokens",
-  "type": "module",
+  "name": "@jeepney-design-system/tokens",
   "version": "0.0.1",
-  "description": "Design tokens for Adobo Network",
+  "description": "Design tokens for Jeepney Design System",
+  "keywords": [
+    "design-tokens",
+    "tokens"
+  ],
+  "license": "MIT",
+  "author": "Jeepney Design System",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -12,21 +18,14 @@
   ],
   "scripts": {
     "build": "npm run style-dictionary:build && rollup -c",
-    "build:tokens": "tsx build.ts",
     "build:rollup": "rollup -c",
-    "dev": "rollup -c --watch",
+    "build:tokens": "tsx build.ts",
     "clean": "rm -rf dist",
+    "dev": "rollup -c --watch",
+    "prepublishOnly": "npm run clean && npm run build",
     "style-dictionary:build": "tsx build.ts",
-    "style-dictionary:clean": "style-dictionary clean",
-    "prepublishOnly": "npm run clean && npm run build"
+    "style-dictionary:clean": "style-dictionary clean"
   },
-  "keywords": [
-    "design-tokens",
-    "adobo-network",
-    "tokens"
-  ],
-  "author": "Adobo Network",
-  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "catalog:",
     "rollup": "catalog:",
