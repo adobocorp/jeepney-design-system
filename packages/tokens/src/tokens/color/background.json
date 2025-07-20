@@ -1,0 +1,116 @@
+{
+  "color": {
+    "background": {
+      "base": {
+        "attributes": {
+          "font": "base"
+        },
+        "type": "color",
+        "value": "{color.base.white.value}"
+      },
+      "alt": {
+        "attributes": {
+          "font": "base"
+        },
+        "type": "color",
+        "value": "{color.base.blue_grey.100.value}"
+      },
+      "disabled": {
+        "attributes": {
+          "font": "base"
+        },
+        "type": "color",
+        "value": "{color.base.blue_grey.100.value}"
+      },
+      "inverse": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.blue_grey.900.value}"
+      },
+      "success": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.green.600.value}"
+      },
+      "error": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.red.600.value}"
+      },
+      "warning": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.orange.800.value}"
+      },
+      "info": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.light_blue.600.value}"
+      },
+      "link": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.light_blue.600.value}"
+      },
+      "low-priority": {
+        "attributes": {
+          "font": "inverse"
+        },
+        "type": "color",
+        "value": "{color.base.grey.600.value}"
+      },
+      "button": {
+        "primary": {
+          "base": {
+            "type": "color",
+            "value": "{color.brand.primary.base.value}"
+          },
+          "disabled": {
+            "type": "color",
+            "value": "{color.brand.primary.light.value}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{color.brand.primary.dark.value}"
+          }
+        },
+        "secondary": {
+          "base": {
+            "type": "color",
+            "value": "{color.brand.secondary.base.value}"
+          },
+          "disabled": {
+            "type": "color",
+            "value": "{color.brand.secondary.light.value}"
+          },
+          "active": {
+            "type": "color",
+            "value": "{color.brand.secondary.dark.value}"
+          }
+        }
+      },
+      "overlay": {
+        "light": {
+          "type": "color",
+          "value": "#FFFFFFCC"
+        },
+        "dark": {
+          "type": "color",
+          "value": "#00000044"
+        }
+      }
+    }
+  }
+}

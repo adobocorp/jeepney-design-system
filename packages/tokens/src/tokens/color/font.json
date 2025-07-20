@@ -1,0 +1,98 @@
+{
+  "color": {
+    "font": {
+      "base": {
+        "type": "color",
+        "value": "{color.base.grey.900.value}"
+      },
+      "secondary": {
+        "type": "color",
+        "value": "{color.base.grey.800.value}"
+      },
+      "tertiary": {
+        "type": "color",
+        "value": "{color.base.grey.600.value}"
+      },
+      "quaternary": {
+        "type": "color",
+        "value": "{color.base.grey.400.value}"
+      },
+      "link": {
+        "type": "color",
+        "value": "{color.brand.primary.base.value}"
+      },
+      "active": {
+        "type": "color",
+        "value": "{color.brand.secondary.base.value}"
+      },
+      "error": {
+        "type": "color",
+        "value": "{color.base.red.600.value}"
+      },
+      "warning": {
+        "type": "color",
+        "value": "{color.base.orange.800.value}"
+      },
+      "success": {
+        "type": "color",
+        "value": "{color.base.green.600.value}"
+      },
+      "disabled": {
+        "type": "color",
+        "value": "{color.font.secondary.value}"
+      },
+      "inverse": {
+        "base": {
+          "type": "color",
+          "value": "{color.base.white.value}"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "{color.base.grey.100.value}"
+        },
+        "tertiary": {
+          "type": "color",
+          "value": "{color.base.grey.200.value}"
+        },
+        "quaternary": {
+          "type": "color",
+          "value": "{color.base.grey.400.value}"
+        },
+        "link": {
+          "type": "color",
+          "value": "{color.brand.primary.light.value}"
+        },
+        "active": {
+          "type": "color",
+          "value": "{color.brand.secondary.light.value}"
+        },
+        "error": {
+          "type": "color",
+          "value": "{color.base.red.400.value}"
+        },
+        "warning": {
+          "type": "color",
+          "value": "{color.base.orange.400.value}"
+        },
+        "success": {
+          "type": "color",
+          "value": "{color.base.green.400.value}"
+        },
+        "disabled": {
+          "type": "color",
+          "value": "{color.font.inverse.secondary.value}"
+        }
+      },
+      "button": {
+        "primary": {
+          "type": "color",
+          "value": "{color.font.inverse.base.value}"
+        },
+        "secondary": {
+          "type": "color",
+          "value": "{color.font.link.value}"
+        }
+      }
+    }
+  }
+}

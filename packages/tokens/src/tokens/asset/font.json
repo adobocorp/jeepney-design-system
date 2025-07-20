@@ -1,0 +1,31 @@
+{
+  "asset": {
+    "font": {
+      "icon": {
+        "name": {
+          "value": "MaterialIcons"
+        },
+        "ttf": {
+          "value": "assets/fonts/MaterialIcons-Regular.ttf"
+        },
+        "eot": {
+          "value": "assets/fonts/MaterialIcons-Regular.eot"
+        },
+        "woff": {
+          "value": "assets/fonts/MaterialIcons-Regular.woff"
+        },
+        "woff2": {
+          "value": "assets/fonts/MaterialIcons-Regular.woff2"
+        }
+      },
+      "avenir": {
+        "name": {
+          "value": "Avenir"
+        },
+        "ttf": {
+          "value": "assets/fonts/Avenir-Regular.ttf"
+        }
+      }
+    }
+  }
+}

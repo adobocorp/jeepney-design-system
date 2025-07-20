@@ -1,0 +1,76 @@
+{
+  "source": ["src/tokens/**/*.json"],
+  "log": {
+    "warnings": "warn",
+    "verbosity": "verbose",
+    "errors": {
+      "brokenReferences": "console"
+    }
+  },
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "build/scss/",
+      "files": [
+        {
+          "destination": "_variables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    },
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "files": [
+        {
+          "destination": "_variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "js": {
+      "transformGroup": "js",
+      "buildPath": "build/",
+      "files": [
+        {
+          "destination": "tokens.js",
+          "format": "javascript/es6"
+        }
+      ]
+    },
+    "ts": {
+      "buildPath": "build/",
+      "transforms": [
+        "name/pathToCamelCase",
+        "color/hexAlpha",
+        "shadow/css",
+        "attribute/cti"
+      ],
+      "files": [
+        {
+          "filter": "isSource",
+          "destination": "tokens.ts",
+          "format": "javascript/esm"
+        }
+      ]
+    },
+    "tailwindPreset": {
+      "buildPath": "build/tailwind/",
+      "transformGroup": "tailwind",
+      "files": [
+        {
+          "destination": "cssVarsPlugin.js",
+          "format": "tailwind/css-vars-plugin"
+        },
+        {
+          "destination": "themeColors.js",
+          "format": "tailwind/theme-colors"
+        },
+        {
+          "destination": "preset.js",
+          "format": "tailwind/preset"
+        }
+      ]
+    }
+  }
+}
