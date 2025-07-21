@@ -15,6 +15,11 @@
     "dev": "tsup src/index.tsx --watch",
     "lint": "eslint src/"
   },
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router-dom": "catalog:"
+  },
   "devDependencies": {
     "@babel/core": "catalog:",
     "@babel/preset-env": "catalog:",
@@ -43,9 +48,6 @@
     "@jeepney-design-system/tokens": "workspace:^",
     "@tanstack/react-query": "catalog:",
     "classnames": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-router-dom": "catalog:",
     "swiper": "catalog:",
     "tailwindcss": "catalog:",
     "tailwindcss-autofill": "catalog:",

@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "storybook build --docs",
-    "clean": "rm -rf .turbo && rm -rf node_modules",
+    "build": "storybook build",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static",
     "dev": "storybook dev -p 6006",
     "lint": "eslint ./stories/*.stories.tsx",
     "prepublishOnly": "npm run build && npm run build",
-    "preview-storybook": "serve storybook-static",
-    "serve-storybook": "npx http-server storybook-static",
+    "preview": "npx http-server storybook-static",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
@@ -19,7 +18,8 @@
     "@tanstack/react-query": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-router-dom": "catalog:"
+    "react-router-dom": "catalog:",
+    "storybook-addon-remix-react-router": "catalog:"
   },
   "devDependencies": {
     "@jeepney-design-system/tsconfig": "workspace:^0.0.2",

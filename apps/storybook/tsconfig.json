@@ -20,5 +20,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "stories/**/*", ".storybook/**/*"]
+  "include": ["src/**/*", "stories/**/*", ".storybook/**/*", "."],
+  "exclude": ["dist", "build", "node_modules"]
 }
