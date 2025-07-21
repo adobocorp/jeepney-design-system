@@ -36,27 +36,20 @@ export async function signUp(request: SignUpRequest): Promise<SignUpResponse> {
     apiEndpoint,
   } = request;
 
-  const formData = new FormData();
-  formData.append("authenticity_token", token);
-  formData.append("user[email]", email);
-  formData.append("user[password]", password);
-  formData.append("user[password_confirmation]", passwordConfirmation);
-
-  if (firstName) {
-    formData.append("user[first_name]", firstName);
-  }
-
-  if (lastName) {
-    formData.append("user[last_name]", lastName);
-  }
-
   try {
     const response = await fetch(apiEndpoint, {
       method: "POST",
-      body: formData,
       headers: {
-        "X-Requested-With": "XMLHttpRequest",
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        authenticity_token: token,
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        password,
+        password_confirmation: passwordConfirmation,
+      }),
       credentials: "include",
     });
 

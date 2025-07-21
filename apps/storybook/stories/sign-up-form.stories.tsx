@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 import { SignUpForm } from "@jeepney-design-system/ui";
+import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof SignUpForm> = {
   title: "Components/Forms/SignUpForm",
@@ -52,21 +52,6 @@ const meta: Meta<typeof SignUpForm> = {
       control: "boolean",
     },
   },
-  decorators: [
-    (Story) => (
-      <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 text-center">
-            Create Your Account
-          </h2>
-          <p className="text-gray-600 text-center mt-2">
-            Join us today and get started
-          </p>
-        </div>
-        <Story />
-      </div>
-    ),
-  ],
   includeStories: ["Default"],
 };
 

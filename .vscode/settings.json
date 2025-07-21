@@ -4,6 +4,6 @@
   "editor.codeActionsOnSave": {
     "source.sortImports": "always",
     "source.removeUnusedImports": "always",
-    "source.sortPackageJson": true
+    "source.sortPackageJson": "explicit"
   }
 }

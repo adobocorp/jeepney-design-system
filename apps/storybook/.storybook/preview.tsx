@@ -1,16 +1,8 @@
 import type { Preview } from "@storybook/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter } from "react-router-dom";
-import "./styles.css"; // Import global styles
-// Create a query client for stories
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      staleTime: 5 * 60 * 1000, // 5 minutes
-    },
-  },
-});
+import { withRouter } from "storybook-addon-remix-react-router";
+import "../src/index.css"; // Import global styles
+const queryClient = new QueryClient();
 
 const preview: Preview = {
   parameters: {
@@ -41,13 +33,10 @@ const preview: Preview = {
     layout: "centered",
   },
   decorators: [
+    withRouter,
     (Story) => (
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <div style={{ padding: "2rem" }}>
-            <Story />
-          </div>
-        </BrowserRouter>
+        <Story />
       </QueryClientProvider>
     ),
   ],

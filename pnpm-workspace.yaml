@@ -4,13 +4,13 @@ packages:
 
 catalog:
   # React ecosystem
-  react: ^19.0.0
-  react-dom: ^19.0.0
-  "@types/react": ^19.0.0
-  "@types/react-dom": ^19.0.0
+  react: ^19.1.0
+  react-dom: ^19.1.0
+  "@types/react": ^19.1.0
+  "@types/react-dom": ^19.1.0
 
   # Routing
-  react-router-dom: ^7.0.0
+  react-router-dom: ^7.5.2
   "@types/react-router-dom": ^5.3.3
 
   # State management & data fetching
@@ -60,6 +60,7 @@ catalog:
   "@storybook/react": ^8.6.14
   "@storybook/react-vite": ^8.6.14
   "@storybook/test": ^8.6.14
+  "storybook-addon-remix-react-router": ^3.1.0
 
   # Development tools
   "@vitejs/plugin-react": ^4.0.0

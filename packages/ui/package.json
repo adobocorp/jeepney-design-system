@@ -1,6 +1,6 @@
 {
   "name": "@jeepney-design-system/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -14,6 +14,11 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup src/index.tsx --watch",
     "lint": "eslint src/"
+  },
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router-dom": "catalog:"
   },
   "devDependencies": {
     "@babel/core": "catalog:",
@@ -43,9 +48,6 @@
     "@jeepney-design-system/tokens": "workspace:^",
     "@tanstack/react-query": "catalog:",
     "classnames": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-router-dom": "catalog:",
     "swiper": "catalog:",
     "tailwindcss": "catalog:",
     "tailwindcss-autofill": "catalog:",
@@ -58,7 +60,7 @@
   },
   "tsup": {
     "entry": [
-      "src/v1/index.tsx"
+      "src/index.tsx"
     ],
     "splitting": false,
     "sourcemap": true,
