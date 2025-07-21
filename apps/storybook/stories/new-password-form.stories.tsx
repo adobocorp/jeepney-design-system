@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 import { NewPasswordForm } from "@jeepney-design-system/ui";
+import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof NewPasswordForm> = {
   title: "Components/Forms/NewPasswordForm",
@@ -22,20 +22,6 @@ const meta: Meta<typeof NewPasswordForm> = {
     authenticityToken: {
       description: "Custom authenticity token for CSRF protection",
       control: "text",
-    },
-    resetPasswordToken: {
-      description: "Reset password token (for password reset flow)",
-      control: "text",
-    },
-    showCurrentPassword: {
-      description:
-        "Whether to show current password field (for authenticated users)",
-      control: "boolean",
-    },
-    showResetToken: {
-      description:
-        "Whether to show reset token field (for password reset flow)",
-      control: "boolean",
     },
     onSuccess: {
       description: "Function called when password update is successful",
@@ -85,7 +71,6 @@ export const Default: Story = {
 
 export const PasswordReset: Story = {
   args: {
-    showResetToken: true,
     buttonText: "Reset Password",
     onSuccess: action("onSuccess"),
     onError: action("onError"),
@@ -109,7 +94,6 @@ export const PasswordReset: Story = {
 
 export const PasswordResetWithToken: Story = {
   args: {
-    resetPasswordToken: "abc123def456",
     buttonText: "Set New Password",
     onSuccess: action("onSuccess"),
     onError: action("onError"),
@@ -133,7 +117,6 @@ export const PasswordResetWithToken: Story = {
 
 export const PasswordChange: Story = {
   args: {
-    showCurrentPassword: true,
     buttonText: "Change Password",
     onSuccess: action("onSuccess"),
     onError: action("onError"),
@@ -175,7 +158,6 @@ export const Disabled: Story = {
 export const CustomEndpoint: Story = {
   args: {
     apiEndpoint: "/api/v1/users/password",
-    showCurrentPassword: true,
     buttonText: "Update",
     onSuccess: action("onSuccess"),
     onError: action("onError"),
@@ -193,7 +175,6 @@ export const WithCustomStyling: Story = {
   args: {
     className: "border-2 border-green-200 rounded-xl p-4",
     buttonText: "Secure Update",
-    showCurrentPassword: true,
     onSuccess: action("onSuccess"),
     onError: action("onError"),
   },

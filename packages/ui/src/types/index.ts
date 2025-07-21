@@ -108,7 +108,7 @@ export interface User {
   [key: string]: unknown;
 }
 
-export interface NewPasswordFormProps {
+export interface ResetPasswordFormProps {
   /**
    * Custom password update API endpoint (optional)
    * Defaults to "/auth/password"
@@ -124,17 +124,17 @@ export interface NewPasswordFormProps {
   /**
    * Reset password token (for password reset flow)
    */
-  resetPasswordToken?: string;
+  accessToken?: string;
 
   /**
-   * Whether to show current password field (for authenticated users)
+   * Current user's password (for authenticated users)
    */
-  showCurrentPassword?: boolean;
+  clientId?: string;
 
   /**
-   * Whether to show reset token field (for password reset flow)
+   * Current user's ID (for authenticated users)
    */
-  showResetToken?: boolean;
+  uid?: string;
 
   /**
    * Callback function called on successful password update
@@ -168,7 +168,7 @@ export interface NewPasswordFormProps {
   className?: string;
 }
 
-export interface ResetPasswordFormProps {
+export interface ForgotPasswordFormProps {
   /**
    * Custom password reset API endpoint (optional)
    * Defaults to "/auth/password/reset"

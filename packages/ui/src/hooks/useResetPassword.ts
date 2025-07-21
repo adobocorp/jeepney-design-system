@@ -1,9 +1,9 @@
 import { useMutation } from "@tanstack/react-query";
 import {
   resetPassword,
+  ResetPasswordError,
   ResetPasswordRequest,
   ResetPasswordResponse,
-  ResetPasswordError,
 } from "../api/resetPassword";
 
 export interface UseResetPasswordOptions {
