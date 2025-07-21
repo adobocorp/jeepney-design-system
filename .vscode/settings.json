@@ -1,4 +1,9 @@
 {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.sortImports": "always",
+    "source.removeUnusedImports": "always",
+    "source.sortPackageJson": true
+  }
 }

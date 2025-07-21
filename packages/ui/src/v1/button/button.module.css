@@ -1,4 +1,4 @@
-@import "../../../node_modules/@adobocorp/design-tokens/build/css/_variables.css";
+@import "../node_modules/@jeepney-design-system/tokens/dist/scss/_variables.scss";
 
 .primary {
   font-family: var(--font-family-base);

@@ -1,0 +1,40 @@
+{
+  "name": "@jeepney-design-system/tokens",
+  "version": "0.0.1",
+  "description": "Design tokens for Jeepney Design System",
+  "keywords": [
+    "design-tokens",
+    "tokens"
+  ],
+  "license": "MIT",
+  "author": "Jeepney Design System",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run style-dictionary:build && rollup -c",
+    "build:rollup": "rollup -c",
+    "build:tokens": "tsx build.ts",
+    "clean": "rm -rf dist",
+    "dev": "rollup -c --watch",
+    "prepublishOnly": "npm run clean && npm run build",
+    "style-dictionary:build": "tsx build.ts",
+    "style-dictionary:clean": "style-dictionary clean"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "catalog:",
+    "rollup": "catalog:",
+    "style-dictionary": "catalog:",
+    "style-dictionary-utils": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

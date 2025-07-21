@@ -7,15 +7,14 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "version-packages": "changeset version"
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
+    "@jeepney-design-system/tsconfig": "workspace:*",
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
-    "tsconfig": "workspace:*",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.6.10"
+  "packageManager": "pnpm@10.13.1"
 }

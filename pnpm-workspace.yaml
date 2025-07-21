@@ -1,3 +1,79 @@
 packages:
-  - "apps/*"
   - "packages/*"
+  - "apps/*"
+
+catalog:
+  # React ecosystem
+  react: ^19.0.0
+  react-dom: ^19.0.0
+  "@types/react": ^19.0.0
+  "@types/react-dom": ^19.0.0
+
+  # Routing
+  react-router-dom: ^7.0.0
+  "@types/react-router-dom": ^5.3.3
+
+  # State management & data fetching
+  "@tanstack/react-query": ^5.80.6
+
+  # UI Components
+  "@base-ui-components/react": ^1.0.0-alpha.8
+
+  # Build tools
+  typescript: ^5.4.3
+  rollup: ^4.13.0
+  vite: ^6.0.0
+
+  # Rollup plugins
+  "@rollup/plugin-typescript": ^11.1.6
+  "@rollup/plugin-babel": ^6.0.4
+  "@rollup/plugin-commonjs": ^25.0.7
+  "@rollup/plugin-node-resolve": ^15.2.3
+  rollup-plugin-postcss: ^4.0.2
+  rollup-plugin-dts: ^6.1.0
+  rollup-plugin-peer-deps-external: ^2.2.4
+
+  # Babel
+  "@babel/core": ^7.24.5
+  "@babel/preset-env": ^7.24.5
+  "@babel/preset-react": ^7.24.1
+  "@babel/preset-typescript": ^7.24.1
+
+  # Styling
+  tailwindcss: ^3
+  postcss: ^8.5.6
+  autoprefixer: ^10.4.21
+  "@tailwindcss/forms": ^0.5.10
+  "@tailwindcss/typography": ^0.5.16
+  "@tailwindcss/container-queries": ^0.1.1
+  tailwindcss-autofill: ^1.0.2
+  tailwindcss-shadow-fill: ^1.0.1
+  tailwindcss-text-fill: ^0.2.0
+
+  # Storybook
+  storybook: ^8.6.14
+  "@storybook/addon-actions": ^8.6.14
+  "@storybook/addon-essentials": ^8.6.14
+  "@storybook/addon-interactions": ^8.6.14
+  "@storybook/addon-links": ^8.6.14
+  "@storybook/blocks": ^8.6.14
+  "@storybook/react": ^8.6.14
+  "@storybook/react-vite": ^8.6.14
+  "@storybook/test": ^8.6.14
+
+  # Development tools
+  "@vitejs/plugin-react": ^4.0.0
+  tsx: ^4.7.0
+
+  # Style Dictionary
+  style-dictionary: ^4.4.0
+  style-dictionary-utils: ^4.1.0
+
+  # TSup
+  tsup: ^7.2.0
+
+  # Classnames
+  classnames: ^2.3.2
+
+  # Swiper
+  swiper: ^11.0.4
