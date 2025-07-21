@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "vite build",
-    "build-storybook": "storybook build",
+    "build": "storybook build --docs",
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "dev": "storybook dev -p 6006",
     "lint": "eslint ./stories/*.stories.tsx",
-    "prepublishOnly": "npm run build && npm run build-storybook",
+    "prepublishOnly": "npm run build && npm run build",
     "preview-storybook": "serve storybook-static",
     "serve-storybook": "npx http-server storybook-static",
     "storybook": "storybook dev -p 6006"

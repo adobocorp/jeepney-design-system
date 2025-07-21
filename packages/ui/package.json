@@ -58,7 +58,7 @@
   },
   "tsup": {
     "entry": [
-      "src/v1/index.tsx"
+      "src/index.tsx"
     ],
     "splitting": false,
     "sourcemap": true,
