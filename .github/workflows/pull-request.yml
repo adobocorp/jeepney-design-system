@@ -4,7 +4,7 @@ on:
       - opened
 jobs:
   run_if:
-    if: startsWith(github.head_ref, 'changeset-release/main/')
+    if: startsWith(github.head_ref, 'changeset-release/')
     runs-on: ubuntu-latest
     steps:
       - name: Get PR Details
