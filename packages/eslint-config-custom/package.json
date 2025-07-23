@@ -1,6 +1,6 @@
 {
   "name": "@jeepney-design-system/eslint-config-custom",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "devDependencies": {
     "@vercel/style-guide": "^5.0.0",
