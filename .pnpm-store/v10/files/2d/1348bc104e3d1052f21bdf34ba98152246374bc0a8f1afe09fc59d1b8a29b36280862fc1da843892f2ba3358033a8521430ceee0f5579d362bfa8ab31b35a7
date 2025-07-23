@@ -1,0 +1,58 @@
+"use strict";
+'use client';
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard").default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NavigationMenuLink = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _floatingUiReact = require("../../floating-ui-react");
+var _useRenderElement = require("../../utils/useRenderElement");
+var _CompositeItem = require("../../composite/item/CompositeItem");
+var _NavigationMenuRootContext = require("../root/NavigationMenuRootContext");
+var _isOutsideMenuEvent = require("../utils/isOutsideMenuEvent");
+var _jsxRuntime = require("react/jsx-runtime");
+/**
+ * A link in the navigation menu that can be used to navigate to a different page or section.
+ * Renders an `<a>` element.
+ *
+ * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ */
+const NavigationMenuLink = exports.NavigationMenuLink = /*#__PURE__*/React.forwardRef(function NavigationMenuLink(componentProps, forwardedRef) {
+  const {
+    className,
+    render,
+    ...elementProps
+  } = componentProps;
+  const {
+    setValue,
+    popupElement,
+    rootRef
+  } = (0, _NavigationMenuRootContext.useNavigationMenuRootContext)();
+  const nodeId = (0, _NavigationMenuRootContext.useNavigationMenuTreeContext)();
+  const tree = (0, _floatingUiReact.useFloatingTree)();
+  const element = (0, _useRenderElement.useRenderElement)('a', componentProps, {
+    ref: forwardedRef,
+    props: [{
+      onBlur(event) {
+        if ((0, _isOutsideMenuEvent.isOutsideMenuEvent)({
+          currentTarget: event.currentTarget,
+          relatedTarget: event.relatedTarget
+        }, {
+          popupElement,
+          rootRef,
+          tree,
+          nodeId
+        })) {
+          setValue(null, event.nativeEvent, undefined);
+        }
+      }
+    }, elementProps]
+  });
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_CompositeItem.CompositeItem, {
+    render: element,
+    tabIndex: undefined
+  });
+});
+if (process.env.NODE_ENV !== "production") NavigationMenuLink.displayName = "NavigationMenuLink";

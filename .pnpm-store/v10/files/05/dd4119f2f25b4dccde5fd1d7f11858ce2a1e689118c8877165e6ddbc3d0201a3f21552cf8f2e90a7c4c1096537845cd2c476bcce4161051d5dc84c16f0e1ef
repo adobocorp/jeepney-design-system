@@ -1,0 +1,116 @@
+"use strict";
+'use client';
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard").default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SelectRoot = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _useSelectRoot = require("./useSelectRoot");
+var _SelectRootContext = require("./SelectRootContext");
+var _FieldRootContext = require("../../field/root/FieldRootContext");
+var _visuallyHidden = require("../../utils/visuallyHidden");
+var _useForkRef = require("../../utils/useForkRef");
+var _serialize = require("../utils/serialize");
+var _jsxRuntime = require("react/jsx-runtime");
+/**
+ * Groups all parts of the select.
+ * Doesn’t render its own HTML element.
+ *
+ * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ */
+const SelectRoot = exports.SelectRoot = function SelectRoot(props) {
+  const {
+    id,
+    value: valueProp,
+    defaultValue = null,
+    onValueChange,
+    open,
+    defaultOpen = false,
+    onOpenChange,
+    name,
+    disabled = false,
+    readOnly = false,
+    required = false,
+    modal = true,
+    actionsRef,
+    inputRef,
+    onOpenChangeComplete,
+    items
+  } = props;
+  const {
+    rootContext,
+    floatingContext,
+    value
+  } = (0, _useSelectRoot.useSelectRoot)({
+    id,
+    value: valueProp,
+    defaultValue,
+    onValueChange,
+    open,
+    defaultOpen,
+    onOpenChange,
+    name,
+    disabled,
+    readOnly,
+    required,
+    modal,
+    actionsRef,
+    onOpenChangeComplete,
+    items
+  });
+  const store = rootContext.store;
+  const {
+    setDirty,
+    validityData,
+    validationMode,
+    controlId
+  } = (0, _FieldRootContext.useFieldRootContext)();
+  const ref = (0, _useForkRef.useForkRef)(inputRef, rootContext.fieldControlValidation.inputRef);
+  const serializedValue = React.useMemo(() => (0, _serialize.serializeValue)(value), [value]);
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectRootContext.SelectRootContext.Provider, {
+    value: rootContext,
+    children: /*#__PURE__*/(0, _jsxRuntime.jsxs)(_SelectRootContext.SelectFloatingContext.Provider, {
+      value: floatingContext,
+      children: [props.children, /*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
+        ...rootContext.fieldControlValidation.getInputValidationProps({
+          onFocus() {
+            // Move focus to the trigger element when the hidden input is focused.
+            store.state.triggerElement?.focus();
+          },
+          // Handle browser autofill.
+          onChange(event) {
+            // Workaround for https://github.com/facebook/react/issues/9023
+            if (event.nativeEvent.defaultPrevented) {
+              return;
+            }
+            const nextValue = event.target.value;
+            store.set('forceMount', true);
+            queueMicrotask(() => {
+              const exactValue = rootContext.valuesRef.current.find(v => v === nextValue || typeof value === 'string' && nextValue.toLowerCase() === v.toLowerCase());
+              if (exactValue != null) {
+                setDirty(exactValue !== validityData.initialValue);
+                rootContext.setValue?.(exactValue, event.nativeEvent);
+                if (validationMode === 'onChange') {
+                  rootContext.fieldControlValidation.commitValidation(exactValue);
+                }
+              }
+            });
+          },
+          id: id || controlId || undefined,
+          name: rootContext.name,
+          disabled: rootContext.disabled,
+          required: rootContext.required,
+          readOnly: rootContext.readOnly,
+          value: serializedValue,
+          ref,
+          style: _visuallyHidden.visuallyHidden,
+          tabIndex: -1,
+          'aria-hidden': true
+        })
+      })]
+    })
+  });
+};
+if (process.env.NODE_ENV !== "production") SelectRoot.displayName = "SelectRoot";

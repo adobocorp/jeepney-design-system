@@ -1,0 +1,31 @@
+"use strict";
+'use client';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CompositeItem = CompositeItem;
+var _useRenderElement = require("../../utils/useRenderElement");
+var _useCompositeItem = require("./useCompositeItem");
+/**
+ * @internal
+ */
+function CompositeItem(componentProps) {
+  const {
+    render,
+    className,
+    itemRef = null,
+    metadata,
+    ...elementProps
+  } = componentProps;
+  const {
+    props,
+    ref
+  } = (0, _useCompositeItem.useCompositeItem)({
+    metadata
+  });
+  return (0, _useRenderElement.useRenderElement)('div', componentProps, {
+    ref: [itemRef, ref],
+    props: [props, elementProps]
+  });
+}

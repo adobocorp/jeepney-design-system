@@ -1,0 +1,26 @@
+'use client';
+
+import { useRenderElement } from "../../utils/useRenderElement.js";
+import { useCompositeItem } from "./useCompositeItem.js";
+/**
+ * @internal
+ */
+export function CompositeItem(componentProps) {
+  const {
+    render,
+    className,
+    itemRef = null,
+    metadata,
+    ...elementProps
+  } = componentProps;
+  const {
+    props,
+    ref
+  } = useCompositeItem({
+    metadata
+  });
+  return useRenderElement('div', componentProps, {
+    ref: [itemRef, ref],
+    props: [props, elementProps]
+  });
+}

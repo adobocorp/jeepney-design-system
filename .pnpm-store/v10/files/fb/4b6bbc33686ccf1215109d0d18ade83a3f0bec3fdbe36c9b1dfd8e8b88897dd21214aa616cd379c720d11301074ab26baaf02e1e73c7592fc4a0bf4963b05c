@@ -1,0 +1,7 @@
+import { Transform } from 'style-dictionary/types';
+/**
+ * dimensionRemToPixel
+ * @description convert all dimensions that use rem value to pixels, uses `platform.options.basePxFontSize`
+ * as the base font, or `16` if not provided
+ */
+export declare const dimensionRemToPixel: Transform;

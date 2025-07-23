@@ -1,0 +1,30 @@
+import * as React from 'react';
+import type { BaseUIComponentProps } from "../../utils/types.js";
+/**
+ * A button that opens the popover.
+ * Renders a `<button>` element.
+ *
+ * Documentation: [Base UI Popover](https://base-ui.com/react/components/popover)
+ */
+export declare const PopoverTrigger: React.ForwardRefExoticComponent<PopoverTrigger.Props & React.RefAttributes<any>>;
+export declare namespace PopoverTrigger {
+  interface State {
+    /**
+     * Whether the popover is currently disabled.
+     */
+    disabled: boolean;
+    /**
+     * Whether the popover is currently open.
+     */
+    open: boolean;
+  }
+  interface Props extends BaseUIComponentProps<'button', State> {
+    /**
+     * Whether the component renders a native `<button>` element when replacing it
+     * via the `render` prop.
+     * Set to `false` if the rendered element is not a button (e.g. `<div>`).
+     * @default true
+     */
+    nativeButton?: boolean;
+  }
+}

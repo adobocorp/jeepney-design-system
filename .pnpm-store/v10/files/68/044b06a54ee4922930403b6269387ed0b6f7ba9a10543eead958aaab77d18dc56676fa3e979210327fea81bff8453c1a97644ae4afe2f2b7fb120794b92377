@@ -1,0 +1,187 @@
+'use client';
+
+import * as React from 'react';
+import { useSelectRootContext, useSelectFloatingContext } from "../root/SelectRootContext.js";
+import { CompositeList } from "../../composite/list/CompositeList.js";
+import { popupStateMapping } from "../../utils/popupStateMapping.js";
+import { useAnchorPositioning } from "../../utils/useAnchorPositioning.js";
+import { SelectPositionerContext } from "./SelectPositionerContext.js";
+import { InternalBackdrop } from "../../utils/InternalBackdrop.js";
+import { inertValue } from "../../utils/inertValue.js";
+import { useModernLayoutEffect } from "../../utils/useModernLayoutEffect.js";
+import { useRenderElement } from "../../utils/useRenderElement.js";
+import { DROPDOWN_COLLISION_AVOIDANCE } from "../../utils/constants.js";
+import { clearPositionerStyles } from "../popup/utils.js";
+import { useEventCallback } from "../../utils/useEventCallback.js";
+import { useSelector } from "../../utils/store/index.js";
+import { selectors } from "../store.js";
+import { useScrollLock } from "../../utils/index.js";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+const FIXED = {
+  position: 'fixed'
+};
+
+/**
+ * Positions the select menu popup.
+ * Renders a `<div>` element.
+ *
+ * Documentation: [Base UI Select](https://base-ui.com/react/components/select)
+ */
+export const SelectPositioner = /*#__PURE__*/React.forwardRef(function SelectPositioner(componentProps, forwardedRef) {
+  const {
+    anchor,
+    positionMethod = 'absolute',
+    className,
+    render,
+    side = 'bottom',
+    align = 'center',
+    sideOffset = 0,
+    alignOffset = 0,
+    collisionBoundary = 'clipping-ancestors',
+    collisionPadding,
+    arrowPadding = 5,
+    sticky = false,
+    trackAnchor = true,
+    alignItemWithTrigger = true,
+    collisionAvoidance = DROPDOWN_COLLISION_AVOIDANCE,
+    ...elementProps
+  } = componentProps;
+  const {
+    store,
+    listRef,
+    labelsRef,
+    alignItemWithTriggerActiveRef,
+    valuesRef
+  } = useSelectRootContext();
+  const floatingRootContext = useSelectFloatingContext();
+  const open = useSelector(store, selectors.open);
+  const mounted = useSelector(store, selectors.mounted);
+  const modal = useSelector(store, selectors.modal);
+  const value = useSelector(store, selectors.value);
+  const touchModality = useSelector(store, selectors.touchModality);
+  const positionerElement = useSelector(store, selectors.positionerElement);
+  const triggerElement = useSelector(store, selectors.triggerElement);
+  const [controlledAlignItemWithTrigger, setControlledAlignItemWithTrigger] = React.useState(alignItemWithTrigger);
+  const alignItemWithTriggerActive = mounted && controlledAlignItemWithTrigger && !touchModality;
+  if (!mounted && controlledAlignItemWithTrigger !== alignItemWithTrigger) {
+    setControlledAlignItemWithTrigger(alignItemWithTrigger);
+  }
+  useModernLayoutEffect(() => {
+    if (!alignItemWithTrigger || !mounted) {
+      if (selectors.scrollUpArrowVisible(store.state)) {
+        store.set('scrollUpArrowVisible', false);
+      }
+      if (selectors.scrollDownArrowVisible(store.state)) {
+        store.set('scrollDownArrowVisible', false);
+      }
+    }
+  }, [store, mounted, alignItemWithTrigger]);
+  React.useImperativeHandle(alignItemWithTriggerActiveRef, () => alignItemWithTriggerActive);
+  useScrollLock({
+    enabled: (alignItemWithTriggerActive || modal) && open,
+    mounted,
+    open,
+    referenceElement: triggerElement
+  });
+  const positioning = useAnchorPositioning({
+    anchor,
+    floatingRootContext,
+    positionMethod,
+    mounted,
+    side,
+    sideOffset,
+    align,
+    alignOffset,
+    arrowPadding,
+    collisionBoundary,
+    collisionPadding,
+    sticky,
+    trackAnchor: trackAnchor ?? !alignItemWithTriggerActive,
+    collisionAvoidance,
+    keepMounted: true
+  });
+  const renderedSide = alignItemWithTriggerActive ? 'none' : positioning.side;
+  const positionerStyles = alignItemWithTriggerActive ? FIXED : positioning.positionerStyles;
+  const defaultProps = React.useMemo(() => {
+    const hiddenStyles = {};
+    if (!open) {
+      hiddenStyles.pointerEvents = 'none';
+    }
+    return {
+      role: 'presentation',
+      hidden: !mounted,
+      style: {
+        ...positionerStyles,
+        ...hiddenStyles
+      }
+    };
+  }, [open, mounted, positionerStyles]);
+  const state = React.useMemo(() => ({
+    open,
+    side: renderedSide,
+    align: positioning.align,
+    anchorHidden: positioning.anchorHidden
+  }), [open, renderedSide, positioning.align, positioning.anchorHidden]);
+  const setPositionerElement = useEventCallback(element => {
+    store.set('positionerElement', element);
+  });
+  const element = useRenderElement('div', componentProps, {
+    ref: [forwardedRef, setPositionerElement],
+    state,
+    customStyleHookMapping: popupStateMapping,
+    props: [defaultProps, elementProps]
+  });
+  const prevMapSizeRef = React.useRef(0);
+  const onMapChange = useEventCallback(map => {
+    if (map.size === 0 && prevMapSizeRef.current === 0) {
+      return;
+    }
+    if (valuesRef.current.length === 0) {
+      return;
+    }
+    const prevSize = prevMapSizeRef.current;
+    prevMapSizeRef.current = map.size;
+    if (map.size === prevSize) {
+      return;
+    }
+    if (value !== null) {
+      const valueIndex = valuesRef.current.indexOf(value);
+      if (valueIndex === -1) {
+        store.apply({
+          label: '',
+          selectedIndex: null
+        });
+      }
+    }
+    if (open && alignItemWithTriggerActive) {
+      store.apply({
+        scrollUpArrowVisible: false,
+        scrollDownArrowVisible: false
+      });
+      if (positionerElement) {
+        clearPositionerStyles(positionerElement, {
+          height: ''
+        });
+      }
+    }
+  });
+  const contextValue = React.useMemo(() => ({
+    ...positioning,
+    side: renderedSide,
+    alignItemWithTriggerActive,
+    setControlledAlignItemWithTrigger
+  }), [positioning, renderedSide, alignItemWithTriggerActive, setControlledAlignItemWithTrigger]);
+  return /*#__PURE__*/_jsx(CompositeList, {
+    elementsRef: listRef,
+    labelsRef: labelsRef,
+    onMapChange: onMapChange,
+    children: /*#__PURE__*/_jsxs(SelectPositionerContext.Provider, {
+      value: contextValue,
+      children: [mounted && modal && /*#__PURE__*/_jsx(InternalBackdrop, {
+        inert: inertValue(!open),
+        cutout: triggerElement
+      }), element]
+    })
+  });
+});
+if (process.env.NODE_ENV !== "production") SelectPositioner.displayName = "SelectPositioner";

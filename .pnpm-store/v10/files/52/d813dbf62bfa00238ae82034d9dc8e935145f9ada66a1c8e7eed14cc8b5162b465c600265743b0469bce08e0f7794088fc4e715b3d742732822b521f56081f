@@ -1,0 +1,79 @@
+'use client';
+
+import * as React from 'react';
+import { CompositeList } from "../list/CompositeList.js";
+import { useCompositeRoot } from "./useCompositeRoot.js";
+import { CompositeRootContext } from "./CompositeRootContext.js";
+import { useEventCallback } from "../../utils/useEventCallback.js";
+import { useRenderElement } from "../../utils/useRenderElement.js";
+import { useDirection } from "../../direction-provider/DirectionContext.js";
+import { jsx as _jsx } from "react/jsx-runtime";
+const COMPOSITE_ROOT_STATE = {};
+
+/**
+ * @internal
+ */
+export function CompositeRoot(componentProps) {
+  const {
+    render,
+    className,
+    highlightedIndex: highlightedIndexProp,
+    onHighlightedIndexChange: onHighlightedIndexChangeProp,
+    orientation,
+    dense,
+    itemSizes,
+    loop,
+    cols,
+    enableHomeAndEndKeys,
+    onMapChange: onMapChangeProp,
+    stopEventPropagation,
+    rootRef,
+    disabledIndices,
+    modifierKeys,
+    highlightItemOnHover = false,
+    ...elementProps
+  } = componentProps;
+  const direction = useDirection();
+  const {
+    props,
+    highlightedIndex,
+    onHighlightedIndexChange,
+    elementsRef,
+    onMapChange: onMapChangeUnwrapped
+  } = useCompositeRoot({
+    itemSizes,
+    cols,
+    loop,
+    dense,
+    orientation,
+    highlightedIndex: highlightedIndexProp,
+    onHighlightedIndexChange: onHighlightedIndexChangeProp,
+    rootRef,
+    stopEventPropagation,
+    enableHomeAndEndKeys,
+    direction,
+    disabledIndices,
+    modifierKeys
+  });
+  const onMapChange = useEventCallback(newMap => {
+    onMapChangeProp?.(newMap);
+    onMapChangeUnwrapped(newMap);
+  });
+  const element = useRenderElement('div', componentProps, {
+    state: COMPOSITE_ROOT_STATE,
+    props: [props, elementProps]
+  });
+  const contextValue = React.useMemo(() => ({
+    highlightedIndex,
+    onHighlightedIndexChange,
+    highlightItemOnHover
+  }), [highlightedIndex, onHighlightedIndexChange, highlightItemOnHover]);
+  return /*#__PURE__*/_jsx(CompositeRootContext.Provider, {
+    value: contextValue,
+    children: /*#__PURE__*/_jsx(CompositeList, {
+      elementsRef: elementsRef,
+      onMapChange: onMapChange,
+      children: element
+    })
+  });
+}

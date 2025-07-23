@@ -1,0 +1,3 @@
+import type { OpenChangeReason as FloatingUIOpenChangeReason } from "../floating-ui-react/index.js";
+export type BaseOpenChangeReason = 'trigger-press' | 'trigger-hover' | 'trigger-focus' | 'focus-out' | 'escape-key' | 'outside-press' | 'list-navigation' | 'item-press' | 'cancel-open';
+export declare function translateOpenChangeReason(nativeReason?: FloatingUIOpenChangeReason): BaseOpenChangeReason | undefined;

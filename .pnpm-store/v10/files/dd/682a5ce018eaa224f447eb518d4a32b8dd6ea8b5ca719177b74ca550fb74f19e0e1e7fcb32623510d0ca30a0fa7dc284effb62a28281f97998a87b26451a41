@@ -1,0 +1,83 @@
+'use client';
+
+import * as React from 'react';
+import { formatNumber } from "../../utils/formatNumber.js";
+import { useRenderElement } from "../../utils/useRenderElement.js";
+import { useLatestRef } from "../../utils/useLatestRef.js";
+import { ProgressRootContext } from "./ProgressRootContext.js";
+import { progressStyleHookMapping } from "./styleHooks.js";
+import { jsx as _jsx } from "react/jsx-runtime";
+function formatValue(value, locale, format) {
+  if (value == null) {
+    return '';
+  }
+  if (!format) {
+    return formatNumber(value / 100, locale, {
+      style: 'percent'
+    });
+  }
+  return formatNumber(value, locale, format);
+}
+function getDefaultAriaValueText(formattedValue, value) {
+  if (value == null) {
+    return 'indeterminate progress';
+  }
+  return formattedValue || `${value}%`;
+}
+
+/**
+ * Groups all parts of the progress bar and provides the task completion status to screen readers.
+ * Renders a `<div>` element.
+ *
+ * Documentation: [Base UI Progress](https://base-ui.com/react/components/progress)
+ */
+export const ProgressRoot = /*#__PURE__*/React.forwardRef(function ProgressRoot(componentProps, forwardedRef) {
+  const {
+    format,
+    getAriaValueText,
+    locale,
+    max = 100,
+    min = 0,
+    value,
+    render,
+    className,
+    ...elementProps
+  } = componentProps;
+  const [labelId, setLabelId] = React.useState();
+  const formatOptionsRef = useLatestRef(format);
+  let status = 'indeterminate';
+  if (Number.isFinite(value)) {
+    status = value === max ? 'complete' : 'progressing';
+  }
+  const formattedValue = formatValue(value, locale, formatOptionsRef.current);
+  const state = React.useMemo(() => ({
+    status
+  }), [status]);
+  const contextValue = React.useMemo(() => ({
+    formattedValue,
+    max,
+    min,
+    setLabelId,
+    state,
+    status,
+    value
+  }), [formattedValue, max, min, setLabelId, state, status, value]);
+  const element = useRenderElement('div', componentProps, {
+    state,
+    ref: forwardedRef,
+    props: [{
+      'aria-labelledby': labelId,
+      'aria-valuemax': max,
+      'aria-valuemin': min,
+      'aria-valuenow': value ?? undefined,
+      'aria-valuetext': getAriaValueText ? getAriaValueText(formattedValue, value) : componentProps['aria-valuetext'] ?? getDefaultAriaValueText(formattedValue, value),
+      role: 'progressbar'
+    }, elementProps],
+    customStyleHookMapping: progressStyleHookMapping
+  });
+  return /*#__PURE__*/_jsx(ProgressRootContext.Provider, {
+    value: contextValue,
+    children: element
+  });
+});
+if (process.env.NODE_ENV !== "production") ProgressRoot.displayName = "ProgressRoot";

@@ -1,0 +1,12 @@
+type Listener<T> = (state: T) => void;
+export declare class Store<State> {
+  state: State;
+  private listeners;
+  constructor(state: State);
+  subscribe: (fn: Listener<State>) => () => void;
+  getSnapshot: () => State;
+  update: (newState: State) => void;
+  apply(changes: Partial<State>): void;
+  set<T>(key: keyof State, value: T): void;
+}
+export {};

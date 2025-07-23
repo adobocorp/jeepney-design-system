@@ -1,0 +1,13 @@
+import * as React from 'react';
+import type { BaseUIComponentProps } from "../../utils/types.js";
+/**
+ * @internal
+ */
+export declare function CompositeItem<Metadata>(componentProps: CompositeItem.Props<Metadata>): React.ReactElement<Record<string, unknown>, string | React.JSXElementConstructor<any>>;
+export declare namespace CompositeItem {
+  interface State {}
+  interface Props<Metadata> extends Omit<BaseUIComponentProps<'div', State>, 'itemRef'> {
+    itemRef?: React.RefObject<HTMLElement | null>;
+    metadata?: Metadata;
+  }
+}

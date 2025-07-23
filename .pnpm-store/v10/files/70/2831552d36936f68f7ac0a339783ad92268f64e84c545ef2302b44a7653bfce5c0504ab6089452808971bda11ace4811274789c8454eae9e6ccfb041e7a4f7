@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { BaseUIComponentProps } from "../../utils/types.js";
+/**
+ * A menu item that opens a submenu.
+ * Renders a `<div>` element.
+ *
+ * Documentation: [Base UI Menu](https://base-ui.com/react/components/menu)
+ */
+export declare const MenuSubmenuTrigger: React.ForwardRefExoticComponent<MenuSubmenuTrigger.Props & React.RefAttributes<Element>>;
+export declare namespace MenuSubmenuTrigger {
+  interface Props extends BaseUIComponentProps<'div', State> {
+    children?: React.ReactNode;
+    onClick?: React.MouseEventHandler<HTMLElement>;
+    /**
+     * Overrides the text label to use when the item is matched during keyboard text navigation.
+     */
+    label?: string;
+    /**
+     * @ignore
+     */
+    id?: string;
+    /**
+     * Whether the component renders a native `<button>` element when replacing it
+     * via the `render` prop.
+     * Set to `false` if the rendered element is not a button (e.g. `<div>`).
+     * @default false
+     */
+    nativeButton?: boolean;
+  }
+  interface State {
+    /**
+     * Whether the component should ignore user interaction.
+     */
+    disabled: boolean;
+    highlighted: boolean;
+    /**
+     * Whether the menu is currently open.
+     */
+    open: boolean;
+  }
+}

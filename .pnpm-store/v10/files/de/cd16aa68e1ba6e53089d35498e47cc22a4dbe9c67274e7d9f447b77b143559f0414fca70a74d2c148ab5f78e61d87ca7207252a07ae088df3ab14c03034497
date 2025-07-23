@@ -1,0 +1,120 @@
+"use strict";
+'use client';
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard").default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useButton = useButton;
+var React = _interopRequireWildcard(require("react"));
+var _mergeProps = require("../merge-props");
+var _useModernLayoutEffect = require("../utils/useModernLayoutEffect");
+var _useEventCallback = require("../utils/useEventCallback");
+var _CompositeRootContext = require("../composite/root/CompositeRootContext");
+var _useFocusableWhenDisabled = require("../utils/useFocusableWhenDisabled");
+function useButton(parameters = {}) {
+  const {
+    disabled = false,
+    focusableWhenDisabled,
+    tabIndex = 0,
+    native: isNativeButton = true
+  } = parameters;
+  const buttonRef = React.useRef(null);
+  const isCompositeItem = (0, _CompositeRootContext.useCompositeRootContext)(true) !== undefined;
+  const isValidLink = (0, _useEventCallback.useEventCallback)(() => {
+    const element = buttonRef.current;
+    return Boolean(element?.tagName === 'A' && element?.href);
+  });
+  const {
+    props: focusableWhenDisabledProps
+  } = (0, _useFocusableWhenDisabled.useFocusableWhenDisabled)({
+    focusableWhenDisabled,
+    disabled,
+    composite: isCompositeItem,
+    tabIndex,
+    isNativeButton
+  });
+
+  // handles a disabled composite button rendering another button, e.g.
+  // <Toolbar.Button disabled render={<Menu.Trigger />} />
+  // the `disabled` prop needs to pass through 2 `useButton`s then finally
+  // delete the `disabled` attribute from DOM
+  (0, _useModernLayoutEffect.useModernLayoutEffect)(() => {
+    const element = buttonRef.current;
+    if (!(element instanceof HTMLButtonElement)) {
+      return;
+    }
+    if (isCompositeItem && disabled && focusableWhenDisabledProps.disabled === undefined && element.disabled) {
+      element.disabled = false;
+    }
+  }, [disabled, focusableWhenDisabledProps.disabled, isCompositeItem]);
+  const getButtonProps = React.useCallback((externalProps = {}) => {
+    const {
+      onClick: externalOnClick,
+      onMouseDown: externalOnMouseDown,
+      onKeyUp: externalOnKeyUp,
+      onKeyDown: externalOnKeyDown,
+      onPointerDown: externalOnPointerDown,
+      ...otherExternalProps
+    } = externalProps;
+    const type = isNativeButton ? 'button' : undefined;
+    return (0, _mergeProps.mergeProps)({
+      type,
+      onClick(event) {
+        if (disabled) {
+          event.preventDefault();
+          return;
+        }
+        externalOnClick?.(event);
+      },
+      onMouseDown(event) {
+        if (!disabled) {
+          externalOnMouseDown?.(event);
+        }
+      },
+      onKeyDown(event) {
+        if (!disabled) {
+          (0, _mergeProps.makeEventPreventable)(event);
+          externalOnKeyDown?.(event);
+        }
+        if (event.baseUIHandlerPrevented) {
+          return;
+        }
+
+        // Keyboard accessibility for non interactive elements
+        if (event.target === event.currentTarget && !isNativeButton && !isValidLink() && event.key === 'Enter' && !disabled) {
+          externalOnClick?.(event);
+          event.preventDefault();
+        }
+      },
+      onKeyUp(event) {
+        // calling preventDefault in keyUp on a <button> will not dispatch a click event if Space is pressed
+        // https://codesandbox.io/p/sandbox/button-keyup-preventdefault-dn7f0
+        // Keyboard accessibility for non interactive elements
+        if (!disabled) {
+          (0, _mergeProps.makeEventPreventable)(event);
+          externalOnKeyUp?.(event);
+        }
+        if (event.baseUIHandlerPrevented) {
+          return;
+        }
+        if (event.target === event.currentTarget && !isNativeButton && !disabled && event.key === ' ') {
+          externalOnClick?.(event);
+        }
+      },
+      onPointerDown(event) {
+        if (disabled) {
+          event.preventDefault();
+          return;
+        }
+        externalOnPointerDown?.(event);
+      }
+    }, !isNativeButton ? {
+      role: 'button'
+    } : undefined, focusableWhenDisabledProps, otherExternalProps);
+  }, [disabled, focusableWhenDisabledProps, isNativeButton, isValidLink]);
+  return {
+    getButtonProps,
+    buttonRef
+  };
+}

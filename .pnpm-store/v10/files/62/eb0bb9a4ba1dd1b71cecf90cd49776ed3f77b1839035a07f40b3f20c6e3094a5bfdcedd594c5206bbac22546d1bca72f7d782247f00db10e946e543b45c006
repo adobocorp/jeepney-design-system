@@ -1,0 +1,36 @@
+{
+  "name": "flatten-tailwindcss-theme",
+  "version": "1.0.0",
+  "private": false,
+  "license": "MIT",
+  "description": "🔨 Flatten TailwindCSS theme objects for plugins to conveniently generate utilities and components.",
+  "keywords": [
+    "tailwindcss",
+    "tailwindcss-plugin",
+    "tailwindcss-extension",
+    "tailwindcss-utility"
+  ],
+  "repository": "https://github.com/phuctm97/flatten-tailwindcss-theme",
+  "author": {
+    "name": "Minh-Phuc Tran",
+    "email": "me@phuctm97.com",
+    "url": "https://phuctm97.com"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-angular": "^16.2.3",
+    "@commitlint/prompt-cli": "^16.2.3",
+    "cspell": "^5.19.7",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "semantic-release": "^19.0.2"
+  }
+}

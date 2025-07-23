@@ -1,0 +1,15 @@
+import * as React from 'react';
+type Empty = null | undefined;
+type InputRef<I> = React.Ref<I> | Empty;
+type Result<I> = React.RefCallback<I> | null;
+/**
+ * Merges refs into a single memoized callback ref or `null`.
+ */
+export declare function useForkRef<I>(a: InputRef<I>, b: InputRef<I>): Result<I>;
+export declare function useForkRef<I>(a: InputRef<I>, b: InputRef<I>, c: InputRef<I>): Result<I>;
+export declare function useForkRef<I>(a: InputRef<I>, b: InputRef<I>, c: InputRef<I>, d: InputRef<I>): Result<I>;
+/**
+ * Merges variadic amount of refs into a single memoized callback ref or `null`.
+ */
+export declare function useForkRefN<I>(refs: InputRef<I>[]): Result<I>;
+export {};

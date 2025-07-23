@@ -1,0 +1,53 @@
+'use client';
+
+import * as React from 'react';
+import { useFloatingTree } from "../../floating-ui-react/index.js";
+import { useRenderElement } from "../../utils/useRenderElement.js";
+import { CompositeItem } from "../../composite/item/CompositeItem.js";
+import { useNavigationMenuRootContext, useNavigationMenuTreeContext } from "../root/NavigationMenuRootContext.js";
+import { isOutsideMenuEvent } from "../utils/isOutsideMenuEvent.js";
+
+/**
+ * A link in the navigation menu that can be used to navigate to a different page or section.
+ * Renders an `<a>` element.
+ *
+ * Documentation: [Base UI Navigation Menu](https://base-ui.com/react/components/navigation-menu)
+ */
+import { jsx as _jsx } from "react/jsx-runtime";
+export const NavigationMenuLink = /*#__PURE__*/React.forwardRef(function NavigationMenuLink(componentProps, forwardedRef) {
+  const {
+    className,
+    render,
+    ...elementProps
+  } = componentProps;
+  const {
+    setValue,
+    popupElement,
+    rootRef
+  } = useNavigationMenuRootContext();
+  const nodeId = useNavigationMenuTreeContext();
+  const tree = useFloatingTree();
+  const element = useRenderElement('a', componentProps, {
+    ref: forwardedRef,
+    props: [{
+      onBlur(event) {
+        if (isOutsideMenuEvent({
+          currentTarget: event.currentTarget,
+          relatedTarget: event.relatedTarget
+        }, {
+          popupElement,
+          rootRef,
+          tree,
+          nodeId
+        })) {
+          setValue(null, event.nativeEvent, undefined);
+        }
+      }
+    }, elementProps]
+  });
+  return /*#__PURE__*/_jsx(CompositeItem, {
+    render: element,
+    tabIndex: undefined
+  });
+});
+if (process.env.NODE_ENV !== "production") NavigationMenuLink.displayName = "NavigationMenuLink";

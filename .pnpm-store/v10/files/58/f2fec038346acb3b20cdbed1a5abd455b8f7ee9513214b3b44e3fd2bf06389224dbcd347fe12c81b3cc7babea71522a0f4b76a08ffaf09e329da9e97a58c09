@@ -1,0 +1,11 @@
+"use strict";
+'use client';
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard").default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useModernLayoutEffect = void 0;
+var React = _interopRequireWildcard(require("react"));
+const noop = () => {};
+const useModernLayoutEffect = exports.useModernLayoutEffect = typeof document !== 'undefined' ? React.useLayoutEffect : noop;
