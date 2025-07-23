@@ -1,30 +1,46 @@
+name: Changeset Release PR Notification
+
 on:
   pull_request:
     types:
       - opened
+    branches:
+      - main
+
 jobs:
-  run_if:
-    if: startsWith(github.head_ref, 'changeset-release/main/')
+  notify-slack:
+    if: startsWith(github.event.pull_request.head.ref, 'changeset-release/')
     runs-on: ubuntu-latest
     steps:
       - name: Get PR Details
         id: pr-details
         run: |
-          echo "pr_number=$(echo ${{ github.event.pull_request.number }} | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "pr_number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          echo "pr_title=${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+          echo "pr_url=${{ github.event.pull_request.html_url }}" >> $GITHUB_OUTPUT
 
       - name: Send Slack notification
         uses: slackapi/slack-github-action@v1.26.0
         with:
           payload: |
             {
-              "text": "Beep-beep! New jeepney-design-system changeset: ${{ steps.pr-details.outputs.pr_number }}",
+              "text": "🚀 New changeset release PR opened for jeepney-design-system!",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*PR # ${{ steps.pr-details.outputs.pr_number }}:* <https://github.com/adobocorp/jeepney-design-system/pull/${{ steps.pr-details.outputs.pr_number }}|Click here to visit Example.com>"
+                    "text": "*PR #${{ steps.pr-details.outputs.pr_number }}:* ${{ steps.pr-details.outputs.pr_title }}\n\n:point_right: <${{ steps.pr-details.outputs.pr_url }}|View Pull Request>"
                   }
+                },
+                {
+                  "type": "context",
+                  "elements": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "Repository: `${{ github.repository }}` | Branch: `${{ github.event.pull_request.head.ref }}` → `${{ github.event.pull_request.base.ref }}`"
+                    }
+                  ]
                 }
               ]
             }
