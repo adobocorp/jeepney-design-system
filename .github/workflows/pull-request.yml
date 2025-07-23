@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  run_if:
+    if: startsWith(github.head_ref, 'changeset-release/main/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get PR Details
+        id: pr-details
+        run: |
+          echo "pr_number=$(echo ${{ github.event.pull_request.number }} | cut -c1-7)" >> $GITHUB_OUTPUT
+
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "text": "Beep-beep! New jeepney-design-system changeset: ${{ steps.pr-details.outputs.pr_number }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*PR # ${{ steps.pr-details.outputs.pr_number }}:* <https://github.com/adobocorp/jeepney-design-system/pull/${{ steps.pr-details.outputs.pr_number }}|Click here to visit Example.com>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
