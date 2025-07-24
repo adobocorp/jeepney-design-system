@@ -1,5 +1,11 @@
 # @jeepney-design-system/tokens
 
+## 0.0.4
+
+### Patch Changes
+
+- 0ec0ea2: Adds button, form title & description (additional styling)
+
 ## 0.0.3
 
 ### Patch Changes
