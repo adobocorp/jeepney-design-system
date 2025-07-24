@@ -7,7 +7,8 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
-    "version-packages": "changeset version"
+    "version-packages": "changeset version",
+    "release": "turbo build --filter=@jeepney-design-system/storybook && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
