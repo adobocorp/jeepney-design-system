@@ -1,5 +1,13 @@
 # @jeepney-design-system/ui
 
+## 0.0.5
+
+### Patch Changes
+
+- b6b5219: Add typography
+- Updated dependencies [b6b5219]
+  - @jeepney-design-system/tokens@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
