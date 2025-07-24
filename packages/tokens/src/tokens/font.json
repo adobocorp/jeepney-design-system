@@ -2,7 +2,7 @@
   "font": {
     "family": {
       "base": {
-        "value": "{asset.font.avenir.name.value}"
+        "value": "{asset.font.bantayog.name.value}"
       },
       "icons": {
         "value": "{asset.font.icon.name.value}"

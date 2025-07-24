@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof SignUpForm> = {
-  title: "Components/Forms/SignUpForm",
+  title: "Components/Authentication/SignUpForm",
   component: SignUpForm,
   parameters: {
     layout: "centered",
@@ -47,12 +47,37 @@ const meta: Meta<typeof SignUpForm> = {
       description: "Additional CSS classes for the form container",
       control: "text",
     },
+    title: {
+      description: "Custom title text displayed above the form",
+      control: "text",
+      table: {
+        defaultValue: {
+          summary: '"Create Your Account"'
+        }
+      },
+    },
+    description: {
+      description: "Custom description text displayed above the form",
+      control: "text",
+      table: {
+        defaultValue: {
+          summary: '"Enter your email address and we\'ll send you a link to reset your password."'
+        }
+      },
+    },
     requireNames: {
       description: "Whether first and last names are required",
       control: "boolean",
     },
   },
-  includeStories: ["Default"],
+  decorators: [
+    (Story) => (
+      <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <Story />
+      </div>
+    ),
+  ],
+  includeStories: ["Default", "Tagalog"],
 };
 
 export default meta;
@@ -65,6 +90,18 @@ export const Default: Story = {
     onRedirect: action("onRedirect"),
   },
 };
+
+
+export const Tagalog: Story = {
+  args: {
+    onSuccess: action("onSuccess"),
+    onError: action("onError"),
+    onRedirect: action("onRedirect"),
+    title: "Gumawa ng Account",
+    description: "Punan ang form sa ibaba upang lumikha ng bagong account.",
+  },
+};
+
 
 export const WithCustomButton: Story = {
   args: {

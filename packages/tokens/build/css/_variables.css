@@ -8,8 +8,8 @@
   --asset-font-icon-eot: assets/fonts/MaterialIcons-Regular.eot;
   --asset-font-icon-woff: assets/fonts/MaterialIcons-Regular.woff;
   --asset-font-icon-woff2: assets/fonts/MaterialIcons-Regular.woff2;
-  --asset-font-avenir-name: Avenir;
-  --asset-font-avenir-ttf: assets/fonts/Avenir-Regular.ttf;
+  --asset-font-bantayog-name: Bantayog;
+  --asset-font-bantayog-ttf: assets/fonts/Bantayog-Regular.ttf;
   --color-background-base: #ffffff;
   --color-background-alt: #cfd8dc;
   --color-background-disabled: #cfd8dc;
@@ -334,7 +334,7 @@
   --color-font-inverse-success: #66bb6a;
   --color-font-inverse-disabled: #f5f5f5;
   --color-font-button-primary: #ffffff;
-  --color-font-button-secondary: #009688;
+  --color-font-button-secondary: #ffffff;
   --content-icon-3d-rotation: 3d_rotation;
   --content-icon-airline-seat-individual-suite: airline_seat_individual_suite;
   --content-icon-airline-seat-legroom-reduced: airline_seat_legroom_reduced;
@@ -1305,7 +1305,7 @@
   --content-icon-zoom-out-map: zoom_out_map;
   --content-icon-zoom-out: zoom_out;
   --content-icon-zoom-in: zoom_in;
-  --font-family-base: Avenir;
+  --font-family-base: Bantayog;
   --font-family-icons: MaterialIcons;
   --size-font-tiny: 0.75;
   --size-font-small: 0.875;

@@ -12,9 +12,9 @@ export default {
         woff: "assets/fonts/MaterialIcons-Regular.woff",
         woff2: "assets/fonts/MaterialIcons-Regular.woff2",
       },
-      avenir: {
-        name: "Avenir",
-        ttf: "assets/fonts/Avenir-Regular.ttf",
+      bantayog: {
+        name: "Bantayog",
+        ttf: "assets/fonts/Bantayog-Regular.ttf",
       },
     },
   },
@@ -415,7 +415,7 @@ export default {
       },
       button: {
         primary: "#ffffff",
-        secondary: "#009688",
+        secondary: "#ffffff",
       },
     },
   },
@@ -1395,7 +1395,7 @@ export default {
   },
   font: {
     family: {
-      base: "Avenir",
+      base: "Bantayog",
       icons: "MaterialIcons",
     },
   },

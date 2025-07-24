@@ -1,5 +1,5 @@
-import React, { forwardRef, Ref } from "react";
 import { Field } from "@base-ui-components/react/field";
+import React, { forwardRef } from "react";
 
 interface PasswordFieldProps {
     type: "password" | "text";
@@ -15,7 +15,7 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
 
         return (
             <Field.Root>
-                <Field.Label className="block text-gray-700 h-6 leading-6">
+                <Field.Label className="block text-gray-700 h-6 leading-6 font-[Bantayog-Light]">
                     Password<sup>*</sup>
                 </Field.Label>
                 <Field.Control

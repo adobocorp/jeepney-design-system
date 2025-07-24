@@ -1,10 +1,10 @@
 import React, { useActionState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSignUp } from "../../hooks/useSignUp";
 import { useAuthenticityToken } from "../../hooks/useAuthenticityToken";
-import { SignUpFormLayout } from "../layout/sign-up-form-layout";
+import { useSignUp } from "../../hooks/useSignUp";
+import { FormError, SignUpFormProps } from "../../types";
 import { FormButton } from "../field/form-button";
-import { SignUpFormProps, FormError } from "../../types";
+import { SignUpFormLayout } from "../layout/sign-up-form-layout";
 
 export const SignUpForm: React.FC<SignUpFormProps> = ({
   apiEndpoint = "/auth",
@@ -16,6 +16,8 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
   buttonText = "Sign Up",
   className = "",
   requireNames = false,
+  title = "Create an Account",
+  description = "Fill in the details below to create your account.",
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -94,6 +96,16 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
 
   return (
     <div className={className}>
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-center text-gray-900">
+          {title}
+        </h2>
+        {
+          description && <p className="text-sm text-gray-599 text-center mt-2 font-[Bantayog-Light]">
+            {description}
+          </p>
+        }
+      </div>
       {error && error.errors && error.errors.length > 0 && (
         <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
           <div className="text-sm text-red-700">

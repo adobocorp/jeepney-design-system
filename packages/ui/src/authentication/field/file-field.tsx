@@ -1,5 +1,5 @@
-import { Ref } from "react";
 import { Field } from "@base-ui-components/react/field";
+import { Ref } from "react";
 
 export const FileField = ({
   id,
@@ -19,7 +19,7 @@ export const FileField = ({
 
   return (
     <Field.Root>
-      <Field.Label className="block text-gray-700">{label}</Field.Label>
+      <Field.Label className="block text-gray-700 font-[Bantayog-Light]">{label}</Field.Label>
       <Field.Control
         className="mt-1 block w-full h-12"
         id={id}

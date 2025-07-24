@@ -14,6 +14,7 @@ export const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
   disabled,
   buttonText = "Send Forgot Instructions",
   className = "",
+  title = "Forgot Your Password?",
   description = "Enter your email address and we'll send you a link to reset your password.",
 }) => {
   const defaultToken = useAuthenticityToken();
@@ -115,11 +116,16 @@ export const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
         </div>
       ) : (
         <>
-          {description && (
-            <div className="mb-4 text-sm text-gray-600 text-center">
-              {description}
-            </div>
-          )}
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-center text-gray-900">
+              {title}
+            </h2>
+            {
+              description && <p className="text-sm text-gray-599 text-center mt-2">
+                {description}
+              </p>
+            }
+          </div>
 
           {error && error.errors && error.errors.length > 0 && (
             <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">

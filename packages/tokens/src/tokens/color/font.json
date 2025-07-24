@@ -90,7 +90,7 @@
         },
         "secondary": {
           "type": "color",
-          "value": "{color.font.link.value}"
+          "value": "{color.font.inverse.base.value}"
         }
       }
     }

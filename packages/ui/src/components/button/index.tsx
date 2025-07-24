@@ -1,5 +1,3 @@
-import { Button } from "@mui/base/Button";
-import styles from "./button.module.css";
 import classNames from "classnames";
 
 export enum COLOR {
@@ -17,53 +15,31 @@ export interface ButtonProps
   color: COLOR;
 }
 
-export function ButtonV1({
+export function Button({
   children,
   color,
   ...other
-}: ButtonProps): JSX.Element {
-  switch (color) {
-    case COLOR.primary:
-      return (
-        <Button type="button" className={classNames(styles.primary)} {...other}>
-          {children}
-        </Button>
-      );
-    case COLOR.secondary:
-      return (
-        <Button
-          type="button"
-          className={classNames(styles.secondary)}
-          {...other}
-        >
-          {children}
-        </Button>
-      );
-    case COLOR.neutral:
-      return (
-        <Button type="button" className={classNames(styles.neutral)} {...other}>
-          {children}
-        </Button>
-      );
-    case COLOR.alert:
-      return (
-        <Button type="button" className={classNames(styles.alert)} {...other}>
-          {children}
-        </Button>
-      );
-    case COLOR.success:
-      return (
-        <Button type="button" className={classNames(styles.success)} {...other}>
-          {children}
-        </Button>
-      );
-    case COLOR.warning:
-      return (
-        <Button type="button" className={classNames(styles.warning)} {...other}>
-          {children}
-        </Button>
-      );
-  }
+}: ButtonProps) {
+  const baseClasses = "h-8 w-full max-w-24 border rounded font-[Bantayog-Light] leading-8 px-2";
+
+  const colorClasses = {
+    [COLOR.primary]: "text-white bg-color-brand-primary-base border-color-border-light",
+    [COLOR.secondary]: "text-color-font-button-secondary bg-color-brand-secondary-base border-color-border-dark",
+    [COLOR.neutral]: "bg-color-base-grey-200 border-color-border-light",
+    [COLOR.alert]: "text-white bg-color-base-red-300 border-color-border-error",
+    [COLOR.success]: "text-white bg-color-base-green-400 border-color-border-success",
+    [COLOR.warning]: "text-color-base-black bg-color-base-yellow-500 border-color-border-warning",
+  };
+
+  return (
+    <button
+      type="button"
+      className={classNames(baseClasses, colorClasses[color])}
+      {...other}
+    >
+      {children}
+    </button>
+  );
 }
 
-ButtonV1.displayName = "ButtonV1";
+Button.displayName = "Button";

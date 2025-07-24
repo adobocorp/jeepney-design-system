@@ -5,5 +5,11 @@
     "source.sortImports": "always",
     "source.removeUnusedImports": "always",
     "source.sortPackageJson": "explicit"
-  }
+  },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "on"
+  },
+  "tailwindCSS.experimental.configFile": "./apps/storybook/tailwind.config.js"
 }
