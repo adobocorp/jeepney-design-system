@@ -1,5 +1,6 @@
 import React, { useActionState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { HEADING, Typography } from "../../components/typography";
 import { useAuthenticityToken } from "../../hooks/useAuthenticityToken";
 import { useResetPassword } from "../../hooks/useResetPassword";
 import { FormError, ResetPasswordFormProps } from "../../types";
@@ -94,13 +95,13 @@ export const ResetPasswordForm: React.FC<ResetPasswordFormProps> = ({
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-center text-gray-900">
+        <Typography heading={HEADING.H2} className="text-2xl font-bold text-center text-gray-900">
           {title}
-        </h2>
+        </Typography>
         {
-          description && <p className="text-sm text-gray-599 text-center mt-2 font-[Bantayog-Light]">
+          description && <Typography heading={HEADING.H3} className="text-sm text-gray-599 text-center mt-2">
             {description}
-          </p>
+          </Typography>
         }
       </div>
       <div className={className}>

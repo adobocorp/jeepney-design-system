@@ -1,4 +1,5 @@
 import React, { useActionState } from "react";
+import { HEADING, Typography } from "../../components/typography";
 import { useAuthenticityToken } from "../../hooks/useAuthenticityToken";
 import { useForgotPassword } from "../../hooks/useForgotPassword";
 import { ForgotPasswordFormProps, FormError } from "../../types";
@@ -117,13 +118,13 @@ export const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({
       ) : (
         <>
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-center text-gray-900">
+            <Typography heading={HEADING.H2} className="text-2xl font-bold text-center text-gray-900">
               {title}
-            </h2>
+            </Typography>
             {
-              description && <p className="text-sm text-gray-599 text-center mt-2">
+              description && <Typography heading={HEADING.H3} className="text-sm text-gray-599 text-center mt-2">
                 {description}
-              </p>
+              </Typography>
             }
           </div>
 
