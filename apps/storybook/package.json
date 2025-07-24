@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@base-ui-components/react": "catalog:",
-    "@jeepney-design-system/tokens": "workspace:^0.0.4",
-    "@jeepney-design-system/ui": "workspace:^0.0.4",
+    "@jeepney-design-system/tokens": "workspace:^0.0.5",
+    "@jeepney-design-system/ui": "workspace:^0.0.5",
     "@tanstack/react-query": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -22,7 +22,7 @@
     "storybook-addon-remix-react-router": "catalog:"
   },
   "devDependencies": {
-    "@jeepney-design-system/tsconfig": "workspace:^0.0.4",
+    "@jeepney-design-system/tsconfig": "workspace:^0.0.5",
     "@storybook/addon-actions": "catalog:",
     "@storybook/addon-essentials": "catalog:",
     "@storybook/addon-interactions": "catalog:",

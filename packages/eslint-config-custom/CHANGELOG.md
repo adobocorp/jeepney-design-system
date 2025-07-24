@@ -1,5 +1,11 @@
 # @jeepney-design-system/eslint-config-custom
 
+## 0.0.5
+
+### Patch Changes
+
+- b6b5219: Add typography
+
 ## 0.0.4
 
 ### Patch Changes
