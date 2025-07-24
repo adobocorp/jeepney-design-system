@@ -1,4 +1,4 @@
-import styles from "./typography.module.css";
+import classNames from "classnames";
 
 export enum HEADING {
   H1 = "h1",
@@ -14,35 +14,47 @@ export interface TypographyProps
   heading: HEADING;
 }
 
-export function TypographyV1({ children, heading, ...props }: TypographyProps) {
+export function Typography({ children, heading, className, ...props }: TypographyProps) {
+  const baseClasses = "font-[Avenir]";
+
+  const headingClasses = {
+    [HEADING.H1]: "font-[Avenir] text-xl", // --size-font-xl: 1.5
+    [HEADING.H2]: "font-[Bantayog-Light] text-lg", // --size-font-large: 1.25
+    [HEADING.H3]: "font-[Avenir] text-base", // --size-font-medium: 1
+    [HEADING.H4]: "font-[Bantayog-Light] text-sm", // --size-font-small: 0.875
+    [HEADING.H5]: "font-[Avenir] text-xs", // --size-font-tiny: 0.75
+  };
+
+  const combinedClasses = classNames(baseClasses, headingClasses[heading], className);
+
   switch (heading) {
     case HEADING.H1:
       return (
-        <h1 className={styles.h1} {...props}>
+        <h1 className={combinedClasses} {...props}>
           {children}
         </h1>
       );
     case HEADING.H2:
       return (
-        <h2 className={styles.h2} {...props}>
+        <h2 className={combinedClasses} {...props}>
           {children}
         </h2>
       );
     case HEADING.H3:
       return (
-        <h3 className={styles.h3} {...props}>
+        <h3 className={combinedClasses} {...props}>
           {children}
         </h3>
       );
     case HEADING.H4:
       return (
-        <h4 className={styles.h4} {...props}>
+        <h4 className={combinedClasses} {...props}>
           {children}
         </h4>
       );
     case HEADING.H5:
       return (
-        <h5 className={styles.h5} {...props}>
+        <h5 className={combinedClasses} {...props}>
           {children}
         </h5>
       );

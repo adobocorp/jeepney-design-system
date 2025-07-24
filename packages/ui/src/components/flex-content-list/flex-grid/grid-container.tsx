@@ -1,6 +1,6 @@
-import { Typography, HEADING } from "../../shared/typography";
-import styles from "./flex-grid.module.css";
 import cn from "classnames";
+import { HEADING, Typography } from "../../typography";
+import styles from "./flex-grid.module.css";
 
 type GridContainerProps = {
   primaryText: string;

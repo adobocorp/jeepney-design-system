@@ -19,6 +19,7 @@ export { SignUpFormLayout } from "./authentication/layout/sign-up-form-layout";
 
 // General Components
 export { Button as ButtonComponent, COLOR } from "./components/button";
+export { HEADING, Typography } from "./components/typography";
 
 // Hooks
 export { useAuthenticityToken } from "./hooks/useAuthenticityToken";
