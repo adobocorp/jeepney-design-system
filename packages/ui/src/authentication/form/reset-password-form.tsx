@@ -18,6 +18,8 @@ export const ResetPasswordForm: React.FC<ResetPasswordFormProps> = ({
   disabled,
   buttonText = "Update Password",
   className = "",
+  title = "Reset Your Password",
+  description = "Enter your new password below",
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -90,21 +92,33 @@ export const ResetPasswordForm: React.FC<ResetPasswordFormProps> = ({
   const isDisabled = disabled || isPending || resetPasswordMutation.isPending;
 
   return (
-    <div className={className}>
-      {error && error.errors && error.errors.length > 0 && (
-        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
-          <div className="text-sm text-red-700">
-            {error.errors.map((err, index) => (
-              <div key={index}>{err}</div>
-            ))}
+    <div>
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-center text-gray-900">
+          {title}
+        </h2>
+        {
+          description && <p className="text-sm text-gray-599 text-center mt-2 font-[Bantayog-Light]">
+            {description}
+          </p>
+        }
+      </div>
+      <div className={className}>
+        {error && error.errors && error.errors.length > 0 && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+            <div className="text-sm text-red-700">
+              {error.errors.map((err, index) => (
+                <div key={index}>{err}</div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <form action={submitAction} acceptCharset="UTF-8">
-        <ResetPasswordFormLayout />
-        <FormButton text={buttonText} disabled={isDisabled} />
-      </form>
+        <form action={submitAction} acceptCharset="UTF-8">
+          <ResetPasswordFormLayout />
+          <FormButton text={buttonText} disabled={isDisabled} />
+        </form>
+      </div>
     </div>
   );
 };

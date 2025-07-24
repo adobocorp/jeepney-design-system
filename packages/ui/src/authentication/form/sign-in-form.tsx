@@ -1,10 +1,10 @@
 import React, { useActionState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSignIn } from "../../hooks/useSignIn";
 import { useAuthenticityToken } from "../../hooks/useAuthenticityToken";
-import { SignInFormLayout } from "../layout/sign-in-form-layout";
+import { useSignIn } from "../../hooks/useSignIn";
+import { FormError, SignInFormProps } from "../../types";
 import { FormButton } from "../field/form-button";
-import { SignInFormProps, FormError } from "../../types";
+import { SignInFormLayout } from "../layout/sign-in-form-layout";
 
 export const SignInForm: React.FC<SignInFormProps> = ({
   apiEndpoint = "/auth/sign_in",
@@ -15,6 +15,8 @@ export const SignInForm: React.FC<SignInFormProps> = ({
   disabled,
   buttonText = "Login",
   className = "",
+  title = "Sign In",
+  description = "Enter your email and password to sign in.",
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -69,9 +71,30 @@ export const SignInForm: React.FC<SignInFormProps> = ({
   const isDisabled = disabled || isPending || signInMutation.isPending;
 
   return (
-    <form action={submitAction} acceptCharset="UTF-8" className={className}>
-      <SignInFormLayout />
-      <FormButton text={buttonText} disabled={isDisabled} />
-    </form>
+    <div className={className}>
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-center text-gray-900">
+          {title}
+        </h2>
+        {
+          description && <p className="text-sm text-gray-599 text-center mt-2 font-[Bantayog-Light]">
+            {description}
+          </p>
+        }
+      </div>
+      {error && error.errors && error.errors.length > 0 && (
+        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+          <div className="text-sm text-red-700">
+            {error.errors.map((err, index) => (
+              <div key={index}>{err}</div>
+            ))}
+          </div>
+        </div>
+      )}
+      <form action={submitAction} acceptCharset="UTF-8" className={className}>
+        <SignInFormLayout />
+        <FormButton text={buttonText} disabled={isDisabled} />
+      </form>
+    </div>
   );
 };

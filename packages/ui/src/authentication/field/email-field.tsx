@@ -1,5 +1,5 @@
-import React, { Ref } from "react";
 import { Field } from "@base-ui-components/react/field";
+import React, { Ref } from "react";
 
 export interface EmailFieldProps {
     inputRef?: Ref<HTMLInputElement>;
@@ -8,7 +8,7 @@ export interface EmailFieldProps {
 export const EmailField: React.FC<EmailFieldProps> = ({ inputRef }) => {
     return (
         <Field.Root>
-            <Field.Label className="block text-gray-700">
+            <Field.Label className="block text-gray-700 font-[Bantayog-Light]">
                 Email<sup>*</sup>
             </Field.Label>
             <Field.Control

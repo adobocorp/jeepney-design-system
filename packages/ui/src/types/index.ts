@@ -50,6 +50,16 @@ export interface SignInFormProps {
    * Custom CSS classes for the form
    */
   className?: string;
+
+  /**
+   * Custom title for the form
+   */
+  title?: string;
+
+  /**
+   * Custom description for the form
+   */
+  description?: string;
 }
 
 export interface SignUpFormProps {
@@ -100,6 +110,16 @@ export interface SignUpFormProps {
    * Require first and last name fields
    */
   requireNames?: boolean;
+
+  /**
+   * Custom title for the form
+   */
+  title?: string;
+
+  /**
+   * Custom description for the form
+   */
+  description?: string;
 }
 
 export interface User {
@@ -166,6 +186,16 @@ export interface ResetPasswordFormProps {
    * Custom CSS classes for the form
    */
   className?: string;
+
+  /**
+   * Custom title for the form
+   */
+  title?: string;
+
+  /**
+   * Custom description for the form
+   */
+  description?: string;
 }
 
 export interface ForgotPasswordFormProps {
@@ -211,6 +241,11 @@ export interface ForgotPasswordFormProps {
    * Custom CSS classes for the form
    */
   className?: string;
+
+  /**
+   * Custom title text above the form
+   */
+  title?: string;
 
   /**
    * Custom description text above the form

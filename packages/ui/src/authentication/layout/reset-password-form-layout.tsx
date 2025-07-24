@@ -16,7 +16,7 @@ export const ResetPasswordFormLayout: React.FC = () => {
           <div className="w-full">
             <Field.Root>
               <Field.Label className="block text-gray-700 h-6 leading-6">
-                Reset Password<sup>*</sup>
+                New Password<sup>*</sup>
               </Field.Label>
               <Field.Control
                 id="password"
@@ -43,7 +43,7 @@ export const ResetPasswordFormLayout: React.FC = () => {
           <div className="w-full">
             <Field.Root>
               <Field.Label className="block text-gray-700 h-6 leading-6">
-                Confirm Reset Password<sup>*</sup>
+                Confirm New Password<sup>*</sup>
               </Field.Label>
               <Field.Control
                 id="password_confirmation"

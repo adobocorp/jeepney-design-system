@@ -18,12 +18,12 @@
           "value": "assets/fonts/MaterialIcons-Regular.woff2"
         }
       },
-      "avenir": {
+      "bantayog": {
         "name": {
-          "value": "Avenir"
+          "value": "Bantayog"
         },
         "ttf": {
-          "value": "assets/fonts/Avenir-Regular.ttf"
+          "value": "assets/fonts/Bantayog-Regular.ttf"
         }
       }
     }

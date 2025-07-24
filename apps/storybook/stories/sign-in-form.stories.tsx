@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 import { SignInForm } from "@jeepney-design-system/ui";
+import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof SignInForm> = {
-  title: "Components/Forms/SignInForm",
+  title: "Components/Authentication/SignInForm",
   component: SignInForm,
   parameters: {
     layout: "centered",
@@ -35,6 +35,14 @@ const meta: Meta<typeof SignInForm> = {
       description: "Additional CSS classes for the form container",
       control: "text",
     },
+    title: {
+      description: "Custom title text displayed above the form",
+      control: "text",
+    },
+    description: {
+      description: "Custom description text displayed above the form",
+      control: "text",
+    },
   },
   decorators: [
     (Story) => (
@@ -43,7 +51,7 @@ const meta: Meta<typeof SignInForm> = {
       </div>
     ),
   ],
-  includeStories: ["Default"],
+  includeStories: ["Default", "Tagalog"],
 };
 
 export default meta;
@@ -54,6 +62,16 @@ export const Default: Story = {
     onSignIn: action("onSignIn"),
     onSuccess: action("onSuccess"),
     onError: action("onError"),
+  },
+};
+
+export const Tagalog: Story = {
+  args: {
+    onSignIn: action("onSignIn"),
+    onSuccess: action("onSuccess"),
+    onError: action("onError"),
+    title: "Mag-sign In sa Iyong Account",
+    description: "Ilagay ang iyong email at password upang mag-sign in.",
   },
 };
 

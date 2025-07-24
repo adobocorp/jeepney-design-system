@@ -1,6 +1,6 @@
-import { Ref } from "react";
 import { Field } from "@base-ui-components/react/field";
 import cn from "classnames";
+import { Ref } from "react";
 
 interface NumberHoursFieldProps {
   id: string;
@@ -39,7 +39,7 @@ export const NumberField = ({
 
   return (
     <Field.Root>
-      <Field.Label className="block text-gray-700">{required ? <>{label} <sup>*</sup></> : label}</Field.Label>
+      <Field.Label className="block text-gray-700 font-[Bantayog-Light]">{required ? <>{label} <sup>*</sup></> : label}</Field.Label>
       <Field.Control
         className={numberFieldClassNames}
         id={id}

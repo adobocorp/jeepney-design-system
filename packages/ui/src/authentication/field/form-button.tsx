@@ -17,7 +17,6 @@ export const FormButton: React.FC<FormButtonProps> = ({
       type="submit"
       size="medium"
       width="inherit"
-      color="blue"
       text={text}
       disabled={disabled}
       className={className}

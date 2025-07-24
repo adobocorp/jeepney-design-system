@@ -5,8 +5,7 @@ interface ButtonProps {
     type?: "button" | "submit" | "reset";
     width?: "thin" | "regular" | "wide" | "inherit";
     size?: "small" | "medium" | "large" | "x-large";
-    rank?: "primary" | "secondary" | "tertiary";
-    color?: "blue" | "red" | "green" | "yellow" | "gray";
+    rank?: "primary" | "secondary";
     disabled?: boolean;
     onClick?: () => void;
     className?: string;
@@ -16,15 +15,14 @@ export const Button: React.FC<ButtonProps> = ({
     text,
     width,
     size = "medium",
-    rank,
-    color = "blue",
+    rank = "primary",
     type = "button",
     disabled = false,
     onClick,
     className = "",
 }) => {
     const getClassNames = () => {
-        const baseClasses = "shadow-sm px-4 rounded-sm border-solid border-1 focus:outline-none";
+        const baseClasses = "font-[Bantayog-Light] shadow-sm px-4 rounded-sm border-solid border-1 focus:outline-none";
 
         let sizeClasses = "";
         switch (size) {
@@ -65,36 +63,19 @@ export const Button: React.FC<ButtonProps> = ({
         }
 
         let colorClasses = "";
-        switch (color) {
-            case "blue":
-                colorClasses = "bg-blue-500 text-white hover:bg-blue-600";
-                break;
-            case "red":
-                colorClasses = "bg-red-500 text-white hover:bg-red-600";
-                break;
-            case "green":
-                colorClasses = "bg-green-500 text-white hover:bg-green-600";
-                break;
-            case "yellow":
-                colorClasses = "bg-yellow-500 text-white hover:bg-yellow-600";
-                break;
-            case "gray":
-                colorClasses = "bg-gray-500 text-white hover:bg-gray-600";
-                break;
-            default:
-                colorClasses = "bg-blue-500 text-white hover:bg-blue-600";
-                break;
-        }
+        const colorPrimary = "text-white bg-color-brand-primary-base border-color-border-light";
+        const colorSecondary = "text-color-font-button-secondary bg-color-brand-secondary-base border-color-border-dark";
 
         let rankClasses = "";
         switch (rank) {
             case "primary":
                 rankClasses = "focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50";
+                colorClasses = colorPrimary;
                 break;
             case "secondary":
-            case "tertiary":
             default:
                 rankClasses = "border-gray-500 border-opacity-70";
+                colorClasses = colorSecondary;
                 break;
         }
 
