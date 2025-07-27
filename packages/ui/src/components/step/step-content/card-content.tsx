@@ -1,6 +1,3 @@
-import styles from "./content.module.css";
-import cn from "classnames";
-// import { CardContent as CardContentProps } from "../../shared/types";
 import { CardCallToAction } from "./card-call-to-action";
 
 export const CardContent = ({
@@ -10,16 +7,16 @@ export const CardContent = ({
   background,
 }: any) => {
   return (
-    <div className={cn(styles.contentContainer, styles.cardContainer)}>
-      <div className={cn(styles.cardContent, styles.cardContentPrimary)}>
+    <div className="h-[300px] w-[700px] flex justify-center items-start flex-col p-8 rounded-sm bg-white/95">
+      <div className="text-color-base-black text-[length:var(--size-font-large)rem] mb-3">
         {primaryText}
       </div>
       {secondaryText && (
-        <div className={cn(styles.cardContent, styles.cardContentSecondary)}>
+        <div className="text-color-base-black text-[length:var(--size-font-small)rem] flex-grow">
           {secondaryText}
         </div>
       )}
-      <div className={cn(styles.cardLastRow)}>
+      <div className="flex justify-end">
         <CardCallToAction
           callToAction={callToAction}
           backgroundColor={background.backgroundColor}

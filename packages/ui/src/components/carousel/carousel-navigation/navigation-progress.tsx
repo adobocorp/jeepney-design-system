@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
-import cn from "classnames";
+import { useEffect, useState } from "react";
 import { useSwiper } from "swiper/react";
-import style from "./carousel-navigation.module.css";
 import { ProgressMeter } from "./progress-meter";
 
 export function NavigationProgress({ progressBars = 1 }: any) {
@@ -39,7 +37,7 @@ export function NavigationProgress({ progressBars = 1 }: any) {
   });
 
   return (
-    <div className={cn(style.navigationProgressContainer)}>
+    <div className="w-[500px] flex items-center justify-center flex-row mb-[18px] mx-auto gap-3">
       {Array(progressBars)
         .fill(true)
         .map((_, index) => (

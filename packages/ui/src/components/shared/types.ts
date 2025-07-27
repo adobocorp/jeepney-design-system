@@ -66,7 +66,7 @@ export type VideoContent = WithCallAction & {
   width: number;
   height: number;
   src: string;
-  trackSrc: string;
+  trackSrc?: string;
   type: string;
   contentType: ContentType.Video;
 };

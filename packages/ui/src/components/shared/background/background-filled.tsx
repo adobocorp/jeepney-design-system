@@ -1,30 +1,30 @@
 import cn from "classnames";
-import styles from "./background.module.css";
+import type { ReactNode } from "react";
 import { BackgroundColor } from "../types";
 
-export function BackgroundFilled({ backgroundColor, children }) {
+interface BackgroundFilledProps {
+  backgroundColor?: BackgroundColor;
+  children: ReactNode;
+}
+
+export function BackgroundFilled({
+  backgroundColor,
+  children,
+}: BackgroundFilledProps) {
   return (
     <div
       className={cn(
-        styles.background,
-        backgroundColor === BackgroundColor.Primary
-          ? styles.backgroundWithPrimary
-          : "",
-        backgroundColor === BackgroundColor.Secondary
-          ? styles.backgroundWithSecondary
-          : "",
-        backgroundColor === BackgroundColor.Neutral
-          ? styles.backgroundWithNeutral
-          : "",
-        backgroundColor === BackgroundColor.Success
-          ? styles.backgroundWithSuccess
-          : "",
-        backgroundColor === BackgroundColor.Alert
-          ? styles.backgroundWithAlert
-          : "",
-        backgroundColor === BackgroundColor.Warning
-          ? styles.backgroundWithWarning
-          : ""
+        "w-full flex justify-center items-center flex-col",
+        backgroundColor === BackgroundColor.Primary &&
+          "bg-color-brand-primary-base",
+        backgroundColor === BackgroundColor.Secondary &&
+          "bg-color-brand-secondary-base",
+        backgroundColor === BackgroundColor.Neutral && "bg-color-base-grey-200",
+        backgroundColor === BackgroundColor.Success &&
+          "bg-color-base-green-400",
+        backgroundColor === BackgroundColor.Alert && "bg-color-base-red-300",
+        backgroundColor === BackgroundColor.Warning &&
+          "bg-color-base-yellow-500"
       )}
     >
       {children}

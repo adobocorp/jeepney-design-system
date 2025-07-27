@@ -1,11 +1,11 @@
-import styles from "./image-caption.module.css";
-import cn from "classnames";
-
-export function UpperImage({ backgroundPosition = "center" }) {
+export function UpperImage({
+  backgroundPosition = "center",
+  backgroundImage = "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
+}) {
   return (
     <div
-      className={cn(styles.contentContainer, styles.upperImageContainer)}
-      style={{ backgroundPosition }}
+      className="flex justify-center flex-col h-60 w-full bg-no-repeat rounded-sm rounded-b-none"
+      style={{ backgroundPosition, backgroundImage: `url(${backgroundImage})` }}
     ></div>
   );
 }

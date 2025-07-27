@@ -1,11 +1,20 @@
-import cn from "classnames";
-import styles from "./background.module.css";
+import type { ReactNode } from "react";
 
-export function BackgroundImage({ backgroundPosition, children }) {
+interface BackgroundImageProps {
+  backgroundPosition?: string;
+  backgroundImage?: string;
+  children: ReactNode;
+}
+
+export function BackgroundImage({
+  backgroundPosition,
+  backgroundImage = "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
+  children,
+}: BackgroundImageProps) {
   return (
     <div
-      className={cn(styles.background, styles.backgroundWithImage)}
-      style={{ backgroundPosition }}
+      className="w-full flex justify-center items-center flex-col bg-no-repeat"
+      style={{ backgroundPosition, backgroundImage: `url(${backgroundImage})` }}
     >
       {children}
     </div>

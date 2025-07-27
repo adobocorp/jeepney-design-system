@@ -1,7 +1,3 @@
-import { useState } from "react";
-import styles from "./image-caption.module.css";
-import cn from "classnames";
-
 export const LowerCaption = ({ primaryText, secondaryText }: any) => {
   let longCaption = secondaryText;
 
@@ -10,22 +6,12 @@ export const LowerCaption = ({ primaryText, secondaryText }: any) => {
   }
 
   return (
-    <div className={cn(styles.contentContainer, styles.lowerCaptionContainer)}>
-      <div
-        className={cn(
-          styles.lowerCaptionContent,
-          styles.lowerCaptionContentPrimary
-        )}
-      >
+    <div className="flex justify-center flex-col h-12 w-[calc(100%-64px)] p-8 bg-color-base-white rounded-sm rounded-t-none">
+      <div className="text-color-base-black font-[var(--font-family-base)] text-[length:var(--size-font-large)rem] mb-3">
         {primaryText}
       </div>
       {secondaryText && (
-        <div
-          className={cn(
-            styles.lowerCaptionContent,
-            styles.lowerCaptionContentSecondary
-          )}
-        >
+        <div className="text-color-base-black font-[var(--font-family-base)] text-[length:var(--size-font-small)rem]">
           {longCaption}
         </div>
       )}

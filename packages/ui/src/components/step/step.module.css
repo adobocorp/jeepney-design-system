@@ -1,6 +1,0 @@
-@import "../node_modules/@jeepney-design-system/tokens/dist/scss/_variables.scss";
-
-.step {
-  width: 800px;
-  height: 400px;
-}
