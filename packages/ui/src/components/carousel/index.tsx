@@ -16,7 +16,9 @@ export function Carousel({
           <CarouselSwiper>
             {contentList.map((content, index) => (
               <CarouselContent
-                content={content}
+                caption={content.caption}
+                asset={content.asset}
+                contentType={content.contentType}
                 key={`carousel-content-${index}`}
               />
             ))}

@@ -30,7 +30,7 @@ export type WithBackground = {
 export type BackgroundProps = WithBackground;
 
 export enum ContentType {
-  Card = "card",
+  Image = "image",
   Video = "video",
 }
 
@@ -50,23 +50,38 @@ export type WithCallAction = {
   callToAction: CallToAction;
 };
 
-export type CardContent = {
+export type CaptionContent = {
   primaryText: string;
   secondaryText?: string;
-  contentType: ContentType.Card;
+};
+
+export type ImageContent = {
+  contentType: ContentType.Image;
+  caption: CaptionContent;
+  asset?: Image;
 };
 
 export enum CardHeight {
   SHORT = "short",
   TALL = "tall",
 }
+export type Image = {
+  width: number;
+  height: number;
+  src: string;
+  type: string;
+};
 
-export type VideoContent = WithCallAction & {
-  caption?: string;
+export type Video = {
   width: number;
   height: number;
   src: string;
   trackSrc?: string;
   type: string;
+};
+
+export type VideoContent = WithCallAction & {
   contentType: ContentType.Video;
+  caption: CaptionContent;
+  asset?: Video;
 };

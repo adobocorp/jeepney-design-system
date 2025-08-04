@@ -52,22 +52,21 @@ type Story = StoryObj<typeof Carousel>;
 // Sample content data
 const sampleCardContent = [
   {
-    primaryText: "Beautiful Mountain Landscape",
-    secondaryText:
-      "Discover the breathtaking views of the mountain ranges with crystal clear lakes and abundant wildlife. This location offers perfect hiking trails for adventurers of all levels.",
-    contentType: ContentType.Card as const,
-  },
-  {
-    primaryText: "Urban City Life",
-    secondaryText:
-      "Experience the vibrant energy of metropolitan areas with their towering skyscrapers, bustling streets, and rich cultural diversity.",
-    contentType: ContentType.Card as const,
-  },
-  {
-    primaryText: "Peaceful Beach Sunset",
-    secondaryText:
-      "Relax and unwind at pristine beaches with golden sand and stunning sunset views that create perfect moments for reflection.",
-    contentType: ContentType.Card as const,
+    caption: {
+      primaryText: "Explore the Beauty of Nature",
+      secondaryText: "Discover breathtaking landscapes and wildlife",
+    },
+    asset: {
+      image: "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
+      position: "right",
+    },
+    contentType: ContentType.Image,
+    callToAction: {
+      href: "https://example.com/nature",
+      text: "Learn More",
+      target: "_blank",
+      type: CallToActionType.Default,
+    },
   },
 ];
 
