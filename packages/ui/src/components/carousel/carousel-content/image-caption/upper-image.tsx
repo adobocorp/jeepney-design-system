@@ -1,5 +1,5 @@
 export function UpperImage({
-  backgroundPosition = "center",
+  backgroundPosition = "center center",
   image = "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
 }) {
   return (

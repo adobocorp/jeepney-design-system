@@ -1,10 +1,10 @@
-import styles from "./flex-card.module.css";
 import cn from "classnames";
-import { CardContent } from "./card-content";
 import {
-  CardHeight,
   CardContent as CardContentProps,
+  CardHeight,
 } from "../../shared/types";
+import { CardContent } from "./card-content";
+import styles from "./flex-card.module.css";
 export type FlexGridContent = CardContentProps;
 
 export type WithContent = {
@@ -28,7 +28,7 @@ export function FlexCard({ content, cardHeight }: FlexCardProps) {
         <CardContent
           primaryText={content.primaryText}
           secondaryText={content.secondaryText}
-          contentType={content.contentType}
+          assetType={content.AssetType}
         />
       )}
     </div>

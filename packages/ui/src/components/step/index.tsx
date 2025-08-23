@@ -7,7 +7,7 @@ export function Step({ width, height, content, background }: StepProps) {
     <div className="w-[800px] h-96" style={{ width: width, height: height }}>
       {background?.backgroundType && (
         <StepBackground background={background}>
-          {content?.contentType && (
+          {content?.AssetType && (
             <StepContent
               content={content}
               background={background}

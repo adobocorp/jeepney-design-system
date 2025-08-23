@@ -17,8 +17,7 @@ export function Carousel({
             {contentList.map((content, index) => (
               <CarouselContent
                 caption={content.caption}
-                asset={content.asset}
-                contentType={content.contentType}
+                background={content.background}
                 key={`carousel-content-${index}`}
               />
             ))}

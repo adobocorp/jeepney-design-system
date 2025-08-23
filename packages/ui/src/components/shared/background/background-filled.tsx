@@ -1,16 +1,20 @@
 import cn from "classnames";
 import type { ReactNode } from "react";
-import { BackgroundColor } from "../types";
+import {
+  BackgroundColor,
+  BackgroundFilled as BackgroundFilledType,
+} from "../types";
 
 interface BackgroundFilledProps {
-  backgroundColor?: BackgroundColor;
+  background: BackgroundFilledType;
   children: ReactNode;
 }
 
 export function BackgroundFilled({
-  backgroundColor,
+  background,
   children,
 }: BackgroundFilledProps) {
+  const { backgroundColor } = background;
   return (
     <div
       className={cn(

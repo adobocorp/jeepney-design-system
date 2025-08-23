@@ -10,26 +10,43 @@ export enum BackgroundColor {
 export enum BackgroundType {
   Image = "image",
   Filled = "filled",
+  Video = "video",
 }
 
 export type BackgroundImage = {
-  backgroundPosition?: string;
+  showBorder?: boolean;
+  backgroundPosition: string;
   backgroundType: BackgroundType.Image;
-};
+} & WithImageAsset;
 
 export type BackgroundFilled = {
   backgroundColor?: BackgroundColor;
   showBorder?: boolean;
+  backgroundPosition?: string;
   backgroundType: BackgroundType.Filled;
 };
 
-export type Background = BackgroundImage | BackgroundFilled;
+export type BackgroundVideo = {
+  showBorder?: boolean;
+  backgroundPosition?: string;
+  backgroundType: BackgroundType.Video;
+} & WithVideoAsset;
+
+export type Background = BackgroundImage | BackgroundFilled | BackgroundVideo;
 export type WithBackground = {
   background: Background;
 };
+
+export type WithImageAsset = {
+  asset: Image;
+};
+
+export type WithVideoAsset = {
+  asset: Video;
+};
 export type BackgroundProps = WithBackground;
 
-export enum ContentType {
+export enum AssetType {
   Image = "image",
   Video = "video",
 }
@@ -55,11 +72,10 @@ export type CaptionContent = {
   secondaryText?: string;
 };
 
-export type ImageContent = {
-  contentType: ContentType.Image;
-  caption: CaptionContent;
-  asset?: Image;
-};
+export type ImageContent = WithCallAction &
+  WithBackground & {
+    caption?: CaptionContent;
+  };
 
 export enum CardHeight {
   SHORT = "short",
@@ -80,8 +96,7 @@ export type Video = {
   type: string;
 };
 
-export type VideoContent = WithCallAction & {
-  contentType: ContentType.Video;
-  caption: CaptionContent;
-  asset?: Video;
-};
+export type VideoContent = WithCallAction &
+  WithBackground & {
+    caption?: CaptionContent;
+  };

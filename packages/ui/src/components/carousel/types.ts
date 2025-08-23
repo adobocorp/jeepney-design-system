@@ -1,11 +1,11 @@
 import {
+  AssetType,
   BackgroundProps,
   CaptionContent,
-  ContentType,
-  Image,
   ImageContent,
-  Video,
   VideoContent,
+  WithBackground,
+  WithVideoAsset,
 } from "../shared/types";
 
 export type CarouselContent = ImageContent | VideoContent;
@@ -23,19 +23,17 @@ export type CarouselVideoProps = {
   video: string;
 };
 
-export type ImageCaptionProps = {
-  caption: CaptionContent;
-  asset?: Image;
-  contentType: ContentType.Image;
-};
+export type ImageContentProps = {
+  caption?: CaptionContent;
+} & WithBackground;
 
-export type VideoCaptionProps = {
-  caption: CaptionContent;
-  asset?: Video;
-  contentType: ContentType.Video;
-};
+export type VideoContentProps = {
+  caption?: CaptionContent;
+  assetType: AssetType.Video;
+} & WithVideoAsset &
+  WithBackground;
 
-export type CarouselContentProps = ImageCaptionProps | VideoCaptionProps;
+export type CarouselContentProps = ImageContentProps | VideoContentProps;
 
 export type CarouselProps = BackgroundProps &
   WithContentList & {

@@ -1,6 +1,6 @@
-import { BackgroundType, WithBackground } from "../../shared/types";
-import { BackgroundImage } from "../../shared/background/background-image";
 import { BackgroundFilled } from "../../shared/background/background-filled";
+import { BackgroundImage } from "../../shared/background/background-image";
+import { BackgroundType, WithBackground } from "../../shared/types";
 
 type FlexBackgroundProps = WithBackground & {
   children: any;
@@ -13,9 +13,7 @@ export function ContentListBackground({
   switch (background.backgroundType) {
     case BackgroundType.Image:
       return (
-        <BackgroundImage backgroundPosition={background.backgroundPosition}>
-          {children}
-        </BackgroundImage>
+        <BackgroundImage background={background}>{children}</BackgroundImage>
       );
     case BackgroundType.Filled:
     default:

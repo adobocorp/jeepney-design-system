@@ -1,20 +1,22 @@
 import type { ReactNode } from "react";
+import { BackgroundImage as BackgroundImageType } from "../types";
 
 interface BackgroundImageProps {
-  backgroundPosition?: string;
-  backgroundImage?: string;
+  background: BackgroundImageType;
   children: ReactNode;
 }
 
 export function BackgroundImage({
-  backgroundPosition,
-  backgroundImage = "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
+  background,
   children,
 }: BackgroundImageProps) {
   return (
     <div
       className="w-full flex justify-center items-center flex-col bg-no-repeat"
-      style={{ backgroundPosition, backgroundImage: `url(${backgroundImage})` }}
+      style={{
+        backgroundPosition: background.backgroundPosition,
+        backgroundImage: `url(${background.asset?.src})`,
+      }}
     >
       {children}
     </div>

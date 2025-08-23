@@ -1,6 +1,7 @@
-import { BackgroundType, WithBackground } from "../../shared/types";
-import { BackgroundImage } from "../../shared/background/background-image";
 import { BackgroundFilled } from "../../shared/background/background-filled";
+import { BackgroundImage } from "../../shared/background/background-image";
+import { BackgroundVideo } from "../../shared/background/background-video";
+import { BackgroundType, WithBackground } from "../../shared/types";
 
 type CarouselBackgroundProps = WithBackground & {
   children: any;
@@ -13,16 +14,17 @@ export function CarouselBackground({
   switch (background.backgroundType) {
     case BackgroundType.Image:
       return (
-        <BackgroundImage backgroundPosition={background.backgroundPosition}>
-          {children}
-        </BackgroundImage>
+        <BackgroundImage background={background}>{children}</BackgroundImage>
       );
     case BackgroundType.Filled:
-    default:
       return (
-        <BackgroundFilled backgroundColor={background.backgroundColor}>
-          {children}
-        </BackgroundFilled>
+        <BackgroundFilled background={background}>{children}</BackgroundFilled>
       );
+    case BackgroundType.Video:
+      return (
+        <BackgroundVideo background={background}>{children}</BackgroundVideo>
+      );
+    default:
+      return <div></div>;
   }
 }

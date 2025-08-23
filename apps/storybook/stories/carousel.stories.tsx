@@ -1,10 +1,15 @@
+import { CarouselContent } from "@jeepney-design-system/ui/src/components/carousel/types";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Carousel } from "../../../packages/ui/src/components/carousel";
 import {
   BackgroundColor,
+  BackgroundImage,
   BackgroundType,
+  BackgroundVideo,
   CallToActionType,
-  ContentType,
+  Image,
+  ImageContent,
+  Video,
 } from "../../../packages/ui/src/components/shared/types";
 
 const meta: Meta<typeof Carousel> = {
@@ -50,54 +55,90 @@ export default meta;
 type Story = StoryObj<typeof Carousel>;
 
 // Sample content data
-const sampleCardContent = [
+const sampleImageAsset: Image = {
+  src: "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
+  width: 1920,
+  height: 1080,
+  type: "image/jpeg",
+};
+
+const sampleBackgroundAsset: Image = {
+  type: "image/jpeg",
+  width: 1920,
+  height: 1080,
+  src: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+};
+
+const sampleVideoAsset: Video = {
+  src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  width: 800,
+  height: 450,
+  type: "video/mp4",
+};
+
+const sampleBackgroundImage: BackgroundImage = {
+  backgroundType: BackgroundType.Image,
+  backgroundPosition: "left center",
+  asset: sampleBackgroundAsset,
+  showBorder: false,
+};
+
+const sampleContentImage: BackgroundImage = {
+  backgroundType: BackgroundType.Image,
+  backgroundPosition: "center center",
+  asset: sampleImageAsset,
+  showBorder: false,
+};
+
+const sampleImageContent: ImageContent[] = [
   {
     caption: {
       primaryText: "Explore the Beauty of Nature",
       secondaryText: "Discover breathtaking landscapes and wildlife",
     },
-    asset: {
-      image: "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
-      position: "right",
-    },
-    contentType: ContentType.Image,
     callToAction: {
-      href: "https://example.com/nature",
-      text: "Learn More",
+      href: "https://example.com/watch",
+      text: "Watch Now",
       target: "_blank",
-      type: CallToActionType.Default,
+      type: CallToActionType.Text,
     },
+    background: sampleContentImage,
   },
 ];
 
-const sampleVideoContent = [
+const sampleBackgroundVideo: BackgroundVideo = {
+  backgroundType: BackgroundType.Video,
+  backgroundPosition: "center center",
+  asset: sampleVideoAsset,
+  showBorder: false,
+};
+
+const sampleVideoContent: CarouselContent[] = [
   {
-    caption: "The first Blender Open Movie from 2006",
-    width: 800,
-    height: 450,
-    src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    type: "video/mp4",
-    contentType: ContentType.Video as const,
-    callToAction: {
-      href: "https://example.com/nature",
-      text: "Watch Full Documentary",
-      target: "_blank",
-      type: CallToActionType.Default as const,
+    caption: {
+      primaryText: "Big Buck Bunny",
+      secondaryText: "The first blender video",
     },
+    callToAction: {
+      href: "https://example.com/watch",
+      text: "Watch Now",
+      target: "_blank",
+      type: CallToActionType.Text,
+    },
+    background: sampleBackgroundVideo,
   },
   {
-    caption: "Big Buck Bunny",
-    width: 800,
-    height: 450,
-    src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    type: "video/mp4",
-    contentType: ContentType.Video as const,
+    caption: {
+      primaryText: "Big Buck Bunny",
+      secondaryText: "The first blender video",
+    },
     callToAction: {
       href: "https://example.com/travel",
       text: "Plan Your Trip",
       target: "_blank",
       type: CallToActionType.Text as const,
     },
+    background: sampleBackgroundVideo,
   },
 ];
 
@@ -105,8 +146,9 @@ export const Default: Story = {
   args: {
     width: "100%",
     height: "500px",
-    contentList: sampleCardContent,
+    contentList: sampleImageContent,
     background: {
+      backgroundPosition: "center center",
       backgroundType: BackgroundType.Filled,
       backgroundColor: BackgroundColor.Neutral,
       showBorder: false,
@@ -118,11 +160,16 @@ export const WithImageBackground: Story = {
   args: {
     width: "100%",
     height: "600px",
-    contentList: sampleCardContent,
-    background: {
-      backgroundType: BackgroundType.Image,
-      backgroundPosition: "center",
-    },
+    contentList: sampleImageContent,
+    background: sampleBackgroundImage,
+  },
+};
+export const WithVideoBackground: Story = {
+  args: {
+    width: "100%",
+    height: "600px",
+    contentList: sampleImageContent,
+    background: sampleBackgroundVideo,
   },
 };
 
@@ -130,7 +177,7 @@ export const PrimaryBackground: Story = {
   args: {
     width: "100%",
     height: "500px",
-    contentList: sampleCardContent,
+    contentList: sampleImageContent,
     background: {
       backgroundType: BackgroundType.Filled,
       backgroundColor: BackgroundColor.Primary,
@@ -143,7 +190,7 @@ export const SecondaryBackground: Story = {
   args: {
     width: "100%",
     height: "500px",
-    contentList: sampleCardContent,
+    contentList: sampleImageContent,
     background: {
       backgroundType: BackgroundType.Filled,
       backgroundColor: BackgroundColor.Secondary,
@@ -156,7 +203,7 @@ export const SingleContent: Story = {
   args: {
     width: "100%",
     height: "400px",
-    contentList: [sampleCardContent[0]],
+    contentList: [sampleImageContent[0]],
     background: {
       backgroundType: BackgroundType.Filled,
       backgroundColor: BackgroundColor.Neutral,
@@ -182,7 +229,7 @@ export const CompactSize: Story = {
   args: {
     width: "600px",
     height: "350px",
-    contentList: sampleCardContent.slice(0, 2),
+    contentList: sampleImageContent.slice(0, 2),
     background: {
       backgroundType: BackgroundType.Filled,
       backgroundColor: BackgroundColor.Success,
@@ -195,7 +242,7 @@ export const LargeSize: Story = {
   args: {
     width: "1200px",
     height: "700px",
-    contentList: sampleCardContent,
+    contentList: sampleImageContent,
     background: {
       backgroundType: BackgroundType.Filled,
       backgroundColor: BackgroundColor.Warning,
