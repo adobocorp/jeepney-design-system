@@ -1,5 +1,11 @@
 # @jeepney-design-system/eslint-config-custom
 
+## 0.1.0
+
+### Minor Changes
+
+- 1ed2a7a: Refactor & Implement Carousel Component
+
 ## 0.0.5
 
 ### Patch Changes
