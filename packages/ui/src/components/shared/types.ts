@@ -15,21 +15,26 @@ export enum BackgroundType {
 
 export type BackgroundImage = {
   showBorder?: boolean;
-  backgroundPosition: string;
-  backgroundType: BackgroundType.Image;
+  backgroundColor?: BackgroundColor;
+  backgroundPosition?: string;
+  backgroundHeight?: string;
+  backgroundType: BackgroundType;
 } & WithImageAsset;
 
 export type BackgroundFilled = {
-  backgroundColor?: BackgroundColor;
   showBorder?: boolean;
+  backgroundColor: BackgroundColor;
   backgroundPosition?: string;
-  backgroundType: BackgroundType.Filled;
+  backgroundType: BackgroundType;
+  backgroundHeight?: string;
 };
 
 export type BackgroundVideo = {
   showBorder?: boolean;
+  backgroundColor?: BackgroundColor;
   backgroundPosition?: string;
-  backgroundType: BackgroundType.Video;
+  backgroundHeight?: string;
+  backgroundType: BackgroundType;
 } & WithVideoAsset;
 
 export type Background = BackgroundImage | BackgroundFilled | BackgroundVideo;

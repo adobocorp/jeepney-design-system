@@ -109,6 +109,7 @@ const sampleImageContent: ImageContent[] = [
 const sampleBackgroundVideo: BackgroundVideo = {
   backgroundType: BackgroundType.Video,
   backgroundPosition: "center center",
+  backgroundColor: BackgroundColor.Secondary,
   asset: sampleVideoAsset,
   showBorder: false,
 };
@@ -145,7 +146,6 @@ const sampleVideoContent: CarouselContent[] = [
 export const Default: Story = {
   args: {
     width: "100%",
-    height: "500px",
     contentList: sampleImageContent,
     background: {
       backgroundPosition: "center center",
@@ -159,7 +159,6 @@ export const Default: Story = {
 export const WithImageBackground: Story = {
   args: {
     width: "100%",
-    height: "600px",
     contentList: sampleImageContent,
     background: sampleBackgroundImage,
   },
@@ -167,7 +166,6 @@ export const WithImageBackground: Story = {
 export const WithVideoBackground: Story = {
   args: {
     width: "100%",
-    height: "600px",
     contentList: sampleImageContent,
     background: sampleBackgroundVideo,
   },
@@ -176,7 +174,6 @@ export const WithVideoBackground: Story = {
 export const PrimaryBackground: Story = {
   args: {
     width: "100%",
-    height: "500px",
     contentList: sampleImageContent,
     background: {
       backgroundType: BackgroundType.Filled,
@@ -189,7 +186,6 @@ export const PrimaryBackground: Story = {
 export const SecondaryBackground: Story = {
   args: {
     width: "100%",
-    height: "500px",
     contentList: sampleImageContent,
     background: {
       backgroundType: BackgroundType.Filled,
@@ -202,7 +198,6 @@ export const SecondaryBackground: Story = {
 export const SingleContent: Story = {
   args: {
     width: "100%",
-    height: "400px",
     contentList: [sampleImageContent[0]],
     background: {
       backgroundType: BackgroundType.Filled,
@@ -215,7 +210,6 @@ export const SingleContent: Story = {
 export const VideoContent: Story = {
   args: {
     width: "100%",
-    height: "600px",
     contentList: sampleVideoContent,
     background: {
       backgroundType: BackgroundType.Filled,
@@ -228,7 +222,6 @@ export const VideoContent: Story = {
 export const CompactSize: Story = {
   args: {
     width: "600px",
-    height: "350px",
     contentList: sampleImageContent.slice(0, 2),
     background: {
       backgroundType: BackgroundType.Filled,
@@ -241,7 +234,6 @@ export const CompactSize: Story = {
 export const LargeSize: Story = {
   args: {
     width: "1200px",
-    height: "700px",
     contentList: sampleImageContent,
     background: {
       backgroundType: BackgroundType.Filled,

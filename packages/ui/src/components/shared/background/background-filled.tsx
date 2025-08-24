@@ -5,7 +5,7 @@ import {
   BackgroundFilled as BackgroundFilledType,
 } from "../types";
 
-interface BackgroundFilledProps {
+export interface BackgroundFilledProps {
   background: BackgroundFilledType;
   children: ReactNode;
 }
