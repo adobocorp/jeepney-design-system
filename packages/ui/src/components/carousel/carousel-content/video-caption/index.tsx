@@ -1,18 +1,18 @@
-import { BackgroundImage, CaptionContent } from "../../../shared/types";
+import { BackgroundVideo, CaptionContent } from "../../../shared/types";
 import { LowerCaption } from "./lower-caption";
-import { UpperImage } from "./upper-image";
+import { UpperVideo } from "./upper-video";
 
-export type ImageCaptionProps = {
+export type VideoCaptionProps = {
   caption?: CaptionContent;
-  background: BackgroundImage;
+  background: BackgroundVideo;
 };
 
-export function ImageCaption({ caption, background }: ImageCaptionProps) {
+export function VideoCaption({ caption, background }: VideoCaptionProps) {
   return (
     <div className="flex justify-center items-center flex-col h-full w-[800px] my-[18px] mx-auto">
       {background && (
-        <UpperImage
-          image={background.asset.src}
+        <UpperVideo
+          video={background.asset.src}
           backgroundPosition={background.backgroundPosition}
         />
       )}

@@ -19,6 +19,7 @@ export { SignUpFormLayout } from "./authentication/layout/sign-up-form-layout";
 
 // General Components
 export { Button as ButtonComponent, COLOR } from "./components/button";
+export { Carousel } from "./components/carousel";
 export { HEADING, Typography } from "./components/typography";
 
 // Hooks
@@ -39,15 +40,20 @@ export { signUp } from "./api/signUp";
 export type {
   ForgotPasswordError,
   ForgotPasswordRequest,
-  ForgotPasswordResponse
+  ForgotPasswordResponse,
 } from "./api/forgotPassword";
 export type {
   ResetPasswordError,
   ResetPasswordRequest,
-  ResetPasswordResponse
+  ResetPasswordResponse,
 } from "./api/resetPassword";
 export type { SignInError, SignInRequest, SignInResponse } from "./api/signIn";
 export type { SignUpError, SignUpRequest, SignUpResponse } from "./api/signUp";
+export type {
+  CarouselContent,
+  CarouselContentProps,
+  CarouselProps,
+} from "./components/carousel/types";
 export type { UseForgotPasswordOptions } from "./hooks/useForgotPassword";
 export type { UseResetPasswordOptions } from "./hooks/useResetPassword";
 export type { UseSignInOptions } from "./hooks/useSignIn";
@@ -59,6 +65,5 @@ export type {
   ResetPasswordFormProps,
   SignInFormProps,
   SignUpFormProps,
-  User
+  User,
 } from "./types";
-

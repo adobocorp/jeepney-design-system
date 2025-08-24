@@ -1,5 +1,3 @@
-import styles from "./carousel-navigation.module.css";
-import cn from "classnames";
 import { useSwiper } from "swiper/react";
 
 function LeftArrow() {
@@ -42,9 +40,9 @@ export function NavigationControls() {
   const swiper = useSwiper();
 
   return (
-    <div className={styles.navigationControls}>
+    <div className="w-24 grid grid-cols-2 mb-[18px] bg-color-base-white mx-auto border border-color-base-grey-400 box-border rounded-xl items-center h-8">
       <div
-        className={cn(styles.navigationButton, styles.leftNavigationButton)}
+        className="box-border text-center cursor-pointer w-full border-r border-color-base-grey-400"
         onClick={() => {
           swiper.slidePrev();
         }}
@@ -52,7 +50,7 @@ export function NavigationControls() {
         <LeftArrow />
       </div>
       <div
-        className={cn(styles.navigationButton)}
+        className="box-border text-center cursor-pointer w-full"
         onClick={() => {
           swiper.slideNext();
         }}

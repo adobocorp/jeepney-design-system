@@ -1,14 +1,13 @@
-import styles from "./step.module.css";
 import { StepBackground } from "./step-background";
-import { StepProps } from "./types";
 import { StepContent } from "./step-content";
+import { StepProps } from "./types";
 
 export function Step({ width, height, content, background }: StepProps) {
   return (
-    <div className={styles.step} style={{ width: width, height: height }}>
+    <div className="w-[800px] h-96" style={{ width: width, height: height }}>
       {background?.backgroundType && (
         <StepBackground background={background}>
-          {content?.contentType && (
+          {content?.AssetType && (
             <StepContent
               content={content}
               background={background}

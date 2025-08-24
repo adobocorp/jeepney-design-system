@@ -1,23 +1,23 @@
-import styles from "./carousel.module.css";
 import { CarouselBackground } from "./carousel-background";
-import type { CarouselProps } from "./types";
 import { CarouselContent } from "./carousel-content";
 import { CarouselSwiper } from "./carousel-swiper";
+import type { CarouselProps } from "./types";
 
-export function CarouselV1({
+export function Carousel({
   width,
   height,
   contentList,
   background,
 }: CarouselProps) {
   return (
-    <div className={styles.carousel} style={{ width, height }}>
+    <div className="w-full h-96" style={{ width, height }}>
       <CarouselBackground background={background}>
         {contentList.length ? (
           <CarouselSwiper>
             {contentList.map((content, index) => (
               <CarouselContent
-                content={content}
+                caption={content.caption}
+                background={content.background}
                 key={`carousel-content-${index}`}
               />
             ))}

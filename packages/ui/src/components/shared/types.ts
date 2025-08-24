@@ -10,27 +10,49 @@ export enum BackgroundColor {
 export enum BackgroundType {
   Image = "image",
   Filled = "filled",
+  Video = "video",
 }
 
 export type BackgroundImage = {
+  showBorder?: boolean;
+  backgroundColor?: BackgroundColor;
   backgroundPosition?: string;
-  backgroundType: BackgroundType.Image;
-};
+  backgroundHeight?: string;
+  backgroundType: BackgroundType;
+} & WithImageAsset;
 
 export type BackgroundFilled = {
-  backgroundColor?: BackgroundColor;
   showBorder?: boolean;
-  backgroundType: BackgroundType.Filled;
+  backgroundColor: BackgroundColor;
+  backgroundPosition?: string;
+  backgroundType: BackgroundType;
+  backgroundHeight?: string;
 };
 
-export type Background = BackgroundImage | BackgroundFilled;
+export type BackgroundVideo = {
+  showBorder?: boolean;
+  backgroundColor?: BackgroundColor;
+  backgroundPosition?: string;
+  backgroundHeight?: string;
+  backgroundType: BackgroundType;
+} & WithVideoAsset;
+
+export type Background = BackgroundImage | BackgroundFilled | BackgroundVideo;
 export type WithBackground = {
   background: Background;
 };
+
+export type WithImageAsset = {
+  asset: Image;
+};
+
+export type WithVideoAsset = {
+  asset: Video;
+};
 export type BackgroundProps = WithBackground;
 
-export enum ContentType {
-  Card = "card",
+export enum AssetType {
+  Image = "image",
   Video = "video",
 }
 
@@ -50,23 +72,36 @@ export type WithCallAction = {
   callToAction: CallToAction;
 };
 
-export type CardContent = {
+export type CaptionContent = {
   primaryText: string;
   secondaryText?: string;
-  contentType: ContentType.Card;
 };
+
+export type ImageContent = WithCallAction &
+  WithBackground & {
+    caption?: CaptionContent;
+  };
 
 export enum CardHeight {
   SHORT = "short",
   TALL = "tall",
 }
-
-export type VideoContent = WithCallAction & {
-  caption?: string;
+export type Image = {
   width: number;
   height: number;
   src: string;
-  trackSrc: string;
   type: string;
-  contentType: ContentType.Video;
 };
+
+export type Video = {
+  width: number;
+  height: number;
+  src: string;
+  trackSrc?: string;
+  type: string;
+};
+
+export type VideoContent = WithCallAction &
+  WithBackground & {
+    caption?: CaptionContent;
+  };

@@ -1,26 +1,26 @@
 // import type { StepContentProps } from "../types";
-import { ContentType } from "../../shared/types";
+import { AssetType } from "../../shared/types";
 import { CardContent } from "./card-content";
 import { VideoContent } from "./video-content";
 
 export function StepContent({ content, background }: any) {
-  switch (content.contentType) {
-    case ContentType.Card:
+  switch (content.AssetType) {
+    case AssetType.Card:
       return (
         <CardContent
           callToAction={content.callToAction}
-          contentType={content.contentType}
+          assetType={content.AssetType}
           primaryText={content.primaryText}
           secondaryText={content.secondaryText}
           background={background}
         />
       );
-    case ContentType.Video:
+    case AssetType.Video:
       return (
         <VideoContent
           callToAction={content.callToAction}
           caption={content.caption}
-          contentType={content.contentType}
+          assetType={content.AssetType}
           height={content.height}
           src={content.src}
           trackSrc={content.trackSrc}
