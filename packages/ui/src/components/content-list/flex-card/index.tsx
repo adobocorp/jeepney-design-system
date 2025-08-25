@@ -21,7 +21,7 @@ export function FlexCard({ content, cardHeight }: FlexCardProps) {
       className={cn(
         "bg-white/95",
         cardHeight === CardHeight.SHORT ? "h-32" : "",
-        cardHeight === CardHeight.TALL ? "h-64" : ""
+        cardHeight === CardHeight.TALL ? "h-96" : ""
       )}
     >
       {content && (

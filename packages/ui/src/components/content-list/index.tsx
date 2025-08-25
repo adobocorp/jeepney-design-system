@@ -1,9 +1,8 @@
-import { BackgroundType } from "../shared/types";
 import { ContentListBackground } from "./content-list-background";
 import { FlexGrid } from "./flex-grid";
 import { FlexContentListProps } from "./types";
 
-export function FlexContentListV1({
+export function ContentList({
   primaryText,
   secondaryText,
   contentList,

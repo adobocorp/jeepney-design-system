@@ -16,7 +16,7 @@ export function GridContainer({
 }: GridContainerProps) {
   return (
     <div className="flex h-[600px] items-center flex-col">
-      <div className="text-center">
+      <div className="p-4 text-center">
         <Typography heading={HEADING.H1}>{primaryText}</Typography>
         <Typography heading={HEADING.H3}>{secondaryText}</Typography>
       </div>

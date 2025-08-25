@@ -1,20 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { FlexContentListV1 } from "../../../packages/ui/src/components/flex-content-list";
-import {
-  FlexGridType,
-  FlexContentListProps,
-} from "../../../packages/ui/src/components/flex-content-list/types";
+import { ContentList } from "@jeepney-design-system/ui/src/components/content-list";
+import { FlexGridType } from "@jeepney-design-system/ui/src/components/content-list/types";
 import {
   AssetType,
   BackgroundColor,
   BackgroundType,
   Image,
   Video,
-} from "../../../packages/ui/src/components/shared/types";
+} from "@jeepney-design-system/ui/src/components/shared/types";
+import type { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof FlexContentListV1> = {
-  title: "Components/Components/FlexContentList",
-  component: FlexContentListV1,
+const meta: Meta<typeof ContentList> = {
+  title: "Components/Components/ContentList",
+  component: ContentList,
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -50,7 +47,7 @@ const meta: Meta<typeof FlexContentListV1> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof FlexContentListV1>;
+type Story = StoryObj<typeof ContentList>;
 
 // Sample image asset
 const sampleImage: Image = {
@@ -94,11 +91,12 @@ export const SingleFilledContentCard: Story = {
   args: {
     primaryText: "Single Filled Content Card",
     secondaryText: "A single content card with text only",
-    flexGridType: FlexGridType.TallCardGrid,
+    flexGridType: FlexGridType.ShortCardGrid,
     contentList: [
       {
         primaryText: "Text Only Content",
-        secondaryText: "This card contains only text content without any media assets",
+        secondaryText:
+          "This card contains only text content without any media assets",
         AssetType: AssetType.Card,
       },
     ],
@@ -110,25 +108,34 @@ export const MultipleImageContentCards: Story = {
   args: {
     primaryText: "Multiple Image Content Cards",
     secondaryText: "A grid of content cards with image assets",
-    flexGridType: FlexGridType.ShortCardGrid,
+    flexGridType: FlexGridType.TallCardGrid,
     contentList: [
       {
         primaryText: "Image Card 1",
         secondaryText: "First image content card",
         AssetType: AssetType.Image,
-        asset: { ...sampleImage, src: "https://picsum.photos/400/300?random=1" },
+        asset: {
+          ...sampleImage,
+          src: "https://picsum.photos/400/300?random=1",
+        },
       },
       {
-        primaryText: "Image Card 2", 
+        primaryText: "Image Card 2",
         secondaryText: "Second image content card",
         AssetType: AssetType.Image,
-        asset: { ...sampleImage, src: "https://picsum.photos/400/300?random=2" },
+        asset: {
+          ...sampleImage,
+          src: "https://picsum.photos/400/300?random=2",
+        },
       },
       {
         primaryText: "Image Card 3",
-        secondaryText: "Third image content card", 
+        secondaryText: "Third image content card",
         AssetType: AssetType.Image,
-        asset: { ...sampleImage, src: "https://picsum.photos/400/300?random=3" },
+        asset: {
+          ...sampleImage,
+          src: "https://picsum.photos/400/300?random=3",
+        },
       },
     ],
     background: defaultBackground,
@@ -143,7 +150,8 @@ export const MultipleFilledContentCards: Story = {
     contentList: [
       {
         primaryText: "Text Card 1",
-        secondaryText: "First text-only content card with some descriptive content",
+        secondaryText:
+          "First text-only content card with some descriptive content",
         AssetType: AssetType.Card,
       },
       {
@@ -152,7 +160,7 @@ export const MultipleFilledContentCards: Story = {
         AssetType: AssetType.Card,
       },
       {
-        primaryText: "Text Card 3", 
+        primaryText: "Text Card 3",
         secondaryText: "Third text-only content card completing the set",
         AssetType: AssetType.Card,
       },
@@ -180,9 +188,13 @@ export const VideoContentCards: Story = {
       },
       {
         primaryText: "Another Video",
-        secondaryText: "Another video content card demonstrating the flexibility",
+        secondaryText:
+          "Another video content card demonstrating the flexibility",
         AssetType: AssetType.Video,
-        asset: { ...sampleVideo, src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" },
+        asset: {
+          ...sampleVideo,
+          src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+        },
       },
     ],
     background: defaultBackground,
