@@ -54,6 +54,7 @@ export type BackgroundProps = WithBackground;
 export enum AssetType {
   Image = "image",
   Video = "video",
+  Card = "card",
 }
 
 export enum CallToActionType {
@@ -105,3 +106,10 @@ export type VideoContent = WithCallAction &
   WithBackground & {
     caption?: CaptionContent;
   };
+
+export type CardContent = {
+  primaryText: string;
+  secondaryText?: string;
+  AssetType?: AssetType;
+  asset?: Image | Video;
+};
