@@ -167,7 +167,7 @@ export const VideoContentCard: Story = {
               color={COLOR.primary}
               size={SIZE.small}
               width={WIDTH.thin}
-              onClick={() => alert("Like button clicked")}
+              onClick={() => alert("Na-click ang like button")}
             >
               <Typography heading={HEADING.SPAN}>Like</Typography>
             </Button>
@@ -175,7 +175,7 @@ export const VideoContentCard: Story = {
               color={COLOR.neutral}
               size={SIZE.small}
               width={WIDTH.thin}
-              onClick={() => alert("Comment button clicked")}
+              onClick={() => alert("Na-click ang comment button")}
             >
               <Typography heading={HEADING.SPAN}>Comment</Typography>
             </Button>
@@ -183,7 +183,7 @@ export const VideoContentCard: Story = {
               color={COLOR.success}
               size={SIZE.small}
               width={WIDTH.thin}
-              onClick={() => alert("Share button clicked")}
+              onClick={() => alert("Na-click ang share button")}
             >
               <Typography heading={HEADING.SPAN}>Share</Typography>
             </Button>
