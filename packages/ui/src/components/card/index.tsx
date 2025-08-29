@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { Children } from "react";
 import {
   BackgroundColor,
   CardContent as CardContentProps,
@@ -24,7 +25,7 @@ export function Card({
 }: CardProps) {
   let colorClasses = "";
   const colorPrimary =
-    "text-[rgb(var(--color-brand-primary-darker))] bg-color-background-card-base border-color-border-light";
+    "text-white bg-[rgb(var(--color-brand-primary-base))] border-color-border-light";
   const colorSecondary =
     "text-color-font-button-secondary bg-color-brand-secondary-base border-color-border-dark";
 
@@ -41,8 +42,33 @@ export function Card({
       break;
   }
 
+  const hasButtons = Children.count(children) > 0;
+
+  if (!hasButtons) {
+    switch (cardBackground) {
+      case "primary":
+        focusClasses =
+          "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-primary-lighter))] focus:ring-opacity-50";
+        hoverClasses = "hover:shadow-lg cursor-pointer";
+        activeClasses =
+          "active:bg-[rgb(var(--color-brand-primary-dark))] active:text-white";
+        break;
+      case "secondary":
+      default:
+        focusClasses =
+          "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-secondary-lighter))] focus:ring-opacity-50";
+        hoverClasses = "hover:shadow-lg cursor-pointer";
+        activeClasses =
+          "active:bg-[rgb(var(--color-brand-secondary-base))] active:text-white";
+        break;
+    }
+  }
+
+  const tabIndex = hasButtons ? -1 : 1;
+
   return (
     <div
+      tabIndex={tabIndex}
       className={cn(
         colorClasses,
         focusClasses,

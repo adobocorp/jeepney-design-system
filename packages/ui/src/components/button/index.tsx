@@ -65,7 +65,8 @@ export function Button({
         "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-secondary-lighter))] focus:ring-opacity-50";
       break;
     case COLOR.neutral:
-      colorClasses = "bg-color-base-grey-200 border-color-border-light";
+      colorClasses =
+        "text-black bg-color-base-grey-200 border-color-border-light";
       hoverClasses = "hover:shadow-lg cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-base-grey-700))] active:text-white";

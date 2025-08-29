@@ -90,7 +90,7 @@ type Story = StoryObj<typeof Card>;
 const sampleImage: Image = {
   width: 400,
   height: 300,
-  src: "https://picsum.photos/400/300",
+  src: "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
   type: "image/jpeg",
 };
 
@@ -105,6 +105,23 @@ const sampleVideo: Video = {
 const defaultBackground = {
   backgroundType: BackgroundType.Filled,
   backgroundColor: BackgroundColor.Neutral,
+};
+
+export const TextContentCard: Story = {
+  args: {
+    content: {
+      primaryText: "@joserizal",
+      secondaryText: `Masasapantaha kaagád, na, lihim na nágayuma ñg isáng FILIBUSTERO ang kapisanan ñg mg̃a makapraile at mg̃a laban sa pagkakasulong,
+         upáng, sa pag-alinsunod na waláng malay sa mg̃a udyók ñg kaniláng kalooban, ay makatulong at makapagpalusóg doon sa imbót na íisang bagay ang
+         linalayon: palaganapin ang adhiká ñg FILIBUSTERISMO sa boong bayan at pananaligin ang lahát ñg pilipino na waláng ibáng kaligtasan liban sa
+         humiwaláy sa España. Kung ihuhulog sa wikang tagalog ang salitáng FILIBUSTERISMO ay lubhang hahaba ang pañgalan ñg aklát na itó at marahil
+         ay mangyaring hindi pa mawatasan ñg babasa, kaya’t hindi na namin inihulog sa wika natin; ñguni’t ílalagáy namán ang katuturán ó kahulugán
+         ñg salitáng itó upang mabatíd noong mg̃a hindi nakaaalam ñg kaniyang kahulugán.`,
+      assetType: AssetType.Card,
+    },
+    cardHeight: CardHeight.SHORT,
+    cardBackground: BackgroundColor.Primary,
+  },
 };
 
 export const ImageContentCard: Story = {
@@ -123,31 +140,6 @@ export const ImageContentCard: Story = {
 export const VideoContentCard: Story = {
   args: {
     content: {
-      primaryText: "Video Content Cards",
-      secondaryText: "Content cards featuring video asset",
-      assetType: AssetType.Video,
-      asset: sampleVideo,
-    },
-    cardHeight: CardHeight.SHORT,
-    cardBackground: BackgroundColor.Primary,
-  },
-};
-
-export const TextContentCard: Story = {
-  args: {
-    content: {
-      primaryText: "Text Content",
-      secondaryText: "A text-only card",
-      assetType: AssetType.Card,
-    },
-    cardHeight: CardHeight.SHORT,
-    cardBackground: BackgroundColor.Primary,
-  },
-};
-
-export const CardWithButton: Story = {
-  args: {
-    content: {
       primaryText: "Big Buck Bunny",
       secondaryText:
         "A day in the life of Big Buck Bunny, during which time he meets three bullying rodents: the leader, Frank the flying squirrel, and his sidekicks Rinky the red squirrel and Gimera the chinchilla.",
@@ -155,7 +147,7 @@ export const CardWithButton: Story = {
       asset: sampleVideo,
     },
     cardHeight: CardHeight.SHORT,
-    cardBackground: BackgroundColor.Primary,
+    cardBackground: BackgroundColor.Secondary,
   },
   render: (args) => {
     const singleImageContentCardProps = {
@@ -172,7 +164,7 @@ export const CardWithButton: Story = {
         {contentList.map((content, index) => (
           <Card {...content} key={`card-${index}`}>
             <Button
-              color={COLOR.secondary}
+              color={COLOR.primary}
               size={SIZE.small}
               width={WIDTH.thin}
               onClick={() => alert("Like button clicked")}
@@ -183,7 +175,7 @@ export const CardWithButton: Story = {
               color={COLOR.neutral}
               size={SIZE.small}
               width={WIDTH.thin}
-              onClick={() => alert("Commentbutton clicked")}
+              onClick={() => alert("Comment button clicked")}
             >
               <Typography heading={HEADING.SPAN}>Comment</Typography>
             </Button>
