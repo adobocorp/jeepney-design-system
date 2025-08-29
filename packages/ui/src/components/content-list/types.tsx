@@ -11,9 +11,9 @@ export enum FlexGridType {
   TallCardGrid = "tallCardGrid",
 }
 
-export type FlexContentListProps = WithContentList &
-  WithBackground & {
-    flexGridType: FlexGridType;
-    primaryText: string;
-    secondaryText?: string;
-  };
+export type FlexContentListProps = WithBackground & {
+  flexGridType: FlexGridType;
+  primaryText: string;
+  secondaryText?: string;
+  children: React.ReactNode;
+};

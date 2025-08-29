@@ -101,6 +101,12 @@
           }
         }
       },
+      "card": {
+        "base": {
+          "type": "color",
+          "value": "{color.brand.primary.light.value}"
+        }
+      },
       "overlay": {
         "light": {
           "type": "color",

@@ -15,6 +15,7 @@ export default {
 	'color-background-button-secondary-base': 'rgb(var(--color-background-button-secondary-base))',
 	'color-background-button-secondary-disabled': 'rgb(var(--color-background-button-secondary-disabled))',
 	'color-background-button-secondary-active': 'rgb(var(--color-background-button-secondary-active))',
+	'color-background-card-base': 'rgb(var(--color-background-card-base))',
 	'color-background-overlay-light': 'rgb(var(--color-background-overlay-light))',
 	'color-background-overlay-dark': 'rgb(var(--color-background-overlay-dark))',
 	'color-base-red-50': 'rgb(var(--color-base-red-50))',

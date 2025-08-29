@@ -42,6 +42,9 @@ export default {
           active: "#303f9f",
         },
       },
+      card: {
+        base: "#4db6ac",
+      },
       overlay: {
         light: "#ffffffcc",
         dark: "#00000044",
