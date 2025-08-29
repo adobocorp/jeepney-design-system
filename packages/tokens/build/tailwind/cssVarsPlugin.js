@@ -26,6 +26,7 @@ export default plugin(function ({ addBase }) {
 			'--color-background-button-secondary-base': '63 81 181',
 			'--color-background-button-secondary-disabled': '121 134 203',
 			'--color-background-button-secondary-active': '48 63 159',
+			'--color-background-card-base': '77 182 172',
 			'--color-background-overlay-light': '255 255 255 / 0.8',
 			'--color-background-overlay-dark': '0 0 0 / 0.27',
 			'--color-base-red-50': '255 229 238',

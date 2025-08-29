@@ -1,28 +1,42 @@
+import { Card } from "../../card";
 import {
-  CardHeight,
+  BackgroundColor,
   CardContent as CardContentProps,
+  CardHeight,
 } from "../../shared/types";
-import { FlexCard } from "../flex-card";
 import { FlexGridType } from "../types";
 
-type FlexCardContent = CardContentProps;
 type WithContent = {
-  content?: FlexCardContent;
+  content?: CardContentProps;
 };
 
 type FlexGridContentProps = WithContent & {
   flexGridType: FlexGridType;
+  cardBackgroundColor: BackgroundColor;
 };
 
 export function FlexGridContent({
   content,
   flexGridType,
+  cardBackgroundColor,
 }: FlexGridContentProps) {
   switch (flexGridType) {
     case FlexGridType.ShortCardGrid:
-      return <FlexCard cardHeight={CardHeight.SHORT} content={content} />;
+      return (
+        <Card
+          cardHeight={CardHeight.SHORT}
+          cardBackground={cardBackgroundColor}
+          content={content}
+        />
+      );
     case FlexGridType.TallCardGrid:
-      return <FlexCard cardHeight={CardHeight.TALL} content={content} />;
+      return (
+        <Card
+          cardHeight={CardHeight.TALL}
+          cardBackground={cardBackgroundColor}
+          content={content}
+        />
+      );
     default:
       return <div />;
   }

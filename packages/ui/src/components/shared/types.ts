@@ -110,6 +110,7 @@ export type VideoContent = WithCallAction &
 export type CardContent = {
   primaryText: string;
   secondaryText?: string;
-  AssetType?: AssetType;
+  assetType?: AssetType;
   asset?: Image | Video;
+  button?: React.ReactNode;
 };

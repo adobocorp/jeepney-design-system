@@ -5,18 +5,14 @@ import { FlexContentListProps } from "./types";
 export function ContentList({
   primaryText,
   secondaryText,
-  contentList,
-  flexGridType,
   background,
+  children,
 }: FlexContentListProps) {
   return (
     <ContentListBackground background={background}>
-      <FlexGrid
-        contentList={contentList}
-        flexGridType={flexGridType}
-        primaryText={primaryText}
-        secondaryText={secondaryText}
-      />
+      <FlexGrid primaryText={primaryText} secondaryText={secondaryText}>
+        {children}
+      </FlexGrid>
     </ContentListBackground>
   );
 }

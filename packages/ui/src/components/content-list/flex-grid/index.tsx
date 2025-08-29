@@ -1,31 +1,23 @@
+import { Children } from "react";
 import { GridContainer } from "./grid-container";
-import { FlexGridType, WithContentList } from "../types";
-import { FlexGridContent } from "./flex-grid-content";
 
-type FlexGridProps = WithContentList & {
-  flexGridType: FlexGridType;
+type FlexGridProps = {
   primaryText: string;
   secondaryText?: string;
+  children: React.ReactNode;
 };
 export function FlexGrid({
   primaryText,
   secondaryText,
-  contentList,
-  flexGridType,
+  children,
 }: FlexGridProps) {
   return (
     <GridContainer
-      numItems={contentList.length}
+      numItems={Children.count(children)}
       primaryText={primaryText}
       secondaryText={secondaryText}
     >
-      {contentList.map((content, index) => (
-        <FlexGridContent
-          content={content}
-          flexGridType={flexGridType}
-          key={`flex-grid-content-${index}`}
-        />
-      ))}
+      {children}
     </GridContainer>
   );
 }
