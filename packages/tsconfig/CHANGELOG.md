@@ -1,5 +1,12 @@
 # @jeepney-design-system/tsconfig
 
+## 0.0.6
+
+### Patch Changes
+
+- e768d64: Card component
+- 1ed2a7a: Refactor & Implement Carousel Component
+
 ## 0.0.5
 
 ### Patch Changes
