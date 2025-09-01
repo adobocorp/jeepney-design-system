@@ -1,8 +1,8 @@
 ---
-"@jeepney-design-system/eslint-config-custom": minor
-"@jeepney-design-system/tokens": minor
-"@jeepney-design-system/tsconfig": minor
-"@jeepney-design-system/ui": minor
+"@jeepney-design-system/eslint-config-custom": patch
+"@jeepney-design-system/tokens": patch
+"@jeepney-design-system/tsconfig": patch
+"@jeepney-design-system/ui": patch
 ---
 
 Refactor & Implement Carousel Component
