@@ -1,5 +1,18 @@
 # @jeepney-design-system/ui
 
+## 1.0.0
+
+### Minor Changes
+
+- 1ed2a7a: Refactor & Implement Carousel Component
+
+### Patch Changes
+
+- e768d64: Card component
+- Updated dependencies [e768d64]
+- Updated dependencies [1ed2a7a]
+  - @jeepney-design-system/tokens@0.1.0
+
 ## 0.0.5
 
 ### Patch Changes
