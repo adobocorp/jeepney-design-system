@@ -12,7 +12,7 @@ type WithContent = {
 
 type FlexGridContentProps = WithContent & {
   flexGridType: FlexGridType;
-  cardBackgroundColor: BackgroundColor;
+  cardBackgroundColor: BackgroundColor.Primary | BackgroundColor.Secondary;
 };
 
 export function FlexGridContent({

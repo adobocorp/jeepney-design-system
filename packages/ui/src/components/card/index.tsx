@@ -13,7 +13,7 @@ export type WithContent = {
 
 export type CardProps = WithContent & {
   cardHeight: CardHeight;
-  cardBackground: BackgroundColor;
+  cardBackground: BackgroundColor.Primary | BackgroundColor.Secondary;
   children?: React.ReactNode;
 };
 
@@ -24,16 +24,18 @@ export function Card({
   children,
 }: CardProps) {
   let colorClasses = "";
-  const colorSecondary =
-    "text-color-font-button-secondary bg-color-brand-secondary-base border-color-border-dark";
-
   let focusClasses = "";
   let hoverClasses = "";
   let activeClasses = "";
   switch (cardBackground) {
-    case "secondary":
+    case BackgroundColor.Primary:
+      colorClasses =
+        "text-color-font-button-primary bg-color-brand-primary-base border-color-border-dark";
+      break;
+    case BackgroundColor.Secondary:
     default:
-      colorClasses = colorSecondary;
+      colorClasses =
+        "text-color-font-button-secondary bg-color-brand-secondary-base border-color-border-dark";
       break;
   }
 
@@ -41,7 +43,12 @@ export function Card({
 
   if (!hasButtons) {
     switch (cardBackground) {
-      case "secondary":
+      case BackgroundColor.Primary:
+        focusClasses =
+          "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-primary-lighter))] focus:ring-opacity-50";
+        hoverClasses = "hover:shadow-lg cursor-pointer";
+        break;
+      case BackgroundColor.Secondary:
       default:
         focusClasses =
           "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-secondary-lighter))] focus:ring-opacity-50";
@@ -71,6 +78,7 @@ export function Card({
         <CardContent
           primaryText={content.primaryText}
           secondaryText={content.secondaryText}
+          cardHeight={cardHeight}
           assetType={content.assetType}
           asset={content.asset}
           button={children}

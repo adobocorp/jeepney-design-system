@@ -1,4 +1,8 @@
-import { AssetType, CardContent as CardContentProps } from "../shared/types";
+import {
+  AssetType,
+  CardContent as CardContentProps,
+  CardHeight,
+} from "../shared/types";
 import { Typography } from "../typography";
 import { HEADING } from "../typography/index";
 
@@ -27,15 +31,42 @@ export const CardContent = ({
   secondaryText,
   assetType,
   asset,
+  cardHeight,
   button,
 }: CardContentProps) => {
-  const secondaryTextLimit =
+  let secondaryTextLimit =
     assetType &&
     [AssetType.Image, AssetType.Video].findIndex(
       (type) => type === assetType
     ) !== -1
-      ? 50
+      ? 100
       : 500;
+
+  if (cardHeight === CardHeight.TALL) {
+    secondaryTextLimit = 300;
+  }
+
+  if (!button) {
+    secondaryTextLimit += 50;
+  }
+
+  if (!asset) {
+    return (
+      <div className="h-full max-w-sm flex flex-col justify-center items-center rounded-sm">
+        <div className="h-full w-full min-w-96 px-2 flex-1 flex flex-col justify-center">
+          <Typography heading={HEADING.H4}>{primaryText}</Typography>
+          {secondaryText && (
+            <Typography heading={HEADING.H5}>
+              {truncateText(secondaryText, secondaryTextLimit)}
+            </Typography>
+          )}
+          {button && (
+            <div className="flex justify-end gap-1 py-2">{button}</div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="h-full max-w-sm flex flex-col justify-center items-center rounded-sm">
@@ -55,17 +86,24 @@ export const CardContent = ({
         </div>
       )}
 
-      <div
-        className="h-full w-full min-w-96 px-2 flex-1 flex flex-col min-h-0 h-full"
-        style={{ justifyContent: asset ? "flex-start" : "center" }}
-      >
-        <Typography heading={HEADING.H4}>{primaryText}</Typography>
+      <div className="h-full w-full min-w-96 px-2 flex-1 flex flex-col">
+        <div
+          className="justify-start"
+          style={{ justifyContent: asset ? "space-between" : "center" }}
+        >
+          <Typography heading={HEADING.H4}>{primaryText}</Typography>
+        </div>
         {secondaryText && (
-          <Typography heading={HEADING.H5}>
-            {truncateText(secondaryText, secondaryTextLimit)}
-          </Typography>
+          <div
+            className="flex flex-1"
+            style={{ justifyContent: asset ? "space-between" : "center" }}
+          >
+            <Typography heading={HEADING.H5}>
+              {truncateText(secondaryText, secondaryTextLimit)}
+            </Typography>
+          </div>
         )}
-        {button && <div className="flex justify-end gap-1 pt-2">{button}</div>}
+        {button && <div className="flex justify-end gap-1 py-2">{button}</div>}
       </div>
     </div>
   );

@@ -127,13 +127,14 @@ export const TextContentCard: Story = {
 export const ImageContentCard: Story = {
   args: {
     content: {
-      primaryText: "Image Content",
-      secondaryText: "This card contains an image asset",
+      primaryText: "Makati",
+      secondaryText:
+        "Makati is a center for finance, commerce, culture, the arts and fashion, academics, and as the home to numerous diplomatic missions and embassies, is the center for the country's international diplomacy.",
       assetType: AssetType.Image,
       asset: sampleImage,
     },
     cardHeight: CardHeight.SHORT,
-    cardBackground: BackgroundColor.Primary,
+    cardBackground: BackgroundColor.Secondary,
   },
 };
 
@@ -146,7 +147,7 @@ export const VideoContentCard: Story = {
       assetType: AssetType.Video,
       asset: sampleVideo,
     },
-    cardHeight: CardHeight.SHORT,
+    cardHeight: CardHeight.TALL,
     cardBackground: BackgroundColor.Secondary,
   },
   render: (args) => {

@@ -42,6 +42,16 @@ const meta: Meta<typeof Button> = {
       control: "select",
       options: ["button", "submit", "reset"],
     },
+    size: {
+      description: "The size of the button",
+      control: "select",
+      options: Object.values(SIZE),
+    },
+    width: {
+      description: "The width of the button",
+      control: "select",
+      options: Object.values(WIDTH),
+    },
   },
   decorators: [
     (Story) => (

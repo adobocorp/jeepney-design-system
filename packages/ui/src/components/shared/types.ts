@@ -113,4 +113,5 @@ export type CardContent = {
   assetType?: AssetType;
   asset?: Image | Video;
   button?: React.ReactNode;
+  cardHeight?: CardHeight;
 };
