@@ -1,8 +1,10 @@
 import { BackgroundFilled } from "../../shared/background/background-filled";
 import { BackgroundImage } from "../../shared/background/background-image";
+import { BackgroundVideo } from "../../shared/background/background-video";
 import {
   BackgroundFilled as BackgroundFilledType,
   BackgroundImage as BackgroundImageType,
+  BackgroundVideo as BackgroundVideoType,
   BackgroundType,
   WithBackground,
 } from "../../shared/types";
@@ -22,6 +24,13 @@ export function ContentListBackground({
         <BackgroundImage background={imageBackground}>
           {children}
         </BackgroundImage>
+      );
+    case BackgroundType.Video:
+      const videoBackground = background as BackgroundVideoType;
+      return (
+        <BackgroundVideo background={videoBackground}>
+          {children}
+        </BackgroundVideo>
       );
     case BackgroundType.Filled:
     default:

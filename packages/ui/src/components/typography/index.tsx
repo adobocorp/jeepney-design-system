@@ -6,6 +6,8 @@ export enum HEADING {
   H3 = "h3",
   H4 = "h4",
   H5 = "h5",
+  SPAN = "span",
+  P = "p",
 }
 
 export interface TypographyProps
@@ -14,7 +16,12 @@ export interface TypographyProps
   heading: HEADING;
 }
 
-export function Typography({ children, heading, className, ...props }: TypographyProps) {
+export function Typography({
+  children,
+  heading,
+  className,
+  ...props
+}: TypographyProps) {
   const baseClasses = "font-[Avenir]";
 
   const headingClasses = {
@@ -23,9 +30,15 @@ export function Typography({ children, heading, className, ...props }: Typograph
     [HEADING.H3]: "font-[Avenir] text-base", // --size-font-medium: 1
     [HEADING.H4]: "font-[Bantayog-Light] text-sm", // --size-font-small: 0.875
     [HEADING.H5]: "font-[Avenir] text-xs", // --size-font-tiny: 0.75
+    [HEADING.SPAN]: "font-[Avenir] text-sm", // --size-font-small: 0.875
+    [HEADING.P]: "font-[Avenir] text-base text-md", // --size-font-medium: 1
   };
 
-  const combinedClasses = classNames(baseClasses, headingClasses[heading], className);
+  const combinedClasses = classNames(
+    baseClasses,
+    headingClasses[heading],
+    className
+  );
 
   switch (heading) {
     case HEADING.H1:
@@ -58,5 +71,19 @@ export function Typography({ children, heading, className, ...props }: Typograph
           {children}
         </h5>
       );
+    case HEADING.SPAN:
+      return (
+        <span className={combinedClasses} {...props}>
+          {children}
+        </span>
+      );
+    case HEADING.P:
+      return (
+        <p className={combinedClasses} {...props}>
+          {children}
+        </p>
+      );
+    default:
+      return null;
   }
 }

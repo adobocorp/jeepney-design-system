@@ -1,6 +1,5 @@
 import cn from "classnames";
 import { HEADING, Typography } from "../../typography";
-import styles from "./flex-grid.module.css";
 
 type GridContainerProps = {
   primaryText: string;
@@ -8,6 +7,7 @@ type GridContainerProps = {
   numItems: number;
   children: React.ReactNode;
 };
+
 export function GridContainer({
   primaryText,
   secondaryText,
@@ -15,16 +15,18 @@ export function GridContainer({
   children,
 }: GridContainerProps) {
   return (
-    <div className={cn(styles.gridContainer)}>
-      <div className={cn(styles.gridHeadingsContainer)}>
+    <div className="flex h-[600px] items-center flex-col">
+      <div className="p-4 text-center">
         <Typography heading={HEADING.H1}>{primaryText}</Typography>
         <Typography heading={HEADING.H3}>{secondaryText}</Typography>
       </div>
       <div
         className={cn(
-          styles.gridItemsContainer,
-          numItems === 3 ? styles.gridContainerThreeItems : "",
-          numItems === 4 ? styles.gridContainerFourItems : ""
+          "grid justify-center",
+          numItems === 3 ? "grid-cols-3 gap-4" : "",
+          numItems === 4 ? "grid-cols-4 gap-4" : "",
+          numItems === 3 ? "[grid-template-columns:repeat(3,330px)]" : "",
+          numItems === 4 ? "[grid-template-columns:repeat(4,250px)]" : ""
         )}
       >
         {children}

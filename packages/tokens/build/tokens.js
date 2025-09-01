@@ -25,6 +25,7 @@ export const ColorBackgroundButtonPrimaryActive = "#00796b";
 export const ColorBackgroundButtonSecondaryBase = "#3f51b5";
 export const ColorBackgroundButtonSecondaryDisabled = "#7986cb";
 export const ColorBackgroundButtonSecondaryActive = "#303f9f";
+export const ColorBackgroundCardBase = "#4db6ac";
 export const ColorBackgroundOverlayLight = "#ffffffcc";
 export const ColorBackgroundOverlayDark = "#00000044";
 export const ColorBaseRed50 = "#ffe5ee";

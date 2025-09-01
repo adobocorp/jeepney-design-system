@@ -56,7 +56,7 @@ type Story = StoryObj<typeof Carousel>;
 
 // Sample content data
 const sampleImageAsset: Image = {
-  src: "https://images.pexels.com/photos/133689/pexels-photo-133689.jpeg",
+  src: "https://images.pexels.com/photos/3698532/pexels-photo-3698532.jpeg",
   width: 1920,
   height: 1080,
   type: "image/jpeg",
@@ -66,11 +66,11 @@ const sampleBackgroundAsset: Image = {
   type: "image/jpeg",
   width: 1920,
   height: 1080,
-  src: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+  src: "https://images.pexels.com/photos/239546/pexels-photo-239546.jpeg",
 };
 
 const sampleVideoAsset: Video = {
-  src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  src: "https://www.pexels.com/download/video/6020095/",
   width: 800,
   height: 450,
   type: "video/mp4",
@@ -78,7 +78,7 @@ const sampleVideoAsset: Video = {
 
 const sampleBackgroundImage: BackgroundImage = {
   backgroundType: BackgroundType.Image,
-  backgroundPosition: "left center",
+  backgroundPosition: "5% 20%",
   asset: sampleBackgroundAsset,
   showBorder: false,
 };
@@ -93,8 +93,9 @@ const sampleContentImage: BackgroundImage = {
 const sampleImageContent: ImageContent[] = [
   {
     caption: {
-      primaryText: "Explore the Beauty of Nature",
-      secondaryText: "Discover breathtaking landscapes and wildlife",
+      primaryText: "Cordillera Administrative Region",
+      secondaryText:
+        "It is the only landlocked region in the archipelago, bordered by the Ilocos Region to the west and southwest, and by the Cagayan Valley Region to the north, east, and southeast.",
     },
     callToAction: {
       href: "https://example.com/watch",
@@ -117,8 +118,9 @@ const sampleBackgroundVideo: BackgroundVideo = {
 const sampleVideoContent: CarouselContent[] = [
   {
     caption: {
-      primaryText: "Big Buck Bunny",
-      secondaryText: "The first blender video",
+      primaryText: "Binondo, Manila",
+      secondaryText:
+        "It is the oldest Chinatown in the world, established in 1594 by the Spaniards as a settlement near Intramuros but across the Pasig River for Catholic Chinese; it was positioned so that the colonial administration could keep a close eye on their migrant subjects.",
     },
     callToAction: {
       href: "https://example.com/watch",
@@ -130,8 +132,9 @@ const sampleVideoContent: CarouselContent[] = [
   },
   {
     caption: {
-      primaryText: "Big Buck Bunny",
-      secondaryText: "The first blender video",
+      primaryText: "Mt. Mayon",
+      secondaryText:
+        'A popular tourist spot, it is renowned for its "perfect cone" because of its symmetric conical shape, and is regarded as sacred in Philippine mythology',
     },
     callToAction: {
       href: "https://example.com/travel",
@@ -139,7 +142,13 @@ const sampleVideoContent: CarouselContent[] = [
       target: "_blank",
       type: CallToActionType.Text as const,
     },
-    background: sampleBackgroundVideo,
+    background: {
+      ...sampleBackgroundVideo,
+      asset: {
+        ...sampleVideoAsset,
+        src: "https://www.pexels.com/download/video/5222769/",
+      },
+    },
   },
 ];
 
@@ -166,7 +175,24 @@ export const WithImageBackground: Story = {
 export const WithVideoBackground: Story = {
   args: {
     width: "100%",
-    contentList: sampleImageContent,
+    contentList: [
+      {
+        ...sampleImageContent[0],
+        caption: {
+          primaryText: "Binondo, Manila",
+          secondaryText:
+            "It is the oldest Chinatown in the world, established in 1594 by the Spaniards as a settlement near Intramuros but across the Pasig River for Catholic Chinese; it was positioned so that the colonial administration could keep a close eye on their migrant subjects.",
+        },
+        background: {
+          ...sampleContentImage,
+          backgroundPosition: "5% 20%",
+          asset: {
+            ...sampleImageAsset,
+            src: "https://images.pexels.com/photos/2315309/pexels-photo-2315309.jpeg",
+          },
+        },
+      },
+    ],
     background: sampleBackgroundVideo,
   },
 };
