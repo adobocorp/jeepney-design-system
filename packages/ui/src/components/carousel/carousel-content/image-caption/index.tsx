@@ -1,25 +1,25 @@
-import { BackgroundImage, CaptionContent } from "../../../shared/types";
 import { LowerCaption } from "./lower-caption";
 import { UpperImage } from "./upper-image";
 
 export type ImageCaptionProps = {
-  caption?: CaptionContent;
-  background: BackgroundImage;
+  primaryText: string;
+  secondaryText?: string;
+  assetSrc: string;
+  backgroundPosition?: string;
 };
 
-export function ImageCaption({ caption, background }: ImageCaptionProps) {
+export function ImageCaption({
+  assetSrc,
+  backgroundPosition,
+  primaryText,
+  secondaryText,
+}: ImageCaptionProps) {
   return (
     <div className="flex justify-center items-center flex-col h-full w-[800px] my-[18px] mx-auto">
-      {background && (
-        <UpperImage
-          image={background.asset.src}
-          backgroundPosition={background.backgroundPosition}
-        />
+      {assetSrc?.length && (
+        <UpperImage image={assetSrc} backgroundPosition={backgroundPosition} />
       )}
-      <LowerCaption
-        primaryText={caption?.primaryText}
-        secondaryText={caption?.secondaryText}
-      />
+      <LowerCaption primaryText={primaryText} secondaryText={secondaryText} />
     </div>
   );
 }

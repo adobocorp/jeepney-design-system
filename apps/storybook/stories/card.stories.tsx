@@ -98,7 +98,7 @@ const sampleImage: Image = {
 const sampleVideo: Video = {
   width: 400,
   height: 300,
-  src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  src: "https://www.pexels.com/download/video/6020095",
   type: "video/mp4",
 };
 
@@ -141,9 +141,9 @@ export const ImageContentCard: Story = {
 export const VideoContentCard: Story = {
   args: {
     content: {
-      primaryText: "Big Buck Bunny",
+      primaryText: "Binondo, Manila",
       secondaryText:
-        "A day in the life of Big Buck Bunny, during which time he meets three bullying rodents: the leader, Frank the flying squirrel, and his sidekicks Rinky the red squirrel and Gimera the chinchilla.",
+        "It is the oldest Chinatown in the world, established in 1594 by the Spaniards as a settlement near Intramuros but across the Pasig River for Catholic Chinese; it was positioned so that the colonial administration could keep a close eye on their migrant subjects.",
       assetType: AssetType.Video,
       asset: sampleVideo,
     },

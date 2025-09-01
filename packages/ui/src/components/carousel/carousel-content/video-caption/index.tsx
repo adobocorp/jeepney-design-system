@@ -1,25 +1,25 @@
-import { BackgroundVideo, CaptionContent } from "../../../shared/types";
-import { LowerCaption } from "./lower-caption";
+import { LowerCaption } from "../image-caption/lower-caption";
 import { UpperVideo } from "./upper-video";
 
 export type VideoCaptionProps = {
-  caption?: CaptionContent;
-  background: BackgroundVideo;
+  primaryText: string;
+  secondaryText?: string;
+  assetSrc: string;
+  backgroundPosition?: string;
 };
 
-export function VideoCaption({ caption, background }: VideoCaptionProps) {
+export function VideoCaption({
+  primaryText,
+  secondaryText,
+  assetSrc,
+  backgroundPosition,
+}: VideoCaptionProps) {
   return (
     <div className="flex justify-center items-center flex-col h-full w-[800px] my-[18px] mx-auto">
-      {background && (
-        <UpperVideo
-          video={background.asset.src}
-          backgroundPosition={background.backgroundPosition}
-        />
+      {assetSrc && (
+        <UpperVideo video={assetSrc} backgroundPosition={backgroundPosition} />
       )}
-      <LowerCaption
-        primaryText={caption?.primaryText}
-        secondaryText={caption?.secondaryText}
-      />
+      <LowerCaption primaryText={primaryText} secondaryText={secondaryText} />
     </div>
   );
 }
