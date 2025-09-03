@@ -1,5 +1,3 @@
-import cn from 'classnames'
-
 interface TextAreaFieldProps {
   id: string;
   name: string;
@@ -17,13 +15,15 @@ export const TextAreaField = ({
   label,
   required = false,
   readonly = false,
-  change
+  change,
 }: TextAreaFieldProps) => {
-
   const readOnlyClassNames = "bg-gray-100 cursor-not-allowed";
-  const textAreaClassNames = cn("mt-1 w-full block border border-[#6b7280] resize-none overflow-y-scroll p-2", {
-    [readOnlyClassNames]: readonly,
-  });
+  const textAreaClassNames = cn(
+    "mt-1 w-full block border border-[#6b7280] resize-none overflow-y-scroll p-2",
+    {
+      [readOnlyClassNames]: readonly,
+    }
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (change) {
@@ -33,7 +33,15 @@ export const TextAreaField = ({
 
   return (
     <>
-      <label className="block text-gray-700">{required ? <>{label} <sup>*</sup></> : label}</label>
+      <label className="block text-gray-700">
+        {required ? (
+          <>
+            {label} <sup>*</sup>
+          </>
+        ) : (
+          label
+        )}
+      </label>
       <textarea
         className={textAreaClassNames}
         id={id}

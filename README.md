@@ -36,7 +36,7 @@ Storybook provides us with an interactive UI playground for our components. This
 For example, here's the included Story for our `Button` component:
 
 ```js:apps/storybook/stories/button.stories.mdx
-import { Button } from '@jeepney-design-system/ui';
+import Button from '@jeepney-design-system/ui';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Components/Button" component={Button} />

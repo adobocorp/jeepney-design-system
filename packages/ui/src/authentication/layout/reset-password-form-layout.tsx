@@ -1,7 +1,7 @@
 import { Field } from "@base-ui-components/react/field";
 import React from "react";
 import { useMasked } from "../../hooks/useMasked";
-import { MaskToggle } from "../field/mask-toggle";
+import { MaskToggle } from "../field/deprecated/deprecated-mask-toggle";
 
 export const ResetPasswordFormLayout: React.FC = () => {
   const { masked: passwordMasked, toggleMasked: togglePasswordMasked } =

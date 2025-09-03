@@ -4,7 +4,7 @@ import { HEADING, Typography } from "../../components/typography";
 import { useAuthenticityToken } from "../../hooks/useAuthenticityToken";
 import { useSignIn } from "../../hooks/useSignIn";
 import { FormError, SignInFormProps } from "../../types";
-import { FormButton } from "../field/form-button";
+import { FormButton } from "../field/deprecated/deprecated-form-button";
 import { SignInFormLayout } from "../layout/sign-in-form-layout";
 
 export const SignInForm: React.FC<SignInFormProps> = ({
@@ -73,15 +73,21 @@ export const SignInForm: React.FC<SignInFormProps> = ({
 
   return (
     <div className={className}>
-      <div className="mb-6">
-        <Typography heading={HEADING.H2} className="text-2xl font-bold text-center text-gray-900 font-[Bantayog-Light]">
+      <div className="mb-4">
+        <Typography
+          heading={HEADING.H2}
+          className="text-2xl font-bold text-center text-gray-900 font-[Bantayog-Light]"
+        >
           {title}
         </Typography>
-        {
-          description && <Typography heading={HEADING.H3} className="text-sm text-gray-599 text-center mt-2">
+        {description && (
+          <Typography
+            heading={HEADING.H3}
+            className="text-sm text-gray-599 text-center mt-2"
+          >
             {description}
           </Typography>
-        }
+        )}
       </div>
       {error && error.errors && error.errors.length > 0 && (
         <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
@@ -92,9 +98,13 @@ export const SignInForm: React.FC<SignInFormProps> = ({
           </div>
         </div>
       )}
-      <form action={submitAction} acceptCharset="UTF-8" className={className}>
+      <form
+        action={submitAction}
+        acceptCharset="UTF-8"
+        className="flex flex-col gap-y-4"
+      >
         <SignInFormLayout />
-        <FormButton text={buttonText} disabled={isDisabled} />
+        <FormButton disabled={isDisabled}>Sign In</FormButton>
       </form>
     </div>
   );

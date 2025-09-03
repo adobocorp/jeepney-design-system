@@ -1,9 +1,9 @@
-import React from "react";
-import { TextField } from "../field/text-field";
-import { EmailField } from "../field/email-field";
 import { Field } from "@base-ui-components/react/field";
-import { MaskToggle } from "../field/mask-toggle";
+import React from "react";
 import { useMasked } from "../../hooks/useMasked";
+import { EmailField } from "../field/deprecated/deprecated-email-field";
+import { MaskToggle } from "../field/deprecated/deprecated-mask-toggle";
+import { TextField } from "../field/deprecated/deprecated-text-field";
 
 export const SignUpFormLayout: React.FC = () => {
   const { masked: passwordMasked, toggleMasked: togglePasswordMasked } =

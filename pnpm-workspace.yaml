@@ -18,6 +18,7 @@ catalog:
 
   # UI Components
   "@base-ui-components/react": ^1.0.0-alpha.8
+  "@headlessui/react": ^2.2.7
 
   # Build tools
   typescript: ^5.4.3
@@ -74,7 +75,7 @@ catalog:
   tsup: ^7.2.0
 
   # Classnames
-  classnames: ^2.3.2
+  clsx: ^2.1.1
 
   # Swiper
   swiper: ^11.0.4

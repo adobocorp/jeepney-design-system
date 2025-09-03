@@ -1,7 +1,7 @@
 import React, { Ref } from "react";
-import { MaskToggle } from "./mask-toggle";
-import { useMasked } from "../../hooks/useMasked";
-import { PasswordField } from "./password-field";
+import { useMasked } from "../../../hooks/useMasked";
+import { MaskToggle } from "./deprecated-mask-toggle";
+import { PasswordField } from "./deprecated-password-field";
 
 export interface MaskedPasswordFieldProps {
   blur?: (e?: React.FocusEvent<HTMLElement>) => void;

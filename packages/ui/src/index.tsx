@@ -5,13 +5,12 @@ export { SignInForm } from "./authentication/form/sign-in-form";
 export { SignUpForm } from "./authentication/form/sign-up-form";
 
 // Sub-components (for customization)
-export { Button } from "./authentication/field/button";
-export { EmailField } from "./authentication/field/email-field";
-export { FieldContainer } from "./authentication/field/field-container";
-export { FormButton } from "./authentication/field/form-button";
-export { MaskToggle } from "./authentication/field/mask-toggle";
-export { MaskedPasswordField } from "./authentication/field/masked-password-field";
-export { PasswordField } from "./authentication/field/password-field";
+export { EmailField } from "./authentication/field/deprecated/deprecated-email-field";
+export { FieldContainer } from "./authentication/field/deprecated/deprecated-field-container";
+export { FormButton } from "./authentication/field/deprecated/deprecated-form-button";
+export { MaskToggle } from "./authentication/field/deprecated/deprecated-mask-toggle";
+export { MaskedPasswordField } from "./authentication/field/deprecated/deprecated-masked-password-field";
+export { PasswordField } from "./authentication/field/deprecated/deprecated-password-field";
 export { ForgotPasswordFormLayout } from "./authentication/layout/forgot-password-form-layout";
 export { ResetPasswordFormLayout } from "./authentication/layout/reset-password-form-layout";
 export { SignInFormLayout } from "./authentication/layout/sign-in-form-layout";

@@ -1,5 +1,4 @@
 import { Field } from "@base-ui-components/react/field";
-import cn from "classnames";
 import { Ref } from "react";
 
 export const TextField = ({
@@ -34,7 +33,15 @@ export const TextField = ({
 
   return (
     <Field.Root>
-      <Field.Label className="block text-gray-700 font-[Bantayog-Light]">{required ? <>{label} <sup>*</sup></> : label}</Field.Label>
+      <Field.Label className="block text-gray-700 font-[Bantayog-Light]">
+        {required ? (
+          <>
+            {label} <sup>*</sup>
+          </>
+        ) : (
+          label
+        )}
+      </Field.Label>
       <Field.Control
         className={textFieldClassNames}
         id={id}

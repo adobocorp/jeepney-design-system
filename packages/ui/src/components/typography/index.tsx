@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classNames from "clsx";
 
 export enum HEADING {
   H1 = "h1",

@@ -1,4 +1,3 @@
-import cn from "classnames";
 import { BackgroundColor } from "../../shared/types";
 
 export function CardCallToAction({ callToAction, backgroundColor }) {

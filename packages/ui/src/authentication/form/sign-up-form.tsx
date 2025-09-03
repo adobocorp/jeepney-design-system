@@ -4,7 +4,7 @@ import { HEADING, Typography } from "../../components/typography";
 import { useAuthenticityToken } from "../../hooks/useAuthenticityToken";
 import { useSignUp } from "../../hooks/useSignUp";
 import { FormError, SignUpFormProps } from "../../types";
-import { FormButton } from "../field/form-button";
+import { FormButton } from "../field/deprecated/deprecated-form-button";
 import { SignUpFormLayout } from "../layout/sign-up-form-layout";
 
 export const SignUpForm: React.FC<SignUpFormProps> = ({
@@ -98,14 +98,20 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
   return (
     <div className={className}>
       <div className="mb-6">
-        <Typography heading={HEADING.H2} className="text-2xl font-bold text-center text-gray-900">
+        <Typography
+          heading={HEADING.H2}
+          className="text-2xl font-bold text-center text-gray-900"
+        >
           {title}
         </Typography>
-        {
-          description && <Typography heading={HEADING.H3} className="text-sm text-gray-599 text-center mt-2">
+        {description && (
+          <Typography
+            heading={HEADING.H3}
+            className="text-sm text-gray-599 text-center mt-2"
+          >
             {description}
           </Typography>
-        }
+        )}
       </div>
       {error && error.errors && error.errors.length > 0 && (
         <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
