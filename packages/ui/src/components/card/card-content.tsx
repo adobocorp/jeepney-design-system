@@ -69,13 +69,13 @@ export const CardContent = ({
   }
 
   return (
-    <div className="h-full max-w-sm flex flex-col justify-center items-center rounded-sm">
+    <div className="group h-full max-w-sm flex flex-col justify-center items-center rounded-sm">
       {assetType === AssetType.Image && asset && (
-        <div className="w-full mb-2">
+        <div className="w-full mb-2 overflow-hidden rounded-t-md">
           <img
             src={asset.src}
             alt={primaryText}
-            className="w-full h-48 object-cover rounded-t-md object-center"
+            className="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-200"
           />
         </div>
       )}

@@ -35,7 +35,7 @@
     "@types/react-dom": "catalog:",
     "esbuild-css-modules-plugin": "^3.0.3",
     "postcss": "^8.4.31",
-    "react": "^18.1.0",
+    "react": "catalog:",
     "rollup-plugin-dts": "catalog:",
     "rollup-plugin-peer-deps-external": "catalog:",
     "rollup-plugin-postcss": "catalog:",
@@ -44,10 +44,10 @@
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "@base-ui-components/react": "catalog:",
+    "@headlessui/react": "catalog:",
     "@jeepney-design-system/tokens": "workspace:^",
     "@tanstack/react-query": "catalog:",
-    "classnames": "catalog:",
+    "clsx": "catalog:",
     "swiper": "catalog:",
     "tailwindcss": "catalog:",
     "tailwindcss-autofill": "catalog:",

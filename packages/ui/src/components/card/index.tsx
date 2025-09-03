@@ -1,4 +1,4 @@
-import cn from "classnames";
+import clsx from "clsx";
 import { Children } from "react";
 import {
   BackgroundColor,
@@ -64,7 +64,7 @@ export function Card({
   return (
     <div
       tabIndex={tabIndex}
-      className={cn(
+      className={clsx(
         colorClasses,
         focusClasses,
         hoverClasses,

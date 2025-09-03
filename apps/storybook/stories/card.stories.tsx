@@ -110,7 +110,7 @@ const defaultBackground = {
 export const TextContentCard: Story = {
   args: {
     content: {
-      primaryText: "@joserizal",
+      primaryText: "@jose.rizal",
       secondaryText: `Masasapantaha kaagád, na, lihim na nágayuma ñg isáng FILIBUSTERO ang kapisanan ñg mg̃a makapraile at mg̃a laban sa pagkakasulong,
          upáng, sa pag-alinsunod na waláng malay sa mg̃a udyók ñg kaniláng kalooban, ay makatulong at makapagpalusóg doon sa imbót na íisang bagay ang
          linalayon: palaganapin ang adhiká ñg FILIBUSTERISMO sa boong bayan at pananaligin ang lahát ñg pilipino na waláng ibáng kaligtasan liban sa

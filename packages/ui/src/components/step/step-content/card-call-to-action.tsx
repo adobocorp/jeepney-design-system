@@ -1,4 +1,4 @@
-import cn from "classnames";
+import clsx from "clsx";
 import { BackgroundColor } from "../../shared/types";
 
 export function CardCallToAction({ callToAction, backgroundColor }) {
@@ -11,7 +11,7 @@ export function CardCallToAction({ callToAction, backgroundColor }) {
 
   return (
     <div
-      className={cn(
+      className={clsx(
         "w-[120px] h-8 leading-8 flex justify-center rounded-sm p-1",
         backgroundColor === BackgroundColor.Primary &&
           "bg-color-brand-primary-base",
@@ -27,7 +27,7 @@ export function CardCallToAction({ callToAction, backgroundColor }) {
       )}
     >
       <a
-        className={cn(
+        className={clsx(
           "text-[length:var(--size-font-xl)rem] no-underline",
           useDarkCta ? "text-color-base-black" : "text-color-base-white"
         )}

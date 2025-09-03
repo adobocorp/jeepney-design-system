@@ -1,4 +1,5 @@
-import classNames from "classnames";
+import { Button as _Button } from "@headlessui/react";
+import clsx from "clsx";
 
 export enum COLOR {
   primary = "primary",
@@ -141,21 +142,21 @@ export function Button({
   }
 
   return (
-    <button
+    <_Button
       type="button"
-      className={classNames(
+      className={clsx(
         baseClasses,
         colorClasses,
+        sizeClasses,
+        widthClasses,
         hoverClasses,
         activeClasses,
-        focusClasses,
-        sizeClasses,
-        widthClasses
+        focusClasses
       )}
       {...other}
     >
       {children}
-    </button>
+    </_Button>
   );
 }
 
