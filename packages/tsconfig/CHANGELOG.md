@@ -1,5 +1,11 @@
 # @jeepney-design-system/tsconfig
 
+## 0.0.7
+
+### Patch Changes
+
+- 806bd48: Cleanup forms
+
 ## 0.0.6
 
 ### Patch Changes
