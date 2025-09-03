@@ -1,4 +1,5 @@
 import { Field, Input, Label } from "@headlessui/react";
+import clsx from "clsx";
 import { useState } from "react";
 import { HEADING, Typography } from "../../typography";
 
@@ -48,11 +49,10 @@ export function PasswordField({
             autoCorrect="off"
             pattern=".{8,}"
             title="Must contain at least 8 or more characters"
-            className={`font-[Avenir] h-12 mt-1 block w-full bg-white border focus:outline-hidden focus:ring-0 autofill autofill:shadow-fill-white autofill:text-fill-gray-900 pr-10 ${
-              error
-                ? "border-red-500 focus:border-red-500"
-                : "border-gray-500 focus:border-gray-500"
-            }`}
+            className={clsx(
+              "font-[Avenir] h-12 mt-1 block w-full bg-white border focus:outline-hidden focus:ring-0 autofill autofill:shadow-fill-white autofill:text-fill-gray-900 pr-10",
+              error && "border-red-500 focus:border-red-500"
+            )}
             required
             autoComplete={autoComplete}
             placeholder="•••••••••"

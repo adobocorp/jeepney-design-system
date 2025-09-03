@@ -18,9 +18,6 @@ catalogs:
     '@babel/preset-typescript':
       specifier: ^7.24.1
       version: 7.27.1
-    '@base-ui-components/react':
-      specifier: ^1.0.0-alpha.8
-      version: 1.0.0-beta.1
     '@headlessui/react':
       specifier: ^2.2.7
       version: 2.2.7
@@ -173,9 +170,9 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@base-ui-components/react':
+      '@headlessui/react':
         specifier: 'catalog:'
-        version: 1.0.0-beta.1(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 2.2.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@jeepney-design-system/tokens':
         specifier: workspace:^0.0.6
         version: link:../../packages/tokens
@@ -311,9 +308,9 @@ importers:
 
   packages/ui:
     dependencies:
-      '@base-ui-components/react':
+      '@headlessui/react':
         specifier: 'catalog:'
-        version: 1.0.0-beta.1(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 2.2.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@jeepney-design-system/tokens':
         specifier: workspace:^
         version: link:../tokens
@@ -357,9 +354,6 @@ importers:
       '@babel/preset-typescript':
         specifier: 'catalog:'
         version: 7.27.1(@babel/core@7.28.0)
-      '@headlessui/react':
-        specifier: 'catalog:'
-        version: 2.2.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@jeepney-design-system/eslint-config-custom':
         specifier: workspace:*
         version: link:../eslint-config-custom
@@ -989,17 +983,6 @@ packages:
   '@babel/types@7.28.1':
     resolution: {integrity: sha512-x0LvFTekgSX+83TI28Y9wYPUfzrnl2aT5+5QLnO6v7mSJYtEEevuDRN0F0uSHRk1G1IWZC43o00Y0xDDrpBGPQ==}
     engines: {node: '>=6.9.0'}
-
-  '@base-ui-components/react@1.0.0-beta.1':
-    resolution: {integrity: sha512-7zmGiz4/+HKnv99lWftItoSMqnj2PdSvt2krh0/GP+Rj0xK0NMnFI/gIVvP7CB2G+k0JPUrRWXjXa3y08oiakg==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      '@types/react': ^17 || ^18 || ^19
-      react: ^17 || ^18 || ^19
-      react-dom: ^17 || ^18 || ^19
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
 
   '@bundled-es-modules/deepmerge@4.3.1':
     resolution: {integrity: sha512-Rk453EklPUPC3NRWc3VUNI/SSUjdBaFoaQvFRmNBNtMHVtOFD5AntiWg5kEE1hqcPqedYFDzxE3ZcMYPcA195w==}
@@ -4793,9 +4776,6 @@ packages:
     resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
     engines: {node: '>=0.10.5'}
 
-  reselect@5.1.1:
-    resolution: {integrity: sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==}
-
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -6374,19 +6354,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
-
-  '@base-ui-components/react@1.0.0-beta.1(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
-    dependencies:
-      '@babel/runtime': 7.27.6
-      '@floating-ui/react-dom': 2.1.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@floating-ui/utils': 0.2.10
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
-      reselect: 5.1.1
-      tabbable: 6.2.0
-      use-sync-external-store: 1.5.0(react@19.1.0)
-    optionalDependencies:
-      '@types/react': 19.1.8
 
   '@bundled-es-modules/deepmerge@4.3.1':
     dependencies:
@@ -10618,8 +10585,6 @@ snapshots:
       unified: 10.1.2
 
   requireindex@1.2.0: {}
-
-  reselect@5.1.1: {}
 
   resolve-from@4.0.0: {}
 

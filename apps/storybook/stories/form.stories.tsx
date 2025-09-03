@@ -1,3 +1,4 @@
+import { Fieldset } from "@headlessui/react";
 import {
   Button,
   COLOR,
@@ -7,8 +8,6 @@ import {
 import { EmailField } from "@jeepney-design-system/ui/src/components/form/field/email-field";
 import { PasswordField } from "@jeepney-design-system/ui/src/components/form/field/password-field";
 import { TextField } from "@jeepney-design-system/ui/src/components/form/field/text-field";
-import { SignInFormLayout } from "@jeepney-design-system/ui/src/components/form/fieldset/sign-in-form-layout";
-import { SignUpFormLayout } from "@jeepney-design-system/ui/src/components/form/fieldset/sign-up-form-layout";
 import {
   HEADING,
   Typography,
@@ -82,68 +81,81 @@ export const FormInteractivity: StoryObj = {
     };
 
     return (
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <Typography heading={HEADING.H2}>
-          Interactive Form with Validation
-        </Typography>
-        <TextField
-          id="interactive_first_name"
-          name="first_name"
-          label="First Name"
-          value={formData.firstName}
-          onChange={(e) =>
-            setFormData({ ...formData, firstName: e.target.value })
-          }
-          required={true}
-        />
-        {errors.firstName && (
-          <div className="text-red-600 text-sm mt-1">{errors.firstName}</div>
-        )}
+      <div>
+        <div className="border-b border-1 border-color-gray-300 mb-6">
+          <Typography heading={HEADING.H2}>
+            Mag-rehistro ng inyong account
+          </Typography>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <Fieldset className={"flex flex-col gap-4"}>
+            <TextField
+              id="interactive_first_name"
+              name="first_name"
+              label="First Name"
+              value={formData.firstName}
+              onChange={(e) =>
+                setFormData({ ...formData, firstName: e.target.value })
+              }
+              required={true}
+            />
+            {errors.firstName && (
+              <div className="text-red-600 text-sm mt-1">
+                {errors.firstName}
+              </div>
+            )}
 
-        <TextField
-          id="interactive_last_name"
-          name="last_name"
-          label="Last Name"
-          value={formData.lastName}
-          onChange={(e) =>
-            setFormData({ ...formData, lastName: e.target.value })
-          }
-        />
+            <TextField
+              id="interactive_last_name"
+              name="last_name"
+              label="Last Name"
+              value={formData.lastName}
+              onChange={(e) =>
+                setFormData({ ...formData, lastName: e.target.value })
+              }
+            />
 
-        <EmailField />
-        {errors.email && (
-          <div className="text-red-600 text-sm mt-1">{errors.email}</div>
-        )}
+            <EmailField
+              onChange={(value) => setFormData({ ...formData, email: value })}
+              error={errors.email}
+            />
+            {errors.email && (
+              <div className="text-red-600 text-sm mt-1">{errors.email}</div>
+            )}
 
-        <PasswordField
-          id="interactive_password"
-          name="password"
-          label="Password"
-          value={formData.password}
-          onChange={(value) => setFormData({ ...formData, password: value })}
-          error={errors.password}
-        />
+            <PasswordField
+              id="interactive_password"
+              name="password"
+              label="Password"
+              value={formData.password}
+              onChange={(value) =>
+                setFormData({ ...formData, password: value })
+              }
+              error={errors.password}
+            />
 
-        <PasswordField
-          id="interactive_confirm_password"
-          name="confirm_password"
-          label="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={(value) =>
-            setFormData({ ...formData, confirmPassword: value })
-          }
-          error={errors.confirmPassword}
-        />
+            <PasswordField
+              id="interactive_confirm_password"
+              name="confirm_password"
+              label="Confirm Password"
+              value={formData.confirmPassword}
+              onChange={(value) =>
+                setFormData({ ...formData, confirmPassword: value })
+              }
+              error={errors.confirmPassword}
+            />
+          </Fieldset>
 
-        <Button
-          type="submit"
-          color={COLOR.primary}
-          size={SIZE.medium}
-          width={WIDTH.inherit}
-        >
-          Submit Form
-        </Button>
-      </form>
+          <Button
+            type="submit"
+            color={COLOR.primary}
+            size={SIZE.medium}
+            width={WIDTH.inherit}
+          >
+            Submit Form
+          </Button>
+        </form>
+      </div>
     );
   },
   parameters: {
@@ -300,33 +312,6 @@ export const PasswordConfirmation: StoryObj = {
       description: {
         story:
           "Example showing password confirmation validation with real-time error feedback. Type different passwords to see the validation in action.",
-      },
-    },
-  },
-};
-
-// Form Layout Stories
-export const SignInForm: StoryObj<typeof SignInFormLayout> = {
-  name: "Sign In Form Layout",
-  render: () => <SignInFormLayout />,
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Complete sign-in form layout with email and password fields. Includes proper form structure and field spacing.",
-      },
-    },
-  },
-};
-
-export const SignUpForm: StoryObj<typeof SignUpFormLayout> = {
-  name: "Sign Up Form Layout",
-  render: () => <SignUpFormLayout />,
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Complete sign-up form layout with name fields, email, password, and password confirmation with built-in validation. Try typing different passwords to see the validation feedback.",
       },
     },
   },
