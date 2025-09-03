@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { ReactNode } from "react";
 import {
   BackgroundColor,
@@ -16,7 +17,7 @@ export function BackgroundFilled({
   const { backgroundColor } = background;
   return (
     <div
-      className={cn(
+      className={clsx(
         "w-full flex justify-center items-center flex-col",
         backgroundColor === BackgroundColor.Primary &&
           "bg-color-brand-primary-base",

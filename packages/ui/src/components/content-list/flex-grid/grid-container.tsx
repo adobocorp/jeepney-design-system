@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { HEADING, Typography } from "../../typography";
 
 type GridContainerProps = {
@@ -20,7 +21,7 @@ export function GridContainer({
         <Typography heading={HEADING.H3}>{secondaryText}</Typography>
       </div>
       <div
-        className={cn(
+        className={clsx(
           "grid justify-center",
           numItems === 3 ? "grid-cols-3 gap-4" : "",
           numItems === 4 ? "grid-cols-4 gap-4" : "",

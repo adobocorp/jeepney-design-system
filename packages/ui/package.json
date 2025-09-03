@@ -25,7 +25,6 @@
     "@babel/preset-env": "catalog:",
     "@babel/preset-react": "catalog:",
     "@babel/preset-typescript": "catalog:",
-    "@headlessui/react": "catalog:",
     "@jeepney-design-system/eslint-config-custom": "workspace:*",
     "@jeepney-design-system/tsconfig": "workspace:*",
     "@rollup/plugin-babel": "catalog:",
@@ -45,7 +44,7 @@
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "@base-ui-components/react": "catalog:",
+    "@headlessui/react": "catalog:",
     "@jeepney-design-system/tokens": "workspace:^",
     "@tanstack/react-query": "catalog:",
     "clsx": "catalog:",

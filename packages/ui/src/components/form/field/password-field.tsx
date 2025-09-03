@@ -1,38 +1,68 @@
 import { Field, Input, Label } from "@headlessui/react";
 import { useState } from "react";
-import { HEADING, Typography } from "../../components/typography";
+import { HEADING, Typography } from "../../typography";
 
-export default function PasswordField() {
+type PasswordFieldProps = {
+  id: string;
+  name: string;
+  label: string;
+  autoComplete?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  error?: string;
+};
+
+export function PasswordField({
+  id,
+  name,
+  label,
+  autoComplete,
+  value,
+  onChange,
+  error,
+}: PasswordFieldProps) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
+
   return (
     <div className="w-full max-w-md">
       <Field>
         <Label>
-          <Typography heading={HEADING.H3}>Password</Typography>
+          <Typography heading={HEADING.H3}>{label}</Typography>
         </Label>
         <div className="relative">
           <Input
-            id="password"
-            name="password"
+            id={id}
+            name={name}
             type={isPasswordVisible ? "text" : "password"}
             autoCapitalize="off"
             autoCorrect="off"
             pattern=".{8,}"
             title="Must contain at least 8 or more characters"
-            className="h-12 mt-1 block w-full bg-white border-gray-500 focus:outline-hidden focus:border-gray-500 focus:ring-0 autofill autofill:shadow-fill-white autofill:text-fill-gray-900 pr-10"
+            className={`font-[Avenir] h-12 mt-1 block w-full bg-white border focus:outline-hidden focus:ring-0 autofill autofill:shadow-fill-white autofill:text-fill-gray-900 pr-10 ${
+              error
+                ? "border-red-500 focus:border-red-500"
+                : "border-gray-500 focus:border-gray-500"
+            }`}
             required
-            autoComplete="current-password"
+            autoComplete={autoComplete}
             placeholder="•••••••••"
+            value={value || ""}
+            onChange={handleInputChange}
           />
           <button
             type="button"
             onClick={togglePasswordVisibility}
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none"
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-primary-lighter))] focus:ring-opacity-50"
             aria-label={isPasswordVisible ? "Hide password" : "Show password"}
           >
             {isPasswordVisible ? (
@@ -76,6 +106,11 @@ export default function PasswordField() {
             )}
           </button>
         </div>
+        {error && (
+          <div className="text-red-600 text-sm mt-1" role="alert">
+            {error}
+          </div>
+        )}
       </Field>
     </div>
   );
