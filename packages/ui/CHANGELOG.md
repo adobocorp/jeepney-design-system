@@ -1,5 +1,13 @@
 # @jeepney-design-system/ui
 
+## 0.0.7
+
+### Patch Changes
+
+- 806bd48: Cleanup forms
+- Updated dependencies [806bd48]
+  - @jeepney-design-system/tokens@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes
