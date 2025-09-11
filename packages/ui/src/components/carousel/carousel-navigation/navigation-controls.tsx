@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useSwiper } from "swiper/react";
 
 function LeftArrow() {
@@ -38,11 +39,19 @@ function RightArrow() {
 }
 export function NavigationControls() {
   const swiper = useSwiper();
+  const interactionCss =
+    "hover:bg-color-base-grey-100 active:bg-color-base-grey-200 focus:bg-color-base-grey-100 focus:outline-none";
 
   return (
-    <div className="w-24 grid grid-cols-2 mb-[18px] bg-color-base-white mx-auto border border-color-base-grey-400 box-border rounded-xl items-center h-8">
+    <div className="w-24 grid grid-cols-2 mb-[18px] bg-color-base-white mx-auto border border-color-base-grey-400 place-items-center h-8 rounded-sm">
       <div
-        className="box-border text-center cursor-pointer w-full border-r border-color-base-grey-400"
+        className={clsx(
+          "h-full w-full border-r border-color-base-grey-400 flex justify-center items-center cursor-pointer transition-colors duration-150",
+          interactionCss
+        )}
+        tabIndex={0}
+        role="button"
+        aria-label="Previous slide"
         onClick={() => {
           swiper.slidePrev();
         }}
@@ -50,7 +59,13 @@ export function NavigationControls() {
         <LeftArrow />
       </div>
       <div
-        className="box-border text-center cursor-pointer w-full"
+        className={clsx(
+          "h-full cursor-pointer w-full flex justify-center items-center transition-colors duration-150",
+          interactionCss
+        )}
+        tabIndex={0}
+        role="button"
+        aria-label="Next slide"
         onClick={() => {
           swiper.slideNext();
         }}

@@ -1,5 +1,5 @@
-import { NavigationProgress } from "./navigation-progress";
 import { NavigationControls } from "./navigation-controls";
+import { NavigationProgress } from "./navigation-progress";
 export function CarouselNavigation({ progressBars = 1 }) {
   return (
     <div>
