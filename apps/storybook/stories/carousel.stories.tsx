@@ -1,6 +1,5 @@
+import { Carousel } from "@jeepney-design-system/ui/src/components/carousel";
 import { CarouselContent } from "@jeepney-design-system/ui/src/components/carousel/types";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Carousel } from "../../../packages/ui/src/components/carousel";
 import {
   BackgroundColor,
   BackgroundImage,
@@ -10,11 +9,13 @@ import {
   Image,
   ImageContent,
   Video,
-} from "../../../packages/ui/src/components/shared/types";
+} from "@jeepney-design-system/ui/src/components/shared/types";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Carousel> = {
   title: "Components/Components/Carousel",
   component: Carousel,
+  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -44,7 +45,7 @@ const meta: Meta<typeof Carousel> = {
   },
   decorators: [
     (Story) => (
-      <div className="p-8 bg-gray-50 min-h-screen">
+      <div className="p-2 md:p-8 bg-gray-50 w-full">
         <Story />
       </div>
     ),

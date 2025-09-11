@@ -8,6 +8,8 @@ export enum HEADING {
   H5 = "h5",
   SPAN = "span",
   P = "p",
+  SPAN_AS_LINK = "span_as_link",
+  H3_AS_LINK = "h3_as_link",
 }
 
 export interface TypographyProps
@@ -32,6 +34,10 @@ export function Typography({
     [HEADING.H5]: "font-[Avenir] text-xs", // --size-font-tiny: 0.75
     [HEADING.SPAN]: "font-[Avenir] text-sm", // --size-font-small: 0.875
     [HEADING.P]: "font-[Avenir] text-base text-md", // --size-font-medium: 1
+    [HEADING.SPAN_AS_LINK]:
+      "font-[Avenir] text-sm hover:underline hover:cursor-pointer", // --size-font-medium: 1
+    [HEADING.H3_AS_LINK]:
+      "font-[Avenir] text-base hover:underline hover:cursor-pointer", // --size-font-medium: 1
   };
 
   const combinedClasses = classNames(
@@ -82,6 +88,18 @@ export function Typography({
         <p className={combinedClasses} {...props}>
           {children}
         </p>
+      );
+    case HEADING.SPAN_AS_LINK:
+      return (
+        <span className={combinedClasses} {...props}>
+          {children}
+        </span>
+      );
+    case HEADING.H3_AS_LINK:
+      return (
+        <span className={combinedClasses} {...props}>
+          {children}
+        </span>
       );
     default:
       return null;

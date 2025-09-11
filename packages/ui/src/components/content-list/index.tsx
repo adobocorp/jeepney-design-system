@@ -7,10 +7,15 @@ export function ContentList({
   secondaryText,
   background,
   children,
+  stickyHeader = false,
 }: FlexContentListProps) {
   return (
     <ContentListBackground background={background}>
-      <FlexGrid primaryText={primaryText} secondaryText={secondaryText}>
+      <FlexGrid
+        primaryText={primaryText}
+        secondaryText={secondaryText}
+        stickyHeader={stickyHeader}
+      >
         {children}
       </FlexGrid>
     </ContentListBackground>

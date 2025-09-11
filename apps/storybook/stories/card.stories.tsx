@@ -21,9 +21,21 @@ import {
 } from "@jeepney-design-system/ui/src/components/typography";
 import type { Meta, StoryObj } from "@storybook/react";
 
+const TEXT_CONTENT = {
+  primaryText: "@jose.rizal",
+  secondaryText: `Masasapantaha kaagád, na, lihim na nágayuma ñg isáng FILIBUSTERO ang kapisanan ñg mg̃a makapraile at mg̃a laban sa pagkakasulong,
+         upáng, sa pag-alinsunod na waláng malay sa mg̃a udyók ñg kaniláng kalooban, ay makatulong at makapagpalusóg doon sa imbót na íisang bagay ang
+         linalayon: palaganapin ang adhiká ñg FILIBUSTERISMO sa boong bayan at pananaligin ang lahát ñg pilipino na waláng ibáng kaligtasan liban sa
+         humiwaláy sa España. Kung ihuhulog sa wikang tagalog ang salitáng FILIBUSTERISMO ay lubhang hahaba ang pañgalan ñg aklát na itó at marahil
+         ay mangyaring hindi pa mawatasan ñg babasa, kaya’t hindi na namin inihulog sa wika natin; ñguni’t ílalagáy namán ang katuturán ó kahulugán
+         ñg salitáng itó upang mabatíd noong mg̃a hindi nakaaalam ñg kaniyang kahulugán.`,
+  assetType: AssetType.Card,
+};
+
 const meta: Meta<typeof Card> = {
   title: "Components/Components/Card",
   component: Card,
+  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -74,11 +86,13 @@ const meta: Meta<typeof Card> = {
     const contentList = [args];
 
     return (
-      <ContentList {...singleContentCardProps}>
-        {contentList.map((content, index) => (
-          <Card {...content} key={`card-${index}`} />
-        ))}
-      </ContentList>
+      <div className="p-2 md:p-8 bg-gray-50 w-full md:w-[800px]">
+        <ContentList {...singleContentCardProps}>
+          {contentList.map((content, index) => (
+            <Card {...content} key={`card-${index}`} />
+          ))}
+        </ContentList>
+      </div>
     );
   },
 };
@@ -109,16 +123,7 @@ const defaultBackground = {
 
 export const TextContentCard: Story = {
   args: {
-    content: {
-      primaryText: "@jose.rizal",
-      secondaryText: `Masasapantaha kaagád, na, lihim na nágayuma ñg isáng FILIBUSTERO ang kapisanan ñg mg̃a makapraile at mg̃a laban sa pagkakasulong,
-         upáng, sa pag-alinsunod na waláng malay sa mg̃a udyók ñg kaniláng kalooban, ay makatulong at makapagpalusóg doon sa imbót na íisang bagay ang
-         linalayon: palaganapin ang adhiká ñg FILIBUSTERISMO sa boong bayan at pananaligin ang lahát ñg pilipino na waláng ibáng kaligtasan liban sa
-         humiwaláy sa España. Kung ihuhulog sa wikang tagalog ang salitáng FILIBUSTERISMO ay lubhang hahaba ang pañgalan ñg aklát na itó at marahil
-         ay mangyaring hindi pa mawatasan ñg babasa, kaya’t hindi na namin inihulog sa wika natin; ñguni’t ílalagáy namán ang katuturán ó kahulugán
-         ñg salitáng itó upang mabatíd noong mg̃a hindi nakaaalam ñg kaniyang kahulugán.`,
-      assetType: AssetType.Card,
-    },
+    content: TEXT_CONTENT,
     cardHeight: CardHeight.SHORT,
     cardBackground: BackgroundColor.Primary,
   },
@@ -161,36 +166,98 @@ export const VideoContentCard: Story = {
     const contentList = [args];
 
     return (
-      <ContentList {...singleImageContentCardProps}>
-        {contentList.map((content, index) => (
-          <Card {...content} key={`card-${index}`}>
-            <Button
-              color={COLOR.primary}
-              size={SIZE.small}
-              width={WIDTH.thin}
-              onClick={() => alert("Na-click ang like button")}
-            >
-              <Typography heading={HEADING.SPAN}>Like</Typography>
-            </Button>
-            <Button
-              color={COLOR.neutral}
-              size={SIZE.small}
-              width={WIDTH.thin}
-              onClick={() => alert("Na-click ang comment button")}
-            >
-              <Typography heading={HEADING.SPAN}>Comment</Typography>
-            </Button>
-            <Button
-              color={COLOR.success}
-              size={SIZE.small}
-              width={WIDTH.thin}
-              onClick={() => alert("Na-click ang share button")}
-            >
-              <Typography heading={HEADING.SPAN}>Share</Typography>
-            </Button>
-          </Card>
-        ))}
-      </ContentList>
+      <div className="p-2 md:p-8 bg-gray-50 w-full md:w-[800px]">
+        <ContentList {...singleImageContentCardProps}>
+          {contentList.map((content, index) => (
+            <Card {...content} key={`card-${index}`}>
+              <Button
+                color={COLOR.primary}
+                size={SIZE.small}
+                width={WIDTH.thin}
+                onClick={() => alert("Na-click ang like button")}
+              >
+                <Typography heading={HEADING.SPAN}>Like</Typography>
+              </Button>
+              <Button
+                color={COLOR.neutral}
+                size={SIZE.small}
+                width={WIDTH.thin}
+                onClick={() => alert("Na-click ang comment button")}
+              >
+                <Typography heading={HEADING.SPAN}>Comment</Typography>
+              </Button>
+              <Button
+                color={COLOR.success}
+                size={SIZE.small}
+                width={WIDTH.thin}
+                onClick={() => alert("Na-click ang share button")}
+              >
+                <Typography heading={HEADING.SPAN}>Share</Typography>
+              </Button>
+            </Card>
+          ))}
+        </ContentList>
+      </div>
+    );
+  },
+};
+
+export const MixedContentCards: Story = {
+  args: {},
+  render: () => {
+    const mixedContentCardProps = {
+      primaryText: "BayanihanBook",
+      secondaryText: "Ang mga istorya ng bayan",
+      flexGridType: FlexGridType.TallCardGrid,
+      background: defaultBackground,
+    };
+    const contentList = [
+      {
+        ...TextContentCard.args,
+      },
+      {
+        ...ImageContentCard.args,
+      },
+      {
+        ...VideoContentCard.args,
+        cardHeight: CardHeight.SHORT,
+        cardBackground: BackgroundColor.Primary,
+      },
+      {
+        ...TextContentCard.args,
+      },
+      {
+        ...ImageContentCard.args,
+      },
+      {
+        ...VideoContentCard.args,
+        cardHeight: CardHeight.SHORT,
+        cardBackground: BackgroundColor.Primary,
+      },
+      {
+        content: {
+          primaryText: undefined,
+          secondaryText: undefined,
+          assetType: AssetType.LOADING,
+          asset: sampleImage,
+        },
+        cardHeight: CardHeight.SHORT,
+        cardBackground: BackgroundColor.Primary,
+      },
+    ];
+
+    return (
+      <div className="px-4 md:p-8 bg-gray-50 w-full md:w-[800px] h-screen overflow-y-hidden">
+        <ContentList
+          {...mixedContentCardProps}
+          secondaryText={undefined}
+          stickyHeader={true}
+        >
+          {contentList.map((content, index) => (
+            <Card {...content} key={`card-${index}`} />
+          ))}
+        </ContentList>
+      </div>
     );
   },
 };

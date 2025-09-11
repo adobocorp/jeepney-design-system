@@ -16,4 +16,5 @@ export type FlexContentListProps = WithBackground & {
   primaryText: string;
   secondaryText?: string;
   children: React.ReactNode;
+  stickyHeader?: boolean;
 };

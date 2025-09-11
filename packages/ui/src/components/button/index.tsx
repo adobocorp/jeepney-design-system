@@ -50,7 +50,7 @@ export function Button({
     case COLOR.primary:
       colorClasses =
         "text-white bg-color-brand-primary-base border-[rgb(var(--color-brand-primary-light))]";
-      hoverClasses = "hover:shadow-lg cursor-pointer";
+      hoverClasses = "hover:shadow cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-brand-primary-dark))] active:text-white";
       focusClasses =
@@ -59,7 +59,7 @@ export function Button({
     case COLOR.secondary:
       colorClasses =
         "text-color-font-button-secondary bg-color-brand-secondary-base border-[rgb(var(--color-brand-secondary-light))]";
-      hoverClasses = "hover:shadow-lg cursor-pointer";
+      hoverClasses = "hover:shadow cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-brand-secondary-dark))] active:text-white";
       focusClasses =
@@ -68,7 +68,7 @@ export function Button({
     case COLOR.neutral:
       colorClasses =
         "text-black bg-color-base-grey-200 border-color-border-light";
-      hoverClasses = "hover:shadow-lg cursor-pointer";
+      hoverClasses = "hover:shadow cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-base-grey-700))] active:text-white";
       focusClasses =
@@ -77,7 +77,7 @@ export function Button({
     case COLOR.alert:
       colorClasses =
         "text-white bg-color-base-red-300 border-color-border-error";
-      hoverClasses = "hover:shadow-lg cursor-pointer";
+      hoverClasses = "hover:shadow cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-base-red-700))] active:text-white";
       focusClasses =
@@ -86,7 +86,7 @@ export function Button({
     case COLOR.success:
       colorClasses =
         "text-white bg-color-base-green-400 border-color-border-success";
-      hoverClasses = "hover:shadow-lg cursor-pointer";
+      hoverClasses = "hover:shadow cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-base-green-700))] active:text-white";
       focusClasses =
@@ -95,7 +95,7 @@ export function Button({
     case COLOR.warning:
       colorClasses =
         "text-color-base-black bg-color-base-yellow-500 border-[rgb(var(--color-base-yellow-400))]";
-      hoverClasses = "hover:shadow-lg cursor-pointer";
+      hoverClasses = "hover:shadow cursor-pointer";
       activeClasses =
         "active:bg-[rgb(var(--color-base-yellow-700))] active:text-white";
       focusClasses =

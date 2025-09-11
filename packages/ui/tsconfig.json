@@ -1,5 +1,9 @@
 {
   "extends": "@jeepney-design-system/tsconfig/react-library.json",
-  "include": ["."],
+  "include": [
+    ".",
+    "../../apps/storybook/stories/footer.stories.tsx",
+    "../../apps/storybook/stories/header.stories.tsx"
+  ],
   "exclude": ["dist", "build", "node_modules"]
 }
