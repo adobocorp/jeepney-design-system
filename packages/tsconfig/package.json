@@ -1,6 +1,6 @@
 {
   "name": "@jeepney-design-system/tsconfig",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

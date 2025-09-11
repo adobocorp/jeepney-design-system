@@ -1,5 +1,11 @@
 # @jeepney-design-system/eslint-config-custom
 
+## 0.0.8
+
+### Patch Changes
+
+- 4f6827c: Fix carousel mobile
+
 ## 0.0.7
 
 ### Patch Changes
