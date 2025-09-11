@@ -9,8 +9,12 @@ export function Carousel({
   contentList,
   background,
 }: CarouselProps) {
+  const isMobile = window.innerWidth < 768;
   return (
-    <div className="w-full h-96" style={{ width, height }}>
+    <div
+      className="w-full h-96"
+      style={{ width: isMobile ? "100%" : width, height }}
+    >
       <CarouselBackground background={background}>
         {contentList.length ? (
           <CarouselSwiper>
