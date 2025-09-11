@@ -15,7 +15,7 @@ export function ImageCaption({
   secondaryText,
 }: ImageCaptionProps) {
   return (
-    <div className="flex justify-center items-center flex-col h-full w-[800px] my-[18px] mx-auto">
+    <div className="flex justify-center items-center flex-col h-full w-full md:w-[800px] my-[18px] mx-auto">
       {assetSrc?.length && (
         <UpperImage image={assetSrc} backgroundPosition={backgroundPosition} />
       )}

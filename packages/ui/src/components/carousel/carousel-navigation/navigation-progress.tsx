@@ -37,7 +37,7 @@ export function NavigationProgress({ progressBars = 1 }: any) {
   });
 
   return (
-    <div className="w-[500px] flex items-center justify-center flex-row mb-[18px] mx-auto gap-3">
+    <div className="flex items-center justify-center flex-row mb-[18px] mx-auto gap-3">
       {Array(progressBars)
         .fill(true)
         .map((_, index) => (
