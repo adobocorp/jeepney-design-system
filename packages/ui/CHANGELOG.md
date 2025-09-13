@@ -1,5 +1,13 @@
 # @jeepney-design-system/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- 4f6827c: Fix carousel mobile
+- Updated dependencies [4f6827c]
+  - @jeepney-design-system/tokens@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
