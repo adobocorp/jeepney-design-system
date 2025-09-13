@@ -55,6 +55,7 @@ export enum AssetType {
   Image = "image",
   Video = "video",
   Card = "card",
+  LOADING = "loading",
 }
 
 export enum CallToActionType {

@@ -18,6 +18,7 @@ import { useState } from "react";
 const meta: Meta<typeof TextField> = {
   title: "Components/Components/Form",
   component: TextField,
+  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -29,7 +30,7 @@ const meta: Meta<typeof TextField> = {
   },
   decorators: [
     (Story) => (
-      <div className="p-8 bg-gray-50 min-h-screen">
+      <div className="p-8 bg-gray-50 w-full md:w-[800px] min-h-screen">
         <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-sm">
           <Story />
         </div>

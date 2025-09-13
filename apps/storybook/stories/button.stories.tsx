@@ -1,15 +1,16 @@
-import { action } from "@storybook/addon-actions";
-import type { Meta, StoryObj } from "@storybook/react";
 import {
   Button,
   COLOR,
   SIZE,
   WIDTH,
-} from "../../../packages/ui/src/components/button";
+} from "@jeepney-design-system/ui/src/components/button";
+import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Elements/Button",
   component: Button,
+  tags: ["autodocs"],
   parameters: {
     layout: "centered",
     docs: {
@@ -171,6 +172,40 @@ export const Disabled: Story = {
   },
 };
 
+export const CustomContent: Story = {
+  args: {
+    children: "🚀 Launch",
+    color: COLOR.primary,
+    onClick: action("custom-clicked"),
+    width: WIDTH.wide,
+    size: SIZE.large,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "Button with custom content including emojis.",
+      },
+    },
+  },
+};
+
+export const LongText: Story = {
+  args: {
+    children: "Very Long Button Text",
+    color: COLOR.primary,
+    size: SIZE.large,
+    width: WIDTH.wide,
+    onClick: action("long-text-clicked"),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: "Button with longer text to test text overflow behavior.",
+      },
+    },
+  },
+};
+
 export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4 items-center">
@@ -205,40 +240,6 @@ export const AllVariants: Story = {
     docs: {
       description: {
         story: "All button variants displayed together for comparison.",
-      },
-    },
-  },
-};
-
-export const CustomContent: Story = {
-  args: {
-    children: "🚀 Launch",
-    color: COLOR.primary,
-    onClick: action("custom-clicked"),
-    width: WIDTH.wide,
-    size: SIZE.large,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Button with custom content including emojis.",
-      },
-    },
-  },
-};
-
-export const LongText: Story = {
-  args: {
-    children: "Very Long Button Text",
-    color: COLOR.primary,
-    size: SIZE.large,
-    width: WIDTH.wide,
-    onClick: action("long-text-clicked"),
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: "Button with longer text to test text overflow behavior.",
       },
     },
   },

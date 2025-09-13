@@ -9,7 +9,7 @@ type VideoPlayerProps = {
 
 const VideoPlayer = ({ height, width, src, trackSrc }: VideoPlayerProps) => {
   return (
-    <video width={width} height={height} muted controls>
+    <video muted controls>
       <source src={src} type="video/mp4"></source>
       {trackSrc ? <track kind="captions" srcLang="en" src={trackSrc} /> : null}
     </video>

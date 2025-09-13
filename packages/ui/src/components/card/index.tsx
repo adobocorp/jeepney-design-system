@@ -46,7 +46,7 @@ export function Card({
       case BackgroundColor.Primary:
         focusClasses =
           "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-brand-primary-lighter))] focus:ring-opacity-50";
-        hoverClasses = "hover:shadow-lg cursor-pointer";
+        hoverClasses = "hover:shadow-md cursor-pointer";
         break;
       case BackgroundColor.Secondary:
       default:
