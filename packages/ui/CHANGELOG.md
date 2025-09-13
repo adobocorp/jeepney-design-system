@@ -1,5 +1,13 @@
 # @jeepney-design-system/ui
 
+## 0.0.9
+
+### Patch Changes
+
+- 127014e: Implements header and footer
+- Updated dependencies [127014e]
+  - @jeepney-design-system/tokens@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes
