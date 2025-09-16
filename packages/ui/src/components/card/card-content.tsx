@@ -4,7 +4,7 @@ import {
   CardHeight,
 } from "../shared/types";
 import { Typography } from "../typography";
-import { HEADING } from "../typography/index";
+import { Heading } from "../typography/index";
 
 const VideoPlayer = ({ src }: { src: string }) => {
   return (
@@ -54,9 +54,9 @@ export const CardContent = ({
     return (
       <div className="h-full max-w-sm flex flex-col justify-center items-center rounded-sm">
         <div className="h-full w-full px-2 flex-1 flex flex-col justify-center">
-          <Typography heading={HEADING.H4}>{primaryText}</Typography>
+          <Typography heading={Heading.H4}>{primaryText}</Typography>
           {secondaryText && (
-            <Typography heading={HEADING.H5}>
+            <Typography heading={Heading.H5}>
               {truncateText(secondaryText, secondaryTextLimit)}
             </Typography>
           )}
@@ -103,14 +103,14 @@ export const CardContent = ({
           className="justify-start"
           style={{ justifyContent: asset ? "space-between" : "center" }}
         >
-          <Typography heading={HEADING.H4}>{primaryText}</Typography>
+          <Typography heading={Heading.H4}>{primaryText}</Typography>
         </div>
         {secondaryText && (
           <div
             className="flex flex-1"
             style={{ justifyContent: asset ? "space-between" : "center" }}
           >
-            <Typography heading={HEADING.H5}>
+            <Typography heading={Heading.H5}>
               {truncateText(secondaryText, secondaryTextLimit)}
             </Typography>
           </div>

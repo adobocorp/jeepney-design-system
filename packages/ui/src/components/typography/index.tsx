@@ -1,6 +1,6 @@
 import classNames from "clsx";
 
-export enum HEADING {
+export enum Heading {
   H1 = "h1",
   H2 = "h2",
   H3 = "h3",
@@ -15,7 +15,7 @@ export enum HEADING {
 export interface TypographyProps
   extends React.ButtonHTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
-  heading: HEADING;
+  heading: Heading;
 }
 
 export function Typography({
@@ -27,16 +27,16 @@ export function Typography({
   const baseClasses = "font-[Avenir]";
 
   const headingClasses = {
-    [HEADING.H1]: "font-[Avenir] text-xl", // --size-font-xl: 1.5
-    [HEADING.H2]: "font-[Bantayog-Light] text-lg", // --size-font-large: 1.25
-    [HEADING.H3]: "font-[Avenir] text-base", // --size-font-medium: 1
-    [HEADING.H4]: "font-[Bantayog-Light] text-sm", // --size-font-small: 0.875
-    [HEADING.H5]: "font-[Avenir] text-xs", // --size-font-tiny: 0.75
-    [HEADING.SPAN]: "font-[Avenir] text-sm", // --size-font-small: 0.875
-    [HEADING.P]: "font-[Avenir] text-base text-md", // --size-font-medium: 1
-    [HEADING.SPAN_AS_LINK]:
+    [Heading.H1]: "font-[Avenir] text-xl", // --size-font-xl: 1.5
+    [Heading.H2]: "font-[Bantayog-Light] text-lg", // --size-font-large: 1.25
+    [Heading.H3]: "font-[Avenir] text-base", // --size-font-medium: 1
+    [Heading.H4]: "font-[Bantayog-Light] text-sm", // --size-font-small: 0.875
+    [Heading.H5]: "font-[Avenir] text-xs", // --size-font-tiny: 0.75
+    [Heading.SPAN]: "font-[Avenir] text-sm", // --size-font-small: 0.875
+    [Heading.P]: "font-[Avenir] text-base text-md", // --size-font-medium: 1
+    [Heading.SPAN_AS_LINK]:
       "font-[Avenir] text-sm hover:underline hover:cursor-pointer", // --size-font-medium: 1
-    [HEADING.H3_AS_LINK]:
+    [Heading.H3_AS_LINK]:
       "font-[Avenir] text-base hover:underline hover:cursor-pointer", // --size-font-medium: 1
   };
 
@@ -47,55 +47,55 @@ export function Typography({
   );
 
   switch (heading) {
-    case HEADING.H1:
+    case Heading.H1:
       return (
         <h1 className={combinedClasses} {...props}>
           {children}
         </h1>
       );
-    case HEADING.H2:
+    case Heading.H2:
       return (
         <h2 className={combinedClasses} {...props}>
           {children}
         </h2>
       );
-    case HEADING.H3:
+    case Heading.H3:
       return (
         <h3 className={combinedClasses} {...props}>
           {children}
         </h3>
       );
-    case HEADING.H4:
+    case Heading.H4:
       return (
         <h4 className={combinedClasses} {...props}>
           {children}
         </h4>
       );
-    case HEADING.H5:
+    case Heading.H5:
       return (
         <h5 className={combinedClasses} {...props}>
           {children}
         </h5>
       );
-    case HEADING.SPAN:
+    case Heading.SPAN:
       return (
         <span className={combinedClasses} {...props}>
           {children}
         </span>
       );
-    case HEADING.P:
+    case Heading.P:
       return (
         <p className={combinedClasses} {...props}>
           {children}
         </p>
       );
-    case HEADING.SPAN_AS_LINK:
+    case Heading.SPAN_AS_LINK:
       return (
         <span className={combinedClasses} {...props}>
           {children}
         </span>
       );
-    case HEADING.H3_AS_LINK:
+    case Heading.H3_AS_LINK:
       return (
         <span className={combinedClasses} {...props}>
           {children}

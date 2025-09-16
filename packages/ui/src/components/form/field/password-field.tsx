@@ -1,7 +1,7 @@
 import { Field, Input, Label } from "@headlessui/react";
 import clsx from "clsx";
 import { useState } from "react";
-import { HEADING, Typography } from "../../typography";
+import { Heading, Typography } from "../../typography";
 
 type PasswordFieldProps = {
   id: string;
@@ -38,7 +38,7 @@ export function PasswordField({
     <div className="w-full max-w-md">
       <Field>
         <Label>
-          <Typography heading={HEADING.H3}>{label}</Typography>
+          <Typography heading={Heading.H3}>{label}</Typography>
         </Label>
         <div className="relative">
           <Input

@@ -1,12 +1,12 @@
 // Import Swiper React components
-import { Children } from "react";
+import { Children, ReactNode } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CarouselNavigation } from "./carousel-navigation";
 
 // Import Swiper styles
 import "swiper/css";
 
-export function CarouselSwiper({ children }) {
+export function CarouselSwiper({ children }: { children: ReactNode[] }) {
   const childrenCount = Children.count(children);
   return (
     <Swiper

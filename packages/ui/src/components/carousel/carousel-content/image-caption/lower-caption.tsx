@@ -1,4 +1,4 @@
-import { HEADING, Typography } from "../../../typography";
+import { Heading, Typography } from "../../../typography";
 export const LowerCaption = ({ primaryText, secondaryText }: any) => {
   let longCaption = secondaryText;
 
@@ -8,9 +8,9 @@ export const LowerCaption = ({ primaryText, secondaryText }: any) => {
 
   return (
     <div className="flex justify-center flex-col p-8 bg-color-base-white rounded-sm rounded-t-none w-full">
-      <Typography heading={HEADING.H3}>{primaryText}</Typography>
+      <Typography heading={Heading.H3}>{primaryText}</Typography>
       {secondaryText && (
-        <Typography heading={HEADING.H4}>{longCaption}</Typography>
+        <Typography heading={Heading.H4}>{longCaption}</Typography>
       )}
     </div>
   );

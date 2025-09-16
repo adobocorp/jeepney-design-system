@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Children } from "react";
-import { HEADING, Typography } from "../../typography";
+import { Heading, Typography } from "../../typography";
 import { GridContainer } from "./grid-container";
 
 type FlexGridProps = {
@@ -19,10 +19,10 @@ export function FlexGrid({
     <div className={clsx("flex items-center flex-col")}>
       <div className={clsx("text-center py-4", stickyHeader && "sticky")}>
         {primaryText && (
-          <Typography heading={HEADING.H1}>{primaryText}</Typography>
+          <Typography heading={Heading.H1}>{primaryText}</Typography>
         )}
         {secondaryText && (
-          <Typography heading={HEADING.H3}>{secondaryText}</Typography>
+          <Typography heading={Heading.H3}>{secondaryText}</Typography>
         )}
       </div>
       <GridContainer

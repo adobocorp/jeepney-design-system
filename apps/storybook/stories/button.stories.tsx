@@ -1,8 +1,8 @@
 import {
   Button,
-  COLOR,
-  SIZE,
-  WIDTH,
+  Color,
+  Size,
+  Width,
 } from "@jeepney-design-system/ui/src/components/button";
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -28,7 +28,7 @@ const meta: Meta<typeof Button> = {
     color: {
       description: "The color variant of the button",
       control: "select",
-      options: Object.values(COLOR),
+      options: Object.values(Color),
     },
     disabled: {
       description: "Whether the button is disabled",
@@ -46,12 +46,12 @@ const meta: Meta<typeof Button> = {
     size: {
       description: "The size of the button",
       control: "select",
-      options: Object.values(SIZE),
+      options: Object.values(Size),
     },
     width: {
       description: "The width of the button",
       control: "select",
-      options: Object.values(WIDTH),
+      options: Object.values(Width),
     },
   },
   decorators: [
@@ -69,7 +69,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: "Primary",
-    color: COLOR.primary,
+    color: Color.Primary,
     onClick: action("primary-clicked"),
   },
   parameters: {
@@ -84,7 +84,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     children: "Secondary",
-    color: COLOR.secondary,
+    color: Color.Secondary,
     onClick: action("secondary-clicked"),
   },
   parameters: {
@@ -99,7 +99,7 @@ export const Secondary: Story = {
 export const Neutral: Story = {
   args: {
     children: "Neutral",
-    color: COLOR.neutral,
+    color: Color.Neutral,
     onClick: action("neutral-clicked"),
   },
   parameters: {
@@ -114,7 +114,7 @@ export const Neutral: Story = {
 export const Alert: Story = {
   args: {
     children: "Alert",
-    color: COLOR.alert,
+    color: Color.Alert,
     onClick: action("alert-clicked"),
   },
   parameters: {
@@ -129,7 +129,7 @@ export const Alert: Story = {
 export const Success: Story = {
   args: {
     children: "Success",
-    color: COLOR.success,
+    color: Color.Success,
     onClick: action("success-clicked"),
   },
   parameters: {
@@ -144,7 +144,7 @@ export const Success: Story = {
 export const Warning: Story = {
   args: {
     children: "Warning",
-    color: COLOR.warning,
+    color: Color.Warning,
     onClick: action("warning-clicked"),
   },
   parameters: {
@@ -159,7 +159,7 @@ export const Warning: Story = {
 export const Disabled: Story = {
   args: {
     children: "Disabled",
-    color: COLOR.primary,
+    color: Color.Primary,
     disabled: true,
     onClick: action("disabled-clicked"),
   },
@@ -175,10 +175,10 @@ export const Disabled: Story = {
 export const CustomContent: Story = {
   args: {
     children: "🚀 Launch",
-    color: COLOR.primary,
+    color: Color.Primary,
     onClick: action("custom-clicked"),
-    width: WIDTH.wide,
-    size: SIZE.large,
+    width: Width.Wide,
+    size: Size.Large,
   },
   parameters: {
     docs: {
@@ -192,9 +192,9 @@ export const CustomContent: Story = {
 export const LongText: Story = {
   args: {
     children: "Very Long Button Text",
-    color: COLOR.primary,
-    size: SIZE.large,
-    width: WIDTH.wide,
+    color: Color.Primary,
+    size: Size.Large,
+    width: Width.Wide,
     onClick: action("long-text-clicked"),
   },
   parameters: {
@@ -209,26 +209,26 @@ export const LongText: Story = {
 export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-4 items-center">
-      <Button color={COLOR.primary} onClick={action("primary-clicked")}>
+      <Button color={Color.Primary} onClick={action("primary-clicked")}>
         Primary
       </Button>
-      <Button color={COLOR.secondary} onClick={action("secondary-clicked")}>
+      <Button color={Color.Secondary} onClick={action("secondary-clicked")}>
         Secondary
       </Button>
-      <Button color={COLOR.neutral} onClick={action("neutral-clicked")}>
+      <Button color={Color.Neutral} onClick={action("neutral-clicked")}>
         Neutral
       </Button>
-      <Button color={COLOR.alert} onClick={action("alert-clicked")}>
+      <Button color={Color.Alert} onClick={action("alert-clicked")}>
         Alert
       </Button>
-      <Button color={COLOR.success} onClick={action("success-clicked")}>
+      <Button color={Color.Success} onClick={action("success-clicked")}>
         Success
       </Button>
-      <Button color={COLOR.warning} onClick={action("warning-clicked")}>
+      <Button color={Color.Warning} onClick={action("warning-clicked")}>
         Warning
       </Button>
       <Button
-        color={COLOR.primary}
+        color={Color.Primary}
         disabled
         onClick={action("disabled-clicked")}
       >

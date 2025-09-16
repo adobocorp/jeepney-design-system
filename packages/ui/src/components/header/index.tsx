@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HEADING, Typography } from "../typography";
+import { Heading, Typography } from "../typography";
 
 export function Header({
   title,
@@ -13,7 +13,7 @@ export function Header({
   return (
     <header className="w-full py-4 px-6 bg-color-base-white border-b border-color-base-grey-200 flex items-center md:justify-between md:w-[800px]">
       {title && (
-        <Typography heading={HEADING.H2} className="m-0">
+        <Typography heading={Heading.H2} className="m-0">
           {title}
         </Typography>
       )}

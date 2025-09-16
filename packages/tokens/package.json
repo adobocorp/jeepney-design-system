@@ -29,6 +29,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "catalog:",
     "rollup": "catalog:",
+    "rollup-plugin-copy": "catalog:",
     "style-dictionary": "catalog:",
     "style-dictionary-utils": "catalog:",
     "tsx": "catalog:",
