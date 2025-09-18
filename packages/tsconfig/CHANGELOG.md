@@ -1,5 +1,11 @@
 # @jeepney-design-system/tsconfig
 
+## 0.0.10
+
+### Patch Changes
+
+- 79eba5a: fix ui package build
+
 ## 0.0.9
 
 ### Patch Changes
