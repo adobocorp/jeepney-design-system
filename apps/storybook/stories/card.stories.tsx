@@ -1,8 +1,8 @@
 import {
   Button,
-  COLOR,
-  SIZE,
-  WIDTH,
+  Color,
+  Size,
+  Width,
 } from "@jeepney-design-system/ui/src/components/button";
 import { Card } from "@jeepney-design-system/ui/src/components/card";
 import { ContentList } from "@jeepney-design-system/ui/src/components/content-list";
@@ -16,7 +16,7 @@ import {
   Video,
 } from "@jeepney-design-system/ui/src/components/shared/types";
 import {
-  HEADING,
+  Heading,
   Typography,
 } from "@jeepney-design-system/ui/src/components/typography";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -171,28 +171,28 @@ export const VideoContentCard: Story = {
           {contentList.map((content, index) => (
             <Card {...content} key={`card-${index}`}>
               <Button
-                color={COLOR.primary}
-                size={SIZE.small}
-                width={WIDTH.thin}
+                color={Color.Primary}
+                size={Size.Small}
+                width={Width.Thin}
                 onClick={() => alert("Na-click ang like button")}
               >
-                <Typography heading={HEADING.SPAN}>Like</Typography>
+                <Typography heading={Heading.SPAN}>Like</Typography>
               </Button>
               <Button
-                color={COLOR.neutral}
-                size={SIZE.small}
-                width={WIDTH.thin}
+                color={Color.Neutral}
+                size={Size.Small}
+                width={Width.Thin}
                 onClick={() => alert("Na-click ang comment button")}
               >
-                <Typography heading={HEADING.SPAN}>Comment</Typography>
+                <Typography heading={Heading.SPAN}>Comment</Typography>
               </Button>
               <Button
-                color={COLOR.success}
-                size={SIZE.small}
-                width={WIDTH.thin}
+                color={Color.Success}
+                size={Size.Small}
+                width={Width.Thin}
                 onClick={() => alert("Na-click ang share button")}
               >
-                <Typography heading={HEADING.SPAN}>Share</Typography>
+                <Typography heading={Heading.SPAN}>Share</Typography>
               </Button>
             </Card>
           ))}

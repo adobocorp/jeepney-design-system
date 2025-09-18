@@ -1,9 +1,14 @@
 {
-  "extends": "@jeepney-design-system/tsconfig/react-library.json",
-  "include": [
-    ".",
-    "../../apps/storybook/stories/footer.stories.tsx",
-    "../../apps/storybook/stories/header.stories.tsx"
-  ],
-  "exclude": ["dist", "build", "node_modules"]
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist",
+    "allowJs": false,
+    "jsx": "react-jsx",
+    "rootDir": "src",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "lib": ["dom", "es2015"]
+  },
+  "include": ["src/index.tsx"],
+  "exclude": ["node_modules", "dist", "tests", "**/*.test.ts", "**/*.test.tsx"]
 }

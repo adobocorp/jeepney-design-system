@@ -1,5 +1,5 @@
 import {
-  HEADING,
+  Heading,
   Typography,
 } from "@jeepney-design-system/ui/src/components/typography";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -25,10 +25,10 @@ const meta: Meta<typeof Typography> = {
     heading: {
       description: "The heading level (H1-H5)",
       control: "select",
-      options: Object.values(HEADING),
+      options: Object.values(Heading),
       table: {
-        type: { summary: "HEADING" },
-        defaultValue: { summary: "HEADING.H1" },
+        type: { summary: "Heading" },
+        defaultValue: { summary: "Heading.H1" },
       },
     },
     className: {
@@ -72,7 +72,7 @@ type Story = StoryObj<typeof meta>;
 
 export const H1: Story = {
   args: {
-    heading: HEADING.H1,
+    heading: Heading.H1,
     children: "Main Page Title",
   },
   parameters: {
@@ -87,7 +87,7 @@ export const H1: Story = {
 
 export const H2: Story = {
   args: {
-    heading: HEADING.H2,
+    heading: Heading.H2,
     children: "Section Heading",
   },
   parameters: {
@@ -102,7 +102,7 @@ export const H2: Story = {
 
 export const H3: Story = {
   args: {
-    heading: HEADING.H3,
+    heading: Heading.H3,
     children: "Subsection Title",
   },
   parameters: {
@@ -116,7 +116,7 @@ export const H3: Story = {
 
 export const H4: Story = {
   args: {
-    heading: HEADING.H4,
+    heading: Heading.H4,
     children: "Minor Heading",
   },
   parameters: {
@@ -130,7 +130,7 @@ export const H4: Story = {
 
 export const H5: Story = {
   args: {
-    heading: HEADING.H5,
+    heading: Heading.H5,
     children: "Small Heading",
   },
   parameters: {
@@ -146,11 +146,11 @@ export const H5: Story = {
 export const AllHeadings: Story = {
   render: () => (
     <div className="space-y-4">
-      <Typography heading={HEADING.H1}>H1 - Main Page Title</Typography>
-      <Typography heading={HEADING.H2}>H2 - Section Heading</Typography>
-      <Typography heading={HEADING.H3}>H3 - Subsection Title</Typography>
-      <Typography heading={HEADING.H4}>H4 - Minor Heading</Typography>
-      <Typography heading={HEADING.H5}>H5 - Small Heading</Typography>
+      <Typography heading={Heading.H1}>H1 - Main Page Title</Typography>
+      <Typography heading={Heading.H2}>H2 - Section Heading</Typography>
+      <Typography heading={Heading.H3}>H3 - Subsection Title</Typography>
+      <Typography heading={Heading.H4}>H4 - Minor Heading</Typography>
+      <Typography heading={Heading.H5}>H5 - Small Heading</Typography>
     </div>
   ),
   parameters: {
@@ -165,7 +165,7 @@ export const AllHeadings: Story = {
 
 export const LongText: Story = {
   args: {
-    heading: HEADING.H2,
+    heading: Heading.H2,
     children:
       "This is a very long heading that demonstrates how the typography component handles longer text content and line wrapping behavior",
   },
@@ -181,7 +181,7 @@ export const LongText: Story = {
 
 export const WithCustomStyling: Story = {
   args: {
-    heading: HEADING.H2,
+    heading: Heading.H2,
     children: "Custom Styled Heading",
     className: "text-blue-600 underline",
   },
@@ -197,7 +197,7 @@ export const WithCustomStyling: Story = {
 
 export const WithHTMLAttributes: Story = {
   args: {
-    heading: HEADING.H3,
+    heading: Heading.H3,
     children: "Accessible Heading",
     id: "main-section",
     role: "heading",
@@ -216,18 +216,18 @@ export const WithHTMLAttributes: Story = {
 export const NavigationExample: Story = {
   render: () => (
     <nav className="space-y-2">
-      <Typography heading={HEADING.H1} className="mb-4">
+      <Typography heading={Heading.H1} className="mb-4">
         Pitongput
       </Typography>
       <div className="ml-4 space-y-2">
-        <Typography heading={HEADING.H2} className="text-gray-700">
+        <Typography heading={Heading.H2} className="text-gray-700">
           Pitong
         </Typography>
         <div className="ml-4 space-y-1">
-          <Typography heading={HEADING.H3} className="text-gray-600">
+          <Typography heading={Heading.H3} className="text-gray-600">
             Puting
           </Typography>
-          <Typography heading={HEADING.H4} className="text-gray-500 ml-4">
+          <Typography heading={Heading.H4} className="text-gray-500 ml-4">
             Tupa
           </Typography>
         </div>
@@ -248,18 +248,18 @@ export const ContentHierarchy: Story = {
   render: () => (
     <article className="max-w-2xl space-y-4">
       <Typography
-        heading={HEADING.H1}
+        heading={Heading.H1}
         className="text-right border-b text-gray-600"
       >
         J. RIZAL
       </Typography>
 
       <div className="space-y-0 text-center">
-        <Typography heading={HEADING.H2} className="text-gray-600">
+        <Typography heading={Heading.H2} className="text-gray-600">
           ANG “FILIBUSTERISMO” (Karugtóng ng̃ NOLI ME TANGERE)
         </Typography>
 
-        <Typography heading={HEADING.H5} className="text-gray-700">
+        <Typography heading={Heading.H5} className="text-gray-700">
           Tinagalog ni PATRICIO MARIANO
         </Typography>
       </div>
@@ -301,7 +301,7 @@ export const ContentHierarchy: Story = {
 
 export const InteractiveHeading: Story = {
   args: {
-    heading: HEADING.H2,
+    heading: Heading.H2,
     children: "Click me!",
     onClick: () => alert("Heading clicked!"),
     className: "cursor-pointer hover:text-blue-600 transition-colors",

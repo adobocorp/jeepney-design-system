@@ -1,5 +1,7 @@
-import cssVarsPlugin from "@jeepney-design-system/tokens/build/tailwind/cssVarsPlugin";
-import themeColors from "@jeepney-design-system/tokens/build/tailwind/themeColors.js";
+import {
+  tailwindCssVarsPlugin,
+  themeColors,
+} from "@jeepney-design-system/tokens";
 import { Config } from "tailwindcss";
 const plugin = require("tailwindcss/plugin");
 
@@ -38,7 +40,7 @@ const config: Config = {
         },
       });
     }),
-    cssVarsPlugin,
+    tailwindCssVarsPlugin,
   ], // <-- plugin imported here
 };
 

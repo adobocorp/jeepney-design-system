@@ -1,5 +1,5 @@
 import typescript from "@rollup/plugin-typescript";
-import { readFileSync } from "fs";
+import copy from "rollup-plugin-copy";
 
 // Read the generated tokens
 const tokensPath = "./build/tokens.ts";
@@ -18,28 +18,17 @@ export default {
     },
   ],
   plugins: [
-    // Custom plugin to copy generated tokens to src before build
-    {
-      name: "copy-tokens",
-      buildStart() {
-        try {
-          // Copy the generated tokens to src directory for rollup to process
-          const tokensContent = readFileSync(tokensPath, "utf8");
-          this.emitFile({
-            type: "asset",
-            fileName: "tokens.ts",
-            source: tokensContent,
-          });
-        } catch (error) {
-          this.warn(`Could not read tokens file: ${error.message}`);
-        }
-      },
-    },
     typescript({
-      declaration: true,
-      declarationDir: "dist",
-      rootDir: "src",
-      include: ["src/**/*", "build/tokens.ts"],
+      tsconfig: "./tsconfig.json",
+    }),
+    copy({
+      targets: [
+        { src: tokensPath, dest: "dist" },
+        { src: "assets", dest: "dist/assets" },
+        { src: "build", dest: "dist/build" },
+      ],
+      copyOnce: true,
+      verbose: true,
     }),
   ],
   external: [],

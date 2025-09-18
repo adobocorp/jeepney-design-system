@@ -1,6 +1,6 @@
 import { Footer } from "@jeepney-design-system/ui/src/components/footer";
 import {
-  HEADING,
+  Heading,
   Typography,
 } from "@jeepney-design-system/ui/src/components/typography";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -28,7 +28,7 @@ export const Default: Story = {
     children: (
       <>
         <a href="http://github.com/adobocorp/jeepney-design-system">
-          <Typography heading={HEADING.SPAN_AS_LINK}>JDS on GitHub</Typography>
+          <Typography heading={Heading.SPAN_AS_LINK}>JDS on GitHub</Typography>
         </a>
       </>
     ),

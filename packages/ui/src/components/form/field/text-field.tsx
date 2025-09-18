@@ -1,7 +1,7 @@
 import { Field, Input, Label } from "@headlessui/react";
 import clsx from "clsx";
 import { Ref } from "react";
-import { HEADING, Typography } from "../../typography";
+import { Heading, Typography } from "../../typography";
 
 type TextFieldProps = {
   id: string;
@@ -37,7 +37,7 @@ export function TextField({
     <div className="w-full max-w-md">
       <Field>
         <Label>
-          <Typography heading={HEADING.H3}>{label}</Typography>
+          <Typography heading={Heading.H3}>{label}</Typography>
         </Label>
         <Input
           className={textFieldClassNames}

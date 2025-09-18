@@ -1,15 +1,15 @@
 import { Fieldset } from "@headlessui/react";
 import {
   Button,
-  COLOR,
-  SIZE,
-  WIDTH,
+  Color,
+  Size,
+  Width,
 } from "@jeepney-design-system/ui/src/components/button";
 import { EmailField } from "@jeepney-design-system/ui/src/components/form/field/email-field";
 import { PasswordField } from "@jeepney-design-system/ui/src/components/form/field/password-field";
 import { TextField } from "@jeepney-design-system/ui/src/components/form/field/text-field";
 import {
-  HEADING,
+  Heading,
   Typography,
 } from "@jeepney-design-system/ui/src/components/typography";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -84,7 +84,7 @@ export const FormInteractivity: StoryObj = {
     return (
       <div>
         <div className="border-b border-1 border-color-gray-300 mb-6">
-          <Typography heading={HEADING.H2}>
+          <Typography heading={Heading.H2}>
             Mag-rehistro ng inyong account
           </Typography>
         </div>
@@ -149,9 +149,9 @@ export const FormInteractivity: StoryObj = {
 
           <Button
             type="submit"
-            color={COLOR.primary}
-            size={SIZE.medium}
-            width={WIDTH.inherit}
+            color={Color.Primary}
+            size={Size.Medium}
+            width={Width.Inherit}
           >
             Submit Form
           </Button>
@@ -323,7 +323,7 @@ export const FormStates: StoryObj = {
   render: () => (
     <div className="space-y-6">
       <div>
-        <Typography heading={HEADING.H2}>Different Field States</Typography>
+        <Typography heading={Heading.H2}>Different Field States</Typography>
         <div className="space-y-4">
           <TextField
             id="normal"

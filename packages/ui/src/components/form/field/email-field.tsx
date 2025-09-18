@@ -1,6 +1,6 @@
 import { Field, Input, Label } from "@headlessui/react";
 import clsx from "clsx";
-import { HEADING, Typography } from "../../typography";
+import { Heading, Typography } from "../../typography";
 type EmailFieldProps = {
   onChange?: (value: string) => void;
   error?: string;
@@ -16,7 +16,7 @@ export function EmailField({ onChange, error }: EmailFieldProps) {
     <div className="w-full max-w-md">
       <Field>
         <Label>
-          <Typography heading={HEADING.H3}>Email</Typography>
+          <Typography heading={Heading.H3}>Email</Typography>
         </Label>
         <Input
           className={clsx(

@@ -1,12 +1,12 @@
 import {
   Button,
-  COLOR,
-  SIZE,
-  WIDTH,
+  Color,
+  Size,
+  Width,
 } from "@jeepney-design-system/ui/src/components/button";
 import { Header } from "@jeepney-design-system/ui/src/components/header";
 import {
-  HEADING,
+  Heading,
   Typography,
 } from "@jeepney-design-system/ui/src/components/typography";
 import type { Meta, StoryObj } from "@storybook/react";
@@ -38,7 +38,7 @@ export const Default: Story = {
       >
         <li className="py-4 border-t border-color-base-grey-200 md:border-t-0 md:p-0">
           <a href="http://github.com/adobocorp/jeepney-design-system">
-            <Typography heading={HEADING.SPAN_AS_LINK}>
+            <Typography heading={Heading.SPAN_AS_LINK}>
               JDS on GitHub
             </Typography>
           </a>
@@ -51,7 +51,7 @@ export const Default: Story = {
 export const BackButtonAsHeader: Story = {
   args: {
     children: (
-      <Button color={COLOR.primary} size={SIZE.medium} width={WIDTH.regular}>
+      <Button color={Color.Primary} size={Size.Medium} width={Width.Regular}>
         <span>{`< `} Bumalik sa Bahay</span>
       </Button>
     ),
