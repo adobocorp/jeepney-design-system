@@ -1,5 +1,13 @@
 # @jeepney-design-system/ui
 
+## 0.0.10
+
+### Patch Changes
+
+- 79eba5a: fix ui package build
+- Updated dependencies [79eba5a]
+  - @jeepney-design-system/tokens@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
