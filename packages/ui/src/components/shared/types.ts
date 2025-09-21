@@ -5,6 +5,7 @@ export enum BackgroundColor {
   Alert = "alert",
   Success = "success",
   Warning = "warning",
+  Transparent = "transparent",
 }
 
 export enum BackgroundType {
