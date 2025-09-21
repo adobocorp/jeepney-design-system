@@ -20,7 +20,7 @@ export function EmailField({ onChange, error }: EmailFieldProps) {
         </Label>
         <Input
           className={clsx(
-            "font-[Avenir] h-12 mt-1 block bg-white w-full autofill:border-gray-900 autofill:shadow-fill-white autofill:text-fill-gray-900",
+            "font-[Avenir] h-12 mt-1 block bg-white w-full autofill:border-gray-900 autofill:shadow-fill-white autofill:text-fill-gray-900 px-2",
             error && "border-red-500 focus:border-red-500"
           )}
           id="email"

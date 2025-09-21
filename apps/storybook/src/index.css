@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.sb-show-main.sb-main-centered #storybook-root {
+  box-sizing: border-box;
+  margin: auto;
+  max-height: 100%;
+  /* Hack for centering correctly in IE11 */
+}

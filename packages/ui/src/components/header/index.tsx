@@ -1,44 +1,59 @@
+import clsx from "clsx";
 import React, { useState } from "react";
 import { Heading, Typography } from "../typography";
 
 export function Header({
   title,
   children,
+  fixed = false,
 }: {
   title?: string;
+  fixed?: boolean;
   children?: React.ReactNode;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full py-4 px-6 bg-color-base-white border-b border-color-base-grey-200 flex items-center md:justify-between md:w-[800px]">
-      {title && (
-        <Typography heading={Heading.H2} className="m-0">
-          {title}
-        </Typography>
+    <header
+      className={clsx(
+        "w-full py-4 px-4 bg-color-base-white border-b border-color-base-grey-200 md:flex md:justify-between",
+        fixed && "fixed top-0 left-0 right-0 z-50"
       )}
-      {/* Burger menu button for mobile */}
-      <button
-        type="button"
-        className="md:hidden ml-auto flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-color-base-grey-400"
-        aria-label="Open menu"
-        onClick={() => setMenuOpen(true)}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect y="5" width="24" height="2" rx="1" fill="currentColor" />
-          <rect y="11" width="24" height="2" rx="1" fill="currentColor" />
-          <rect y="17" width="24" height="2" rx="1" fill="currentColor" />
-        </svg>
-      </button>
+    >
+      {title && (
+        <div className="flex flex-1 items-center justify-between md:justify-start">
+          <Typography heading={Heading.H2} className="m-0">
+            {title}
+          </Typography>
+          <button
+            type="button"
+            className="md:hidden flex items-center justify-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-color-base-grey-400"
+            aria-label="Open menu"
+            onClick={() => setMenuOpen(true)}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect y="5" width="24" height="2" rx="1" fill="currentColor" />
+              <rect y="11" width="24" height="2" rx="1" fill="currentColor" />
+              <rect y="17" width="24" height="2" rx="1" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      )}
       {title && children && <div className="w-full flex-1"></div>}
       {/* Children (e.g., right content) hidden on mobile, visible on md+ */}
-      <div className="hidden items-center md:flex-1 md:flex md:flex-row md:justify-start">
+      <div
+        className={clsx(
+          title ? "hidden" : "flex",
+
+          "items-center md:flex-1 md:flex md:flex-row md:justify-start"
+        )}
+      >
         {children}
       </div>
 
