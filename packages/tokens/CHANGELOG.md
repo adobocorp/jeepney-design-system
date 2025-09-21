@@ -1,5 +1,11 @@
 # @jeepney-design-system/tokens
 
+## 0.0.11
+
+### Patch Changes
+
+- 4b31ac7: minor fixes
+
 ## 0.0.10
 
 ### Patch Changes

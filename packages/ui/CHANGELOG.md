@@ -1,5 +1,13 @@
 # @jeepney-design-system/ui
 
+## 0.0.11
+
+### Patch Changes
+
+- 4b31ac7: minor fixes
+- Updated dependencies [4b31ac7]
+  - @jeepney-design-system/tokens@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes
