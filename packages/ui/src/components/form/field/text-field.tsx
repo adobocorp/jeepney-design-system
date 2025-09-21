@@ -25,9 +25,12 @@ export function TextField({
   readonly = false,
 }: TextFieldProps) {
   const readOnlyClassNames = "bg-gray-100 cursor-not-allowed";
-  const textFieldClassNames = clsx("mt-1 block w-full h-12 font-[Avenir]", {
-    [readOnlyClassNames]: readonly,
-  });
+  const textFieldClassNames = clsx(
+    "mt-1 block w-full h-12 font-[Avenir] px-2",
+    {
+      [readOnlyClassNames]: readonly,
+    }
+  );
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(e);

@@ -50,7 +50,7 @@ export function PasswordField({
             pattern=".{8,}"
             title="Must contain at least 8 or more characters"
             className={clsx(
-              "font-[Avenir] h-12 mt-1 block w-full bg-white border focus:outline-hidden focus:ring-0 autofill autofill:shadow-fill-white autofill:text-fill-gray-900 pr-10",
+              "font-[Avenir] h-12 mt-1 block w-full bg-white border focus:outline-hidden focus:ring-0 autofill autofill:shadow-fill-white autofill:text-fill-gray-900 pr-10 px-2",
               error && "border-red-500 focus:border-red-500"
             )}
             required
